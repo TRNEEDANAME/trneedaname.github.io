@@ -1,0 +1,16 @@
+#+hugo_base_dir: ../
+#+HUGO_LAYOUT: "page"
+#+date:         [2025-10-06]
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: dev-potato
+#+FILETAGS: dev-potato
+#+TITLE: Post 1
+
+* Test
+
+This is text
+
+
+#+begin_src python
+print("Hi")
+#+end_src

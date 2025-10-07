@@ -1,0 +1,10 @@
+#+hugo_base_dir: ../
+#+HUGO_SECTION: . 
+#+TITLE: Search
+#+AUTHOR: RYCKEWAERT TOM
+#+HUGO_LAYOUT: search
+#+HUGO_SECTION: pages
+#+HUGO_SLUG: search
+#+HUGO_PARAMS:
+placeholder: "placeholder text in search input box"
+summary: "search"

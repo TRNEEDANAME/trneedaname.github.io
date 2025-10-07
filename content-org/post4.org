@@ -1,0 +1,12 @@
+#+hugo_base_dir: ../
+#+HUGO_LAYOUT: "page"
+#+date:         [2025-10-07]
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: dev-potato
+#+FILETAGS: dev-potato
+#+TITLE: Post 4
+#+DESCRIPTION: "This is a cool description"
+
+* Page 4
+
+Hi

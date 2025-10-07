@@ -1,0 +1,87 @@
+baseURL: "https://trneedaname.github.io/"
+languageCode: "en-us"
+title: "Dev blog"
+theme: ["PaperMod"]
+author: "TRNEEDANAME"
+
+enableEmoji: true
+
+params:
+  assets:
+    disableHLJS: true
+  mainsections:
+    - dev-tomato
+  homeInfoParams:
+    Title: "TRNEEDANAME's wiki and blog"
+    Content: >
+      - A game dev, mod and tech related blog / wiki.
+
+      - This will serve as a place where people can discover my work and see what I do.
+
+      - It's written using [org-mode](https://orgmode.org/) and transformed into markdown using [ox-hugo](https://ox-hugo.scripter.co/) with a heavy load of custom modes to make it all work
+      
+  socialIcons:
+    - name: "Github"
+      url: "https://github.com/TRNEEDANAME"
+    - name: "Discord"
+      url: "https://discord.com"
+    - name: "Reddit"
+      url: "https://reddit.com/u/TRENEEDNAME_245"
+
+  footer:
+    text: "Made with :heart: by TRNEEDANAME"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS
+  page:
+    - HTML
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Search"
+      url: "/search/"
+      weight: 2
+    - name: "Archives"
+      url: "/archives/"
+      weight: 3
+    - name: "Tags"
+      url: "/tags/"
+      weight: 4
+markup:
+  highlight:
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    noClasses: false
+    style: doom-one
+module:
+  imports:
+    - path: github.com/KKKZOZ/hugo-admonitions
+
+params:
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "summary"]

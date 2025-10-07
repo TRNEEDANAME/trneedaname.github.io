@@ -1,0 +1,35 @@
+.lang-run-btn {
+    display: inline-block;
+    margin: 0.4em 0 0.2em 0;
+    padding: 0.35em 0.8em;
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+.lang-run-btn:hover { background:#005fa3; }
+.lang-run-btn:active { transform: scale(.96); }
+
+.code-run-output {
+    background:#1d1d1d;
+    color:#eaeaea;
+    margin:0.3em 0 1em 0;
+    padding:0.5em 0.75em;
+    border-radius:4px;
+    font-size:0.8rem;
+    overflow:auto;
+    max-height:18em;
+    white-space:pre-wrap;
+    border:1px solid #333;
+}
+
+/* Specific accent bars if desired */
+.python-output { border-left:4px solid #3572A5; }
+.js-output     { border-left:4px solid #f1e05a; }
+.sql-output    { border-left:4px solid #c6538c; }

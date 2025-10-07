@@ -1,0 +1,45 @@
+#+hugo_base_dir: ../
+#+HUGO_LAYOUT: "page"
+#+title: Post 2
+#+HUGO_SECTION: dev-tomato
+#+FILETAGS: dev-tomato
+#+AUTHOR: TRNEEDANAME
+* My second post
+
+This is my post body V2
+
+#+begin_notify Notif
+text
+
+#+begin_src python
+print("Text here")
+#+end_src
+
+More text
+
+#+begin_tip
+Example of code
+
+#+begin_src js
+console.log("Lol")
+#+end_src
+
+#+end_tip
+
+End
+#+end_notify
+
+** Header 2
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+*** LOL
+
+#+begin_quote aaaa
+Two things are infinite, the universe and human stupidity.
+I'm not sure about the universe.
+
+- Albert Einstein
+#+end_quote
+* 
+

@@ -1,0 +1,10 @@
+#+hugo_base_dir: ../
+#+TITLE: Archive
+#+HUGO_LAYOUT: archives
+#+HUGO_URL: /archives/
+#+HUGO_SUMMARY: archives
+#+HUGO_SECTION: .
+
+* Archives
+
+Here you'll see all archived files I have written

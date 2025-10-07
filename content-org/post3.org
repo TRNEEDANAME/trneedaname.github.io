@@ -1,0 +1,15 @@
+#+hugo_base_dir: ../
+#+HUGO_LAYOUT: "page"
+#+date:         [2025-10-06]
+#+FILETAGS: dev-potato
+#+HUGO_SECTION: dev-potato
+#+author: TRNEEDANAME
+#+title: Test3
+
+* Test3
+
+This is text
+
+#+begin_error
+Erreur ici
+#+end_error
