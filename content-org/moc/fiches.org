@@ -23,7 +23,7 @@ Le python est un langage utilisé dans tout, du simple programme au IA les plus 
 
 ** Javascript
 
-Le Javascript es un langage utilisé principalement dans le web (Front-end et Back-end).
+Le Javascript est un langage utilisé principalement dans le web (Front-end et Back-end).
 
 {{{relref(Cours Javascript,fiches/javascript)}}}
 
@@ -31,6 +31,6 @@ Le Javascript es un langage utilisé principalement dans le web (Front-end et Ba
 
 ** SQL
 
-Le SQL est un langage utilisé dans la requète de bases de données
+Le SQL est un langage utilisé dans la requète de bases de données.
 
 {{{relref(Cours SQL,fiches/SQL)}}}
