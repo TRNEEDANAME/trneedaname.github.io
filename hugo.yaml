@@ -8,6 +8,10 @@ enableEmoji: true
 enableInlineShortcodes: true
 enableRobotsTXT: true
 
+caches:
+  images:
+    dir: :cacheDir/images
+
 markup:
   highlight:
     #anchorLineNos: true

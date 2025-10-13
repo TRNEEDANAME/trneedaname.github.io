@@ -6,7 +6,7 @@
     <description>Recent content in Français on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/fran%C3%A7ais/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fiches</title>
@@ -24,6 +24,21 @@
 &lt;h2 id=&#34;sql&#34;&gt;SQL&lt;/h2&gt;
 &lt;p&gt;Le SQL est un langage utilisé dans la requète de bases de données&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/sql/&#34;&gt; SQL &lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/fiches/sql/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/sql/</guid>
+      <description>&lt;h2 id=&#34;le-sql-c-est-quoi&#34;&gt;Le SQL c&amp;rsquo;est quoi ?&lt;/h2&gt;
+
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+    &lt;div class=&#34;admonition info&#34;&gt;
+      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34;/&gt;&lt;/svg&gt;
+        &lt;span&gt;Info&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;admonition-content&#34;&gt;
+        &lt;p&gt;Le &lt;code&gt;Structured Query Language&lt;/code&gt; est un langage de &lt;code&gt;requète&lt;/code&gt; de bases de données, chaque requête est exécuté à la suite.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exercices de Javascript</title>
@@ -246,15 +261,15 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/fiches/python/</guid>
       <description>&lt;h2 id=&#34;le-python-c-est-quoi&#34;&gt;Le Python, c&amp;rsquo;est quoi ?&lt;/h2&gt;
-&lt;p&gt;Le langage &lt;code&gt;Python&lt;/code&gt; est un langage dit &lt;code&gt;interprété&lt;/code&gt;, ce qui veut dire que chaque instruction est lue ligne par ligne, de haut en bas.
-Le code est compilé au moment de l’exécution.&lt;/p&gt;
 
-    &lt;div class=&#34;admonition memo&#34;&gt;
-      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;path d=&#34;M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z&#34;/&gt;&lt;/svg&gt;
-        &lt;span&gt;Convention&lt;/span&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+    &lt;div class=&#34;admonition info&#34;&gt;
+      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34;/&gt;&lt;/svg&gt;
+        &lt;span&gt;Info&lt;/span&gt;
       &lt;/div&gt;
       &lt;div class=&#34;admonition-content&#34;&gt;
-        &lt;p&gt;Le python utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Snake_case&#34;&gt;Snake Case&lt;/a&gt; pour nommer les variables, par exemple, une variable serait donc &lt;code&gt;ma_variable&lt;/code&gt;&lt;/p&gt;</description>
+        &lt;p&gt;Le langage &lt;code&gt;Python&lt;/code&gt; est un langage dit &lt;code&gt;interprété&lt;/code&gt;, ce qui veut dire que chaque instruction est lue ligne par ligne, de haut en bas.
+Le code est compilé au moment de l’exécution.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
