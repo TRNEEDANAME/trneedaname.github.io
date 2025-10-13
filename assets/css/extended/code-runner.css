@@ -1,0 +1,226 @@
+.lang-run-btn {
+    display: inline-block;
+    margin: 0.4em 0 0.2em 0;
+    padding: 0.35em 0.8em;
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1;
+}
+.lang-run-btn:hover { background:#005fa3; }
+.lang-run-btn:active { transform: scale(.96); }
+
+.code-run-output {
+    background:#1d1d1d;
+    color:#eaeaea;
+    margin:0.3em 0 1em 0;
+    padding:0.5em 0.75em;
+    border-radius:4px;
+    font-size:0.8rem;
+    overflow:auto;
+    max-height:18em;
+    white-space:pre-wrap;
+    border:1px solid #333;
+}
+
+/* Specific accent bars if desired */
+.python-output { border-left:4px solid #3572A5; }
+.js-output     { border-left:4px solid #f1e05a; }
+.sql-output    { border-left:4px solid #c6538c; }
+
+/* Button baseline (inherit PaperMod aesthetic) */
+.pm-run-btn {
+    --pm-accent: var(--primary, #3572A5);
+    font: 500 0.70rem/1 "Noto Sans Mono","Fira Code",monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    padding: .35em .7em;
+    background: var(--pm-accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: .3px;
+    cursor: pointer;
+}
+.pm-run-btn:hover:not([disabled]) { background: color-mix(in srgb, var(--pm-accent) 85%, #000); }
+.pm-run-btn:active:not([disabled]) { transform: translateY(1px); }
+.pm-run-btn[disabled] { opacity:.55; cursor: progress; }
+
+/* Spinner */
+.pm-run-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: pm-spin .6s linear infinite;
+    display: inline-block;
+}
+@keyframes pm-spin { to { transform: rotate(360deg); } }
+
+/* Conclusion admonition styling (enhance existing) */
+.admonition.conclusion.py-run-result {
+    --conclusion-accent: var(--primary, #3572A5);
+    margin-top: .6rem;
+    border-left: 4px solid var(--conclusion-accent);
+    background: var(--entry, #1e1e1e);
+}
+.admonition.conclusion.py-run-result .admonition-header {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-weight: 600;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--conclusion-accent);
+    padding: .4em .6em;
+}
+.admonition.conclusion.py-run-result .admonition-header .admon-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+.admonition.conclusion.py-run-result .admonition-content {
+    padding: .5em .75em .7em;
+}
+.admonition.conclusion.py-run-result pre.py-run-stdout {
+    margin: 0;
+    background: transparent;
+    font-size: .72rem;
+    line-height: 1.25;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.admonition.conclusion.py-run-result {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* === Runner / Admonition Theme-Aware Styles === */
+
+/* Accent variable (you can override in .dark) */
+:root {
+    --runner-accent: #3572A5; /* Python-ish blue */
+    --runner-accent-contrast: #ffffff;
+}
+.dark {
+    /* Optionally brighten or shift accent for better contrast on dark background */
+    --runner-accent: #4b8ccf;
+    --runner-accent-contrast: #ffffff;
+}
+
+/* Generic run button */
+.pm-run-btn {
+    font: 500 0.70rem/1 "Droid Sans Mono","Fira Code",monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    padding: .35em .7em;
+    background: var(--runner-accent);
+    color: var(--runner-accent-contrast);
+    border: 1px solid color-mix(in srgb, var(--runner-accent) 70%, var(--border, #ccc));
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: .3px;
+}
+.pm-run-btn:hover:not([disabled]) {
+    background: color-mix(in srgb, var(--runner-accent) 85%, #000);
+}
+.pm-run-btn:active:not([disabled]) { transform: translateY(1px); }
+.pm-run-btn[disabled] { opacity:.55; cursor: progress; }
+
+/* Spinner */
+.pm-run-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255,255,255,.35);
+    border-top-color: var(--runner-accent-contrast);
+    border-radius: 50%;
+    animation: pm-spin .6s linear infinite;
+    display: inline-block;
+}
+@keyframes pm-spin { to { transform: rotate(360deg); } }
+
+/* Conclusion admonition for run output */
+.admonition.conclusion.py-run-result {
+    /* Use entry card background & a subtle border */
+    background: var(--entry);
+    color: var(--primary);
+    border-left: 4px solid var(--runner-accent);
+    box-shadow: 0 0 0 1px var(--border, rgba(0,0,0,0.08));
+    margin-top: .75rem;
+}
+
+.dark .admonition.conclusion.py-run-result {
+    /* Keep same variables; PaperMod already redefines them */
+    box-shadow: 0 0 0 1px var(--border, #30363d);
+}
+
+.admonition.conclusion.py-run-result .admonition-header {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-weight: 600;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--runner-accent);
+    padding: .45em .70em .40em;
+    background: color-mix(in srgb, var(--runner-accent) 14%, var(--entry));
+    border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+    border-top-right-radius: 4px;
+}
+
+.admonition.conclusion.py-run-result .admonition-header .admon-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+.admonition.conclusion.py-run-result .admonition-content {
+    padding: .55em .75em .7em;
+    font-size: .75rem;
+    line-height: 1.3;
+}
+
+.admonition.conclusion.py-run-result pre.py-run-stdout {
+    margin: 0;
+    background: var(--code-bg);
+    color: var(--primary);
+    padding: .5em .6em;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: .72rem;
+    line-height: 1.25;
+    white-space: pre-wrap;
+    border: 1px solid var(--border);
+}
+
+/* If you prefer transparent run output (remove code block look) */
+/*
+ . *admonition.conclusion.py-run-result pre.py-run-stdout {
+ background: transparent;
+ border: none;
+ padding: 0;
+ }
+ */
+
+/* Quote (#+begin_quote) icon injection styling (if an SVG was added) */
+.admonition.quote .admonition-header .admon-icon {
+    width: 16px;
+    height: 16px;
+    opacity: .85;
+}
+
+/* Safeguard: ensure body text and backgrounds use theme variables, not forced white */
+body {
+    background: var(--theme);
+    color: var(--primary);
+}

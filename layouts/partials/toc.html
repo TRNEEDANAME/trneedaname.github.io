@@ -1,0 +1,13 @@
+{{- $isFrench := in .Params.tags "français" -}}
+<div class="toc">
+    <details {{ if .Site.Params.tocOpen }}open{{ end }}>
+        <summary class="toc-title">
+            {{ if $isFrench }}
+            Tableaux des matières
+            {{ else }}
+            Table of Contents
+            {{ end }}
+        </summary>
+        {{ .TableOfContents }}
+    </details>
+</div>

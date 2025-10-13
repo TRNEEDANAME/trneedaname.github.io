@@ -1,0 +1,15 @@
+#+TITLE: Xcom-mods
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+FILETAGS: MOC xcom english
+#+DATE: 2025-10-08
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: false
+#+HUGO_SECTION: moc
+#+AUTHOR: TRNEEDANAME
+#+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false
+
+
+** Mods for xcom
+
+This file will have all of the different mods I did and am doing, each mods will have a dedicated page but each ones will have a brief explanation below.

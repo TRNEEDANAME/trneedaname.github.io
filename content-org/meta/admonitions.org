@@ -1,0 +1,112 @@
+
+#+TITLE: Admonitions
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+DATE: 2025-10-09
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: false
+#+HUGO_SECTION: meta
+#+HUGO_CUSTOM_FRONT_MATTER: :searchHidden true
+
+This page exists to showcase all admonitions and how they look (also to test contrast & colours for source code)
+I'll be working on implementing multiple colour palettes for different colour conditions but PaperMod is proving a bit weird
+
+#+begin_quote
+[...]Humanity or something[...]
+
+- Albert Einstein
+#+end_quote
+
+#+begin_src python
+print("What are you doing here")
+def test():
+        print("Hello !")
+test()
+
+for i in "potato":
+        print(i)
+#Code goes here
+#+end_src
+
+#+begin_success
+Wow
+#+end_success
+
+#+begin_note
+A note ?
+#+end_note
+
+#+begin_notify -
+You've got mail !
+#+end_notify
+
+#+begin_tip -
+Here is a tip, stop reading this nonsense
+#+end_tip
+
+#+begin_task
+- [X] Write more
+- [ ] Find the meaning of 42
+#+end_task
+
+#+begin_important
+Walk the dog
+#+end_important
+
+#+begin_idea
+Make good code
+#+end_idea
+
+#+begin_info
+I am french
+#+end_info
+
+#+begin_warning
+Attention !
+#+end_warning
+
+#+begin_caution
+This is a meta page
+#+end_caution
+
+#+begin_code
+code goes here (not used because src blocks are better)
+#+end_code
+
+#+begin_conclusion
+The End
+#+end_conclusion
+
+#+begin_abstract
+Abstraction is what dev despise
+#+end_abstract
+
+#+begin_danger
+Danger ahead
+#+end_danger
+
+#+begin_error
+You shouldn't be here...
+#+end_error
+
+#+begin_experiment
+Experimenting is fun
+#+end_experiment
+
+#+begin_goal
+Be a better person
+#+end_goal
+
+#+begin_memo
+- Stay flexy
+#+end_memo
+
+
+#+begin_question
+Why 42 ?
+#+end_question
+
+#+begin_bug
+A bug !
+#+end_bug

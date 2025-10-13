@@ -4,6 +4,8 @@
 #+HUGO_URL: /archives/
 #+HUGO_SUMMARY: archives
 #+HUGO_SECTION: .
+#+AUTHOR: TRNEEDANAME
+#+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false ShowBreadCrumbs: false
 
 * Archives
 

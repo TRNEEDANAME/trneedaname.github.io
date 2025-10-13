@@ -6,20 +6,62 @@
     <description>Recent content in Tags on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Oct 2025 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dev-Potato</title>
-      <link>http://localhost:1313/tags/dev-potato/</link>
-      <pubDate>Tue, 07 Oct 2025 00:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/dev-potato/</guid>
+      <title>Fiches</title>
+      <link>http://localhost:1313/tags/fiches/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/fiches/</guid>
       <description></description>
     </item>
     <item>
-      <title>Dev-Tomato</title>
-      <link>http://localhost:1313/tags/dev-tomato/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dev-tomato/</guid>
+      <title>Français</title>
+      <link>http://localhost:1313/tags/fran%C3%A7ais/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/fran%C3%A7ais/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>English</title>
+      <link>http://localhost:1313/tags/english/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/english/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MOC</title>
+      <link>http://localhost:1313/tags/moc/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/moc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xcom</title>
+      <link>http://localhost:1313/tags/xcom/</link>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xcom/</guid>
       <description></description>
     </item>
   </channel>

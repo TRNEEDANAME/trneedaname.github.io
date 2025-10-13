@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pages on Dev blog</title>
+    <link>http://localhost:1313/pages/</link>
+    <description>Recent content in Pages on Dev blog</description>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/pages/about/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/pages/about/</guid>
+      <description>&lt;h2 id=&#34;who-i-am&#34;&gt;Who I am&lt;/h2&gt;
+&lt;p&gt;Hi &amp;#x1f44b; !&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m TRNEEDANAME, a french game dev / mod maker.
+This site is my blog, where you&amp;rsquo;ll find what I did and what I&amp;rsquo;m doing.&lt;/p&gt;
+&lt;h3 id=&#34;what-i-use&#34;&gt;What I use&lt;/h3&gt;
+&lt;p&gt;I use Linux as my main OS (NixOS to be precise), before that I used Arch for close to 4 years.&lt;/p&gt;
+&lt;p&gt;As my text editor / IDE / everything else (mostly), I use &lt;a href=&#34;https://www.gnu.org/software/emacs/emacs.html&#34;&gt;Emacs&lt;/a&gt; because I write in org-mode (I use a framework called &lt;a href=&#34;https://github.com/doomemacs/doomemacs&#34;&gt;Doom Emacs&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

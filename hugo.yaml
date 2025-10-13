@@ -5,20 +5,43 @@ theme: ["PaperMod"]
 author: "TRNEEDANAME"
 
 enableEmoji: true
+enableInlineShortcodes: true
+enableRobotsTXT: true
 
+markup:
+  highlight:
+    #anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    noClasses: false
+    style: monokai
+    
 params:
   assets:
     disableHLJS: true
   mainsections:
-    - dev-tomato
+    - moc
   homeInfoParams:
-    Title: "TRNEEDANAME's wiki and blog"
+    Title: TRNEEDANAME's wiki and blog
     Content: >
       - A game dev, mod and tech related blog / wiki.
 
       - This will serve as a place where people can discover my work and see what I do.
 
-      - It's written using [org-mode](https://orgmode.org/) and transformed into markdown using [ox-hugo](https://ox-hugo.scripter.co/) with a heavy load of custom modes to make it all work
+      - It's written using [org-mode](https://orgmode.org/) and transformed into markdown using [ox-hugo](https://ox-hugo.scripter.co/) with a heavy load of custom modes to make it work nicely with [admonitions](https://github.com/KKKZOZ/hugo-admonitions) and other plugins.
+
+      - Using `Alt` + `Maj` + any keys below has a specific function :
+
+      - C - Open / Close the table of content
+      
+      - G - Go to the top of the page
+
+      - H - Home
+
+      - T - Switch between theme (light / dark)
+
+      - / - Jumps to search page
       
   socialIcons:
     - name: "Github"
@@ -28,6 +51,22 @@ params:
     - name: "Reddit"
       url: "https://reddit.com/u/TRENEEDNAME_245"
 
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+      
   footer:
     text: "Made with :heart: by TRNEEDANAME"
 
@@ -53,8 +92,8 @@ menu:
     - name: "Search"
       url: "/search/"
       weight: 2
-    - name: "Archives"
-      url: "/archives/"
+    - name: "About"
+      url: "/about/"
       weight: 3
     - name: "Tags"
       url: "/tags/"
@@ -70,18 +109,3 @@ markup:
 module:
   imports:
     - path: github.com/KKKZOZ/hugo-admonitions
-
-params:
-  ShowBreadCrumbs: true
-  ShowPostNavLinks: true
-  ShowCodeCopyButtons: true
-  ShowToc: true
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "summary"]

@@ -1,0 +1,335 @@
+/* ==========================================================
+   NORD THEME — MERGED LIGHT / DARK (PaperMod)
+   ========================================================== */
+
+/* ======== COLOR VARIABLES (LIGHT MODE DEFAULT) ========= */
+:root {
+  /* Polar Night */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+
+  /* Snow Storm */
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  /* Frost */
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+
+  /* Aurora — boosted for light mode */
+  --nord11: #d12f2f; /* Red */
+  --nord12: #e06b3d; /* Orange */
+  --nord13: #f2e07b; /* Yellow */
+  --nord14: #70c05c; /* Green */
+  --nord15: #b85bdb; /* Purple */
+  --nord-func: #e6a600; /* Function names */
+
+  /* Theme variables */
+  --theme-bg: var(--nord6);
+  --theme-fg: var(--nord2);
+  --theme-border: var(--nord5);
+  --theme-accent: var(--nord9);
+  --theme-link: var(--nord10);
+  --theme-link-hover: var(--nord9);
+  --theme-menu-bg: var(--nord5);
+  --theme-menu-link: var(--nord0);
+  --theme-menu-hover: var(--nord10);
+  --theme-code-bg: var(--nord5);
+  --theme-code-fg: var(--nord0);
+  --entry-bg: var(--nord5);
+}
+
+/* ==========================================================
+   DARK MODE OVERRIDES
+   ========================================================== */
+body.dark {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+  --nord-func: #ebcb8b;
+
+  --nord-comment: #616e88;
+
+  --theme-bg: var(--nord0);
+  --theme-fg: var(--nord6);
+  --theme-border: var(--nord1);
+  --theme-accent: var(--nord8);
+  --theme-link: var(--nord8);
+  --theme-link-hover: var(--nord7);
+  --theme-menu-bg: var(--nord1);
+  --theme-menu-link: var(--nord5);
+  --theme-menu-hover: var(--nord8);
+  --theme-code-bg: var(--nord2);
+  --theme-code-fg: var(--nord6);
+  --entry-bg: var(--nord2);
+}
+
+/* ==========================================================
+   GLOBAL STYLES
+   ========================================================== */
+body {
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+  border-color: var(--theme-border);
+  font-size: 1.1em;
+}
+
+.admonition-content pre code {
+    font-size: 1.2em !important;
+}
+
+main, .dark.list, .list{
+    background-color: var(--theme-bg);
+}
+
+/* Logo */
+.logo > a:first-child {
+  font-size: 1.5em;
+  color: var(--theme-accent);
+}
+.logo > a:first-child:hover {
+  color: var(--theme-link-hover);
+}
+
+/* Menu */
+#menu {
+  background-color: var(--code-theme-bg) !important;
+  box-shadow: none;
+}
+#menu > li > a {
+  color: var(--theme-menu-link);
+  font-weight: bolder;
+}
+#menu > li > a:hover {
+  color: var(--theme-menu-hover);
+}
+
+/* Links outside menu */
+a:not(.logo > a):not(#menu a) {
+  color: var(--theme-link);
+}
+a:not(.logo > a):not(#menu a):hover {
+  color: var(--theme-link-hover);
+  text-decoration-color: var(--theme-link-hover);
+}
+
+/* Table of Contents */
+.toc {
+  background-color: var(--entry-bg);
+  border: 1px solid var(--theme-border);
+  border-radius: 8px;
+  padding: 1.2em;
+  margin: 1.5em 0;
+}
+
+body.dark .toc {
+    background-color: var(--nord1);
+}
+
+body.dark .menu {
+    color: var(--theme);
+}
+
+/* ==========================================================
+   CODE BLOCKS — CHROMA HIGHLIGHTER
+   ========================================================== */
+pre.chroma, .chroma {
+  background-color: var(--theme-code-bg);
+  color: var(--theme-code-fg);
+  border-radius: 6px;
+  padding: 0.3em;
+  font-family: "Noto Sans Mono", "Fira Code", monospace;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.dark .post-footer > ul > li > a, .dark .paginav{
+    background-color: var(--nord1);
+}
+
+.post-content code {
+    font-size: 1.1em;
+}
+
+/* Line numbers */
+.chroma .lntable,
+.chroma .lntd {
+  border: none !important;
+  background-color: inherit;
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+}
+.chroma .lnt {
+  color: #7b88a1;
+  user-select: none;
+  padding: 0 0.8em 0 0.5em;
+  opacity: 0.8;
+}
+.chroma .line { background-color: inherit; }
+.chroma .hl { background-color: rgba(143, 188, 187, 0.1); }
+
+/* Syntax Highlighting */
+.chroma .k, .chroma .kd, .chroma .kn, .chroma .kr, .chroma .kt { color: var(--nord10); }
+.chroma .s, .chroma .s1, .chroma .s2, .chroma .sb, .chroma .sd { color: var(--nord14); }
+.chroma .m, .chroma .mi, .chroma .mf, .chroma .mh { color: var(--nord13); }
+.chroma .nf { color: var(--nord-func); }
+.chroma .na, .chroma .nd { color: var(--nord8); }
+.chroma .nc, .chroma .no { color: var(--nord15); }
+.chroma .nb, .chroma .bp { color: var(--nord10); }
+/* Comments */
+.chroma .c, .chroma .cm, .chroma .ch { color: var(--nord3); font-style: italic; }
+body.dark .chroma .c1 {color: #e5e9f0; font-style: italic;}
+.chroma .o, .chroma .ow { color: var(--nord11); font-weight: bold; }
+.chroma .ni, .chroma .ne { color: var(--nord12); }
+.chroma .gh, .chroma .gu { color: var(--nord13); font-weight: bold; }
+.chroma .ge { font-style: italic; }
+.chroma .gs { font-weight: bold; }
+
+/* Copy button */
+button.copy-code {
+  background-color: var(--theme-code-bg);
+  color: var(--theme-fg);
+  border: 1px solid var(--theme-border);
+  border-radius: 4px;
+  padding: 0.25em 0.6em;
+  font-size: 0.8em;
+}
+button.copy-code:hover {
+  background-color: var(--theme-accent);
+  color: var(--theme-bg);
+}
+
+.dark .sql-run-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Noto Sans Mono", "Consolas", monospace;
+  background: var(--nord0);
+  color: var(--content);
+  margin: 1em 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+body.dark .sql-run-table th, .sql-run-table td {
+  border: 1px solid var(--theme-border);
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+body.dark .sql-run-table th {
+  color: var(--nord6);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+body.dark .sql-run-table tr:nth-child(even) td {
+  background: var(--theme-bg);
+}
+
+body.dark .sql-run-table tr:nth-child(odd) td {
+  background: var(--entry-bg);
+}
+
+body.dark .sql-run-table tr:hover td {
+  background: var(--nord7);
+  color: var(--nord0);
+}
+
+body.dark .sql-run-table th {
+  background: var(--theme-accent);
+  color: var(--nord6);
+}
+
+body.dark .sql-run-table tr:nth-child(even) td {
+  background: var(--theme-bg);
+}
+body.dark .sql-run-table tr:nth-child(odd) td {
+  background: var(--entry-bg);
+}
+body.dark .sql-run-table tr:hover td {
+  background: var(--nord7);
+  color: var(--nord0);
+}
+
+body.dark .sql-run-table > tbody:nth-child(1) > tr >th {
+    background-color: var(--nord1);
+}
+
+/* LIGHT */
+
+.sql-run-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Noto Sans Mono", "Consolas", monospace;
+  background: var(--nord6);
+  color: var(--content);
+  margin: 1em 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ .sql-run-table th, .sql-run-table td {
+  border: 1px solid var(--theme-border);
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+ .sql-run-table th {
+  color: var(--nord6);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+ .sql-run-table tr:nth-child(even) td {
+  background: var(--nord4);
+}
+
+ .sql-run-table tr:nth-child(odd) td {
+  background: var(--entry-bg);
+}
+
+ .sql-run-table tr:hover td {
+  background: var(--nord7);
+  color: var(--nord0);
+}
+
+ .sql-run-table th {
+  background: var(--theme-accent);
+  color: var(--nord6);
+}
+
+ .sql-run-table tr:nth-child(even) td {
+  background: var(--theme-bg);
+}
+ .sql-run-table tr:nth-child(odd) td {
+  background: var(--entry-bg);
+}
+ .sql-run-table tr:hover td {
+  background: var(--nord7);
+  color: var(--nord0);
+}
+
+ .sql-run-table > tbody:nth-child(1) > tr >th {
+    background-color: var(--nord5);
+    color: var(--theme-fg);
+}

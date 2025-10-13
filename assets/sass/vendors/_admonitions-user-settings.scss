@@ -1,0 +1,72 @@
+// assets/sass/vendors/_admonitions-user-settings.scss
+//
+// Welcome to the user settings file for Hugo Admonitions!
+// To customize, copy this file to your Hugo project at `assets/sass/vendors/`.
+// Then, uncomment and modify the variables below to fit your site's design.
+//
+// IMPORTANT: Do NOT use `!default` in this file.
+
+// =============================================================================
+// --- Option 1: Override Base Colors for Specific Admonition Types ---
+// =============================================================================
+// Use this map to change the default left-border and accent color for any admonition type.
+//
+// $admonition-colors-overrides: (
+//   note: #007bff,      // Make 'note' admonitions blue (like Bootstrap's primary color)
+//   tip: #28a745,       // Make 'tip' admonitions green (like Bootstrap's success color)
+//   warning: #ffc107    // Make 'warning' admonitions yellow (like Bootstrap's warning color)
+// );
+
+// =============================================================================
+// --- Option 2: Override Header Text & Icon Colors ---
+// =============================================================================
+// Use these maps for fine-grained control over the header text and icon color.
+// This is useful when a type's base color is too light or dark, causing poor contrast.
+//
+// // Light Mode Header Text Overrides
+// $admonition-light-header-text-overrides: (
+//   // The default yellow for 'warning' can be hard to read in light mode.
+//   // Let's make the header text a darker, more readable brown.
+//   warning: #a37100
+// );
+//
+// // Dark Mode Header Text Overrides
+// $admonition-dark-header-text-overrides: (
+//   // The default danger color can be hard to read on a dark background tint.
+//   // Let's use a brighter red for the header text in dark mode.
+//   danger: #ff9e8f,
+//   note: #ffffff // Make 'note' header text pure white for high contrast.
+// );
+
+// =============================================================================
+// --- Option 3: Override Global Theme Colors ---
+// =============================================================================
+// Change the fundamental colors for all admonitions in light or dark mode.
+//
+// // Light Mode Global Colors
+$admonition-light-bg: #eceff4;       // A slightly off-white content background
+$admonition-light-code-bg: #e5e9f0;  // A custom background for code blocks
+//
+// // Dark Mode Global Colors
+$admonition-dark-bg: #2e3440;        // A "Dracula" theme-inspired content background
+$admonition-dark-code-bg: #434c5e;              // Inline code & code block background
+
+// Light Mode Colors
+$admonition-light-text: #434c5e;                // Content text
+$admonition-light-code-text: #434c5e;           // Inline code & code block text
+$admonition-light-blockquote-border: #e5e9f0;  // Blockquote left border
+
+// Dark Mode Colors
+$admonition-dark-text: #e5e9f0;      // A corresponding light text color
+$admonition-dark-code-text: #e5e9f0;            // Inline code & code block text
+$admonition-dark-blockquote-border: #434c5e;   // Blockquote left border
+
+// --- Header Background Opacity ---
+// Controls the opacity of the background color tint applied to the whole admonition block.
+// Value should be between 0 (transparent) and 1 (opaque).
+$admonition-light-header-bg-opacity: 0.3;       // Opacity for light mode background tint
+$admonition-dark-header-bg-opacity: 0.2;        // Opacity for dark mode background tint
+
+.admonition {
+  transition: 0s !important;
+}

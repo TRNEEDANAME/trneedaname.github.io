@@ -1,0 +1,41 @@
+#+TITLE: About
+#+HUGO_BASE_DIR: ../
+#+HUGO_LAYOUT: page
+#+DATE: 2025-10-13
+#+HUGO_PUBLISHDATE: 2025-10-13
+#+HUGO_DRAFT: false
+#+HUGO_SECTION: pages
+#+AUTHOR: TRNEEDANAME
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false ShowBreadCrumbs: false :ShowPostNavLinks false
+
+** Who I am
+
+Hi :wave: !
+
+I'm TRNEEDANAME, a french game dev / mod maker.
+This site is my blog, where you'll find what I did and what I'm doing.
+
+*** What I use
+
+I use Linux as my main OS (NixOS to be precise), before that I used Arch for close to 4 years.
+
+As my text editor / IDE / everything else (mostly), I use [[https://www.gnu.org/software/emacs/emacs.html][Emacs]] because I write in org-mode (I use a framework called [[https://github.com/doomemacs/doomemacs][Doom Emacs]]).
+
+The file you're reading is in fact a ~.org~ file !
+
+*** What I do
+
+I make mods for [[https://projectzomboid.com/blog/][Project Zomboid]] and [[https://xcom.com][Xcom]] in my spare time, I started with Xcom 2 in ~2020, in 2024 I joined the Project Zomboid RP scene as a player, then admin / mod maker for another server.
+
+I also play games, as of now I'm playing Satisfactory / Project Zomboid.
+
+I enjoy writing wikis, as show by my [[https://github.com/TRNEEDANAME/Militia_Wiki/wiki][Militia wiki]] for Xcom 2 (still in the work as of now)
+
+*** Technology used by this site
+
+This site is made using [[https://gohugo.io/][Hugo]] with [[https://ox-hugo.scripter.co/][ox-hugo]], I have [[https://github.com/KKKZOZ/hugo-admonitions][Hugo admonitions]] as a plugin installed, but as it doesn't work with [[https://orgmode.org/][org-mode]], I had to write a minor mode for it.
+
+** Contact me
+
+To contact me please send me an email to [[mailto:trneedaname@proton.me][trneedaname@proton.me]] if it is related to this site, otherwise please use fill a bug report on the github repository of the mod / steam page.

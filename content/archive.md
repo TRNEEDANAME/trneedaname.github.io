@@ -1,9 +1,11 @@
 +++
 title = "Archive"
-author = ["Tom Ryckewaert"]
+author = ["TRNEEDANAME"]
 layout = "archives"
 url = "/archives/"
 draft = false
+ShowToc = false
+ShowPostNavLinks = "false ShowBreadCrumbs: false"
 +++
 
 ## Archives {#archives}
