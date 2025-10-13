@@ -24,13 +24,13 @@ Le python est un langage utilisé dans tout, du simple programme au IA les plus 
 
 Le Javascript es un langage utilisé principalement dans le web (Front-end et Back-end).
 
-[ Javascript ]({{< relref "fiches/javascript" >}})
+[ Cours Javascript ]({{< relref "fiches/javascript" >}})
 
-[ Exercices ]({{< relref "Exercices de Javascript" >}})
+[ Exercices Javascript ]({{< relref "Exercices de Javascript" >}})
 
 
 ## SQL {#sql}
 
 Le SQL est un langage utilisé dans la requète de bases de données
 
-[ SQL ]({{< relref "fiches/SQL" >}})
+[ Cours SQL ]({{< relref "fiches/SQL" >}})
