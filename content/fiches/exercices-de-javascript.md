@@ -115,7 +115,7 @@ Les types principaux : number, string, boolean
 
 #### Question n°2 {#question-n-2}
 
-Les variables non initialisées sont \`undefined\`.
+Les variables non initialisées sont `undefined`.
 
 
 ### Exercice 3 – Addition / concaténation {#exercice-3-addition-concaténation}

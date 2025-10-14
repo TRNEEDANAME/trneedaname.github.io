@@ -7,7 +7,9 @@ tags = ["fiches", "javascript", "français"]
 draft = false
 +++
 
-[ Exercices ]({{< relref "Exercices de Javascript" >}})
+## Aller au exercices {#aller-au-exercices}
+
+Les exercices peuvent se trouver ici : [ Exercices ]({{< relref "Exercices de Javascript" >}})
 
 
 ## Le JavaScript, c'est quoi ? {#le-javascript-c-est-quoi}

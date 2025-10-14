@@ -1,5 +1,5 @@
 +++
-title = "Xcom-mods"
+title = "Xcom Mods"
 author = ["TRNEEDANAME"]
 date = 2025-10-08
 layout = "page"

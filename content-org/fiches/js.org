@@ -9,7 +9,9 @@
 #+AUTHOR: TRNEEDANAME
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 
-{{{relref(Exercices,Exercices de Javascript)}}}
+** Aller au exercices
+
+Les exercices peuvent se trouver ici : {{{relref(Exercices,Exercices de Javascript)}}}
 
 ** Le JavaScript, c'est quoi ?
 

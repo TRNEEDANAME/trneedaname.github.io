@@ -118,7 +118,7 @@ for (let name in variables) {
 Les types principaux : number, string, boolean
 
 **** Question n°2
-Les variables non initialisées sont `undefined`.
+Les variables non initialisées sont ~undefined~.
 
 *** Exercice 3 – Addition / concaténation
 #+begin_src js

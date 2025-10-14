@@ -1,4 +1,4 @@
-#+TITLE: Xcom-mods
+#+TITLE: Xcom Mods
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
 #+FILETAGS: MOC xcom english
