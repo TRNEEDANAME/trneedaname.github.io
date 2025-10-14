@@ -156,25 +156,19 @@ Comme vous le voyez en exécutant le code, l'interpréteur de Python renvoie
 ~TypeError: can only concatenate str (not "int") to str~
 #+end_error
 
-Avec le ~input()~ transformé :
-
-#+begin_src python 
-age = int(input("Quel est votre age ? "))
-age = age + 1
-print("Votre age est donc " + age)
-#+end_src
-
 *** La sortie
 
 #+begin_src python 
 print("Hello World !")
 #+end_src
 
-Le python supporte la concaténation des string, par exemple
+Le python supporte la concaténation des string.
+Avec le ~input()~ transformé :
 
 #+begin_src python 
-age = 20
-print("J'ai " + str(age) + " ans")
+age = int(input("Quel est votre age ? "))
+age = age + 1
+print("Votre age est donc " + str(age))
 #+end_src
 
 #+begin_tip - A voir

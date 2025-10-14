@@ -156,11 +156,20 @@
     <li><a href="#le-sql-c-est-quoi">Le SQL c&rsquo;est quoi ?</a></li>
     <li><a href="#les-requètes-simples">Les requètes simples</a>
       <ul>
-        <li><a href="#le-select">Le <code>SELECT</code></a></li>
-        <li><a href="#le-where">Le <code>WHERE</code></a></li>
-        <li><a href="#le-between">Le <code>BETWEEN</code></a></li>
-        <li><a href="#le-like">Le <code>LIKE</code></a></li>
-        <li><a href="#trier-les-résultats">Trier les résultats</a></li>
+        <li><a href="#select">SELECT</a></li>
+        <li><a href="#where">WHERE</a></li>
+        <li><a href="#between">BETWEEN</a></li>
+        <li><a href="#like">LIKE</a></li>
+      </ul>
+    </li>
+    <li><a href="#fonctions-d-agrégation">Fonctions d’agrégation</a>
+      <ul>
+        <li><a href="#count">COUNT</a></li>
+        <li><a href="#avg">AVG</a></li>
+        <li><a href="#min">MIN</a></li>
+        <li><a href="#max">MAX</a></li>
+        <li><a href="#sum">SUM</a></li>
+        <li><a href="#order-by">ORDER BY</a></li>
       </ul>
     </li>
     <li><a href="#modification-et-suppression">Modification et suppression</a>
@@ -170,8 +179,13 @@
         <li><a href="#delete">DELETE</a></li>
       </ul>
     </li>
-    <li><a href="#les-jointures--join">Les jointures (JOIN)</a></li>
-    <li><a href="#fonctions-d-agrégation">Fonctions d’agrégation</a></li>
+    <li><a href="#les-jointures">Les jointures</a>
+      <ul>
+        <li><a href="#inner-join">INNER JOIN</a></li>
+        <li><a href="#left-join">LEFT JOIN</a></li>
+        <li><a href="#right-join">RIGHT JOIN</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </details>
@@ -250,6 +264,8 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -258,7 +274,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- A ne pas faire !
@@ -276,7 +294,7 @@
     </div><p>Les conventions sont définies par la norme <a href="https://www.iso.org/standard/76583.html">ISO/IEC 9075</a>.</p>
       </div>
     </div><h2 id="les-requètes-simples">Les requètes simples<a hidden class="anchor" aria-hidden="true" href="#les-requètes-simples">#</a></h2>
-<h3 id="le-select">Le <code>SELECT</code><a hidden class="anchor" aria-hidden="true" href="#le-select">#</a></h3>
+<h3 id="select">SELECT<a hidden class="anchor" aria-hidden="true" href="#select">#</a></h3>
 <p>Permet de sélectionner des valeurs dans une table.</p>
 
     <div class="admonition code">
@@ -298,6 +316,8 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -306,7 +326,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
@@ -316,7 +338,7 @@
 </div>
 </div>
       </div>
-    </div><h3 id="le-where">Le <code>WHERE</code><a hidden class="anchor" aria-hidden="true" href="#le-where">#</a></h3>
+    </div><h3 id="where">WHERE<a hidden class="anchor" aria-hidden="true" href="#where">#</a></h3>
 <p>Filtre les résultats selon une condition.</p>
 
     <div class="admonition code">
@@ -339,6 +361,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -347,7 +371,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
@@ -359,7 +385,7 @@
 </div>
       </div>
     </div><p>Il est possible d&rsquo;utiliser les opérateurs <code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code> et <code>&gt;=</code>.</p>
-<h3 id="le-between">Le <code>BETWEEN</code><a hidden class="anchor" aria-hidden="true" href="#le-between">#</a></h3>
+<h3 id="between">BETWEEN<a hidden class="anchor" aria-hidden="true" href="#between">#</a></h3>
 <p>Permet de filtrer des valeurs comprises dans un intervalle.</p>
 
     <div class="admonition code">
@@ -382,6 +408,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -390,7 +418,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
@@ -409,7 +439,7 @@
       <div class="admonition-content">
         <p><code>BETWEEN</code> inclut les bornes : ici, les utilisateurs nés le 1er janvier 1980 et le 31 décembre 2000 seront inclus.</p>
       </div>
-    </div><h3 id="le-like">Le <code>LIKE</code><a hidden class="anchor" aria-hidden="true" href="#le-like">#</a></h3>
+    </div><h3 id="like">LIKE<a hidden class="anchor" aria-hidden="true" href="#like">#</a></h3>
 <p><code>LIKE</code> permet de rechercher des valeurs partiellement correspondantes.</p>
 <ul>
 <li><code>%</code> : zéro ou plusieurs caractères</li>
@@ -436,6 +466,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -444,7 +476,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
@@ -456,7 +490,298 @@
 </div>
       </div>
     </div><p>Cherche ici tous les utilisateurs dont le nom contient la lettre “J”.</p>
-<h3 id="trier-les-résultats">Trier les résultats<a hidden class="anchor" aria-hidden="true" href="#trier-les-résultats">#</a></h3>
+<h2 id="fonctions-d-agrégation">Fonctions d’agrégation<a hidden class="anchor" aria-hidden="true" href="#fonctions-d-agrégation">#</a></h2>
+<p>Les fonctions d’agrégation permettent de calculer des valeurs globales à partir de plusieurs lignes.</p>
+<h3 id="count">COUNT<a hidden class="anchor" aria-hidden="true" href="#count">#</a></h3>
+<p>Compte le nombre d&rsquo;éléments.</p>
+
+    <details class="admonition info">
+      <summary class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+        <span>A voir</span>
+      </summary>
+      <div class="admonition-content">
+        <p>On utilise des <code>'</code> et non des <code>&quot;</code> car SQL peut interprété <code>table</code> comme une commande.</p>
+      </div>
+    </details>
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>sql</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">produit</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">type_produit</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">produit</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">type_produit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;jardin&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s1">&#39;chaise&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;jardin&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s1">&#39;lampe&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;chambre&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s1">&#39;parasol&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;jardin&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;Quantité&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">type_produit</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;Type&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">produit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">type_produit</span><span class="p">,</span><span class="w"> </span><span class="n">type_produit</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="avg">AVG<a hidden class="anchor" aria-hidden="true" href="#avg">#</a></h3>
+<p>Calcule la moyenne d&rsquo;une colonne.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>sql</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom_coureur</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom_course</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">temps_course</span><span class="w"> </span><span class="n">DOUBLE</span><span class="w"> </span><span class="k">PRECISION</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">taille_course</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="n">nom_coureur</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">nom_course</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">temps_course</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">taille_course</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du peuplier&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">.</span><span class="mi">04</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de la musaraigne&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du chat&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Jeanne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du berger&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">.</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Marc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de Lille&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Patrique&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de pot&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">.</span><span class="mi">06</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">AVG</span><span class="p">(</span><span class="n">temps_course</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;temps moyen&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">taille_course</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;distance&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">course</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">taille_course</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="min">MIN<a hidden class="anchor" aria-hidden="true" href="#min">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>sql</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom_coureur</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom_course</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">temps_course</span><span class="w"> </span><span class="n">DOUBLE</span><span class="w"> </span><span class="k">PRECISION</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">taille_course</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="n">nom_coureur</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">nom_course</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">temps_course</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">taille_course</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du peuplier&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">.</span><span class="mi">04</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de la musaraigne&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du chat&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Jeanne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du berger&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">.</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Marc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de Lille&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Patrique&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de pot&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">.</span><span class="mi">06</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">nom_coureur</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;coureur&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">taille_course</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;taille course&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">MIN</span><span class="p">(</span><span class="n">temps_course</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;temps minimum&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">course</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">taille_course</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="max">MAX<a hidden class="anchor" aria-hidden="true" href="#max">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>sql</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom_coureur</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom_course</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">temps_course</span><span class="w"> </span><span class="n">DOUBLE</span><span class="w"> </span><span class="k">PRECISION</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">taille_course</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">course</span><span class="w"> </span><span class="p">(</span><span class="n">nom_coureur</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">nom_course</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">temps_course</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">taille_course</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du peuplier&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">.</span><span class="mi">04</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de la musaraigne&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du chat&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Jeanne&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course du berger&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">.</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Marc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de Lille&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">.</span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;Patrique&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;course de pot&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">.</span><span class="mi">06</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">nom_coureur</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;coureur&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">taille_course</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;taille course&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">MAX</span><span class="p">(</span><span class="n">temps_course</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;temps maxiumum&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">course</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">taille_course</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition info">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+        <span>Info</span>
+      </div>
+      <div class="admonition-content">
+        <p>La clause <code>GROUP BY</code> permet de regrouper les lignes selon une colonne, pour appliquer des fonctions d’agrégation sur chaque groupe.</p>
+      </div>
+    </div><h3 id="sum">SUM<a hidden class="anchor" aria-hidden="true" href="#sum">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>sql</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">produit</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nombre_produit</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">type_produit</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">produit</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_produit</span><span class="p">,</span><span class="w"> </span><span class="n">type_produit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="s1">&#39;Baguette&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;aliment&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">(</span><span class="s1">&#39;Chaise&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;objet&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">(</span><span class="s1">&#39;Banane&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;aliment&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">(</span><span class="s1">&#39;Tasse&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;aliment&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">type_produit</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;type de produit&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">SUM</span><span class="p">(</span><span class="n">nombre_produit</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;nombre de produit&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">produit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">type_produit</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="order-by">ORDER BY<a hidden class="anchor" aria-hidden="true" href="#order-by">#</a></h3>
 <p><code>ORDER BY</code> permet de trier les résultats.</p>
 
     <div class="admonition code">
@@ -503,11 +828,6 @@
 <li><code>ASC</code> (par défaut) : ordre croissant</li>
 </ul>
 <h2 id="modification-et-suppression">Modification et suppression<a hidden class="anchor" aria-hidden="true" href="#modification-et-suppression">#</a></h2>
-<ul>
-<li><code>INSERT INTO</code> : ajouter des lignes</li>
-<li><code>UPDATE</code> : modifier des lignes</li>
-<li><code>DELETE</code> : supprimer des lignes</li>
-</ul>
 <h3 id="insert-into">INSERT INTO<a hidden class="anchor" aria-hidden="true" href="#insert-into">#</a></h3>
 <p>Ajoute une ou plusieurs lignes dans une table.</p>
 
@@ -529,6 +849,8 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -537,7 +859,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Lucie&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1995-09-12&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Marseille&#39;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s1">&#39;Paul&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1988-03-22&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Lyon&#39;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w">
@@ -579,6 +903,8 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -587,7 +913,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
@@ -651,15 +979,15 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Jean&#39;</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ROLLBACK</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">;</span><span class="w">
@@ -667,7 +995,7 @@
 </div>
 </div>
       </div>
-    </div>
+    </div><p>Aucun changement de la base !</p>
       </div>
     </div><ul>
 <li>Supprime l’utilisateur “François”</li>
@@ -695,6 +1023,8 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
@@ -703,7 +1033,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">);</span><span class="w">
@@ -715,8 +1047,7 @@
 </div>
 </div>
       </div>
-    </div><h2 id="les-jointures--join">Les jointures (JOIN)<a hidden class="anchor" aria-hidden="true" href="#les-jointures--join">#</a></h2>
-<p>Les jointures permettent de combiner plusieurs tables.</p>
+    </div><h2 id="les-jointures">Les jointures<a hidden class="anchor" aria-hidden="true" href="#les-jointures">#</a></h2>
 
     <div class="admonition info">
       <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
@@ -725,11 +1056,8 @@
       <div class="admonition-content">
         <p>Les jointures servent à relier les données de plusieurs tables grâce à des colonnes communes (souvent des identifiants).</p>
       </div>
-    </div><ul>
-<li><code>INNER JOIN</code> : retourne seulement les lignes correspondantes dans les deux tables</li>
-<li><code>LEFT JOIN</code> : retourne toutes les lignes de la table de gauche, même sans correspondance</li>
-<li><code>RIGHT JOIN</code> : retourne toutes les lignes de la table de droite</li>
-</ul>
+    </div><h3 id="inner-join">INNER JOIN<a hidden class="anchor" aria-hidden="true" href="#inner-join">#</a></h3>
+<p>On retourne seulement les lignes correspondantes dans les deux tables</p>
 
     <div class="admonition code">
       <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
@@ -757,17 +1085,9 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">commande</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
@@ -786,32 +1106,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">produit</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">nombre_produit</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">utilisateur_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- LEFT JOIN : tous les utilisateurs, même sans commande
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">produit</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">utilisateur_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>
       </div>
-    </div>
-    <div class="admonition memo">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
-        <span>Memo</span>
-      </div>
-      <div class="admonition-content">
-        <p>Dans une jointure, utiliser des alias (ici <code>u</code> et <code>c</code>) rend le code plus lisible.
-Toujours écrire les mots-clés SQL en majuscules : <code>SELECT</code>, <code>FROM</code>, <code>JOIN</code>, <code>WHERE</code>, etc.</p>
-      </div>
-    </div><h2 id="fonctions-d-agrégation">Fonctions d’agrégation<a hidden class="anchor" aria-hidden="true" href="#fonctions-d-agrégation">#</a></h2>
-<p>Les fonctions d’agrégation permettent de calculer des valeurs globales à partir de plusieurs lignes.</p>
-<p>Fonctions principales :</p>
-<ul>
-<li><code>COUNT()</code> : compte le nombre d’éléments</li>
-<li><code>SUM()</code> : somme d’une colonne numérique</li>
-<li><code>AVG()</code> : moyenne</li>
-<li><code>MIN()</code> et <code>MAX()</code> : valeurs extrêmes</li>
-</ul>
+    </div><h3 id="left-join">LEFT JOIN<a hidden class="anchor" aria-hidden="true" href="#left-join">#</a></h3>
+<p>On retourne toutes les lignes de la table de gauche et droite qui correspondent.</p>
 
     <div class="admonition code">
       <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
@@ -836,35 +1136,92 @@ Toujours écrire les mots-clés SQL en majuscules : <code>SELECT</code>, <code>F
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">dateNaissance</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">villeNaissance</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dateNaissance</span><span class="p">,</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Jean&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;François&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-05-07&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Roubaix&#34;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1990-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Paris&#34;</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s2">&#34;Lucie&#34;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1995-09-12&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&#34;Lille&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">villeNaissance</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nombre_utilisateurs</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">villeNaissance</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">nombre_utilisateurs</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">commande</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">utilisateur_id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">produit</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nombre_produit</span><span class="w"> </span><span class="n">INTERGER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">utilisateur_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;François&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="p">(</span><span class="n">utilisateur_id</span><span class="p">,</span><span class="w"> </span><span class="n">produit</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_produit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Chaise&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Table&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">produit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">utilisateur_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="right-join">RIGHT JOIN<a hidden class="anchor" aria-hidden="true" href="#right-join">#</a></h3>
+<p>On retourne toutes les lignes de la table de droite.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>sql</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">commande</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">utilisateur_id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">produit</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nombre_produit</span><span class="w"> </span><span class="n">INTERGER</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">utilisateur_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">utilisateur</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;François&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;Thomas&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="p">(</span><span class="n">utilisateur_id</span><span class="p">,</span><span class="w"> </span><span class="n">produit</span><span class="p">,</span><span class="w"> </span><span class="n">nombre_produit</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Chaise&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Table&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">produit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">utilisateur</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">utilisateur_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>
       </div>
     </div>
-    <div class="admonition info">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
-        <span>Info</span>
+    <div class="admonition memo">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        <span>Memo</span>
       </div>
       <div class="admonition-content">
-        <p>La clause <code>GROUP BY</code> permet de regrouper les lignes selon une colonne, pour appliquer des fonctions d’agrégation sur chaque groupe.</p>
+        <p>Dans une jointure, utiliser des alias (ici <code>u</code> et <code>c</code>) rend le code plus lisible.
+Toujours écrire les mots-clés SQL en majuscules : <code>SELECT</code>, <code>FROM</code>, <code>JOIN</code>, <code>WHERE</code>, etc.</p>
       </div>
     </div>
 

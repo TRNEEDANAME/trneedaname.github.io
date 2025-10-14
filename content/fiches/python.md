@@ -155,15 +155,6 @@ Pour demander un nombre il faut mettre le `input()` dans un `int()` ou autre.
 > 
 > `TypeError: can only concatenate str (not "int") to str`
 
-Avec le `input()` transformé :
-
-> [!CODE] python
->  ```python
->  age = int(input("Quel est votre age ? "))
->  age = age + 1
->  print("Votre age est donc " + age)
-> ```
-
 
 ### La sortie {#la-sortie}
 
@@ -172,12 +163,14 @@ Avec le `input()` transformé :
 >  print("Hello World !")
 > ```
 
-Le python supporte la concaténation des string, par exemple
+Le python supporte la concaténation des string.
+Avec le `input()` transformé :
 
 > [!CODE] python
 >  ```python
->  age = 20
->  print("J'ai " + str(age) + " ans")
+>  age = int(input("Quel est votre age ? "))
+>  age = age + 1
+>  print("Votre age est donc " + str(age))
 > ```
 > 
 

@@ -9,7 +9,6 @@
 #+AUTHOR: TRNEEDANAME
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 
-
 ** Le SQL c'est quoi ?
 
 #+begin_info
@@ -41,7 +40,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix");
 
@@ -58,11 +59,9 @@ WHERE dateNaissance > '1990-01-01';
 Les conventions sont définies par la norme [[https://www.iso.org/standard/76583.html][ISO/IEC 9075]].
 #+end_memo
 
-
-
 ** Les requètes simples
 
-*** Le ~SELECT~
+*** SELECT
 
 Permet de sélectionner des valeurs dans une table.
 
@@ -74,7 +73,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -84,9 +85,7 @@ FROM utilisateur;
 
 #+end_src
 
-
-
-*** Le ~WHERE~
+*** WHERE
 
 Filtre les résultats selon une condition.
 
@@ -98,7 +97,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -111,9 +112,7 @@ WHERE dateNaissance > '1990-01-01';
 
 Il est possible d'utiliser les opérateurs ~>~, ~<~, ~<=~ et ~>=~.
 
-
-
-*** Le ~BETWEEN~
+*** BETWEEN
 
 Permet de filtrer des valeurs comprises dans un intervalle.
 
@@ -125,7 +124,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -140,7 +141,7 @@ WHERE dateNaissance BETWEEN '1980-01-01' AND '2000-12-31';
 ~BETWEEN~ inclut les bornes : ici, les utilisateurs nés le 1er janvier 1980 et le 31 décembre 2000 seront inclus.
 #+end_info
 
-*** Le ~LIKE~
+*** LIKE
 
 ~LIKE~ permet de rechercher des valeurs partiellement correspondantes.
 
@@ -155,7 +156,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -168,9 +171,156 @@ WHERE nom LIKE '%J%';
 
 Cherche ici tous les utilisateurs dont le nom contient la lettre “J”.
 
+** Fonctions d’agrégation
 
+Les fonctions d’agrégation permettent de calculer des valeurs globales à partir de plusieurs lignes.
+  
+*** COUNT
 
-*** Trier les résultats
+Compte le nombre d'éléments.
+
+#+begin_info - A voir
+On utilise des ~'~ et non des ~"~ car SQL peut interprété ~table~ comme une commande.
+#+end_info
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS produit(
+        id SERIAL PRIMARY KEY,
+        nom TEXT,
+        type_produit TEXT
+);
+
+INSERT INTO produit (nom, type_produit)
+VALUES ('table', 'jardin'),
+       ('chaise', 'jardin'),
+       ('lampe', 'chambre'),
+       ('parasol', 'jardin');
+
+SELECT COUNT(*) AS 'Quantité',
+       type_produit AS 'Type'
+FROM produit
+GROUP BY type_produit, type_produit;
+#+end_src
+
+*** AVG
+
+Calcule la moyenne d'une colonne.
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS course (
+    id SERIAL PRIMARY KEY,
+    nom_coureur TEXT,
+    nom_course TEXT,
+    temps_course DOUBLE PRECISION,
+    taille_course INTEGER
+);
+
+INSERT INTO course (nom_coureur,
+                    nom_course,
+                    temps_course,
+                    taille_course)
+VALUES 
+    ('Jean', 'course du peuplier', 32.04, 200),
+    ('Charles', 'course de la musaraigne', 10.41, 100),
+    ('Thomas', 'course du chat', 42.41, 200),
+    ('Jeanne', 'course du berger', 21.10, 200),
+    ('Marc', 'course de Lille', 15.86, 100),
+    ('Patrique', 'course de pot', 20.06, 100);
+
+SELECT 
+    AVG(temps_course) AS "temps moyen", 
+    taille_course AS "distance"
+FROM course
+GROUP BY taille_course;
+#+end_src
+
+*** MIN
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS course (
+    id SERIAL PRIMARY KEY,
+    nom_coureur TEXT,
+    nom_course TEXT,
+    temps_course DOUBLE PRECISION,
+    taille_course INTEGER
+);
+
+INSERT INTO course (nom_coureur,
+                    nom_course,
+                    temps_course,
+                    taille_course)
+VALUES 
+    ('Jean', 'course du peuplier', 32.04, 200),
+    ('Charles', 'course de la musaraigne', 10.41, 100),
+    ('Thomas', 'course du chat', 42.41, 200),
+    ('Jeanne', 'course du berger', 21.10, 200),
+    ('Marc', 'course de Lille', 15.86, 100),
+    ('Patrique', 'course de pot', 20.06, 100);
+
+SELECT nom_coureur AS 'coureur',
+       taille_course AS 'taille course',
+       MIN(temps_course) AS 'temps minimum'
+FROM course
+GROUP BY taille_course;
+#+end_src
+
+*** MAX
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS course (
+    id SERIAL PRIMARY KEY,
+    nom_coureur TEXT,
+    nom_course TEXT,
+    temps_course DOUBLE PRECISION,
+    taille_course INTEGER
+);
+
+INSERT INTO course (nom_coureur,
+                    nom_course,
+                    temps_course,
+                    taille_course)
+VALUES 
+    ('Jean', 'course du peuplier', 32.04, 200),
+    ('Charles', 'course de la musaraigne', 10.41, 100),
+    ('Thomas', 'course du chat', 42.41, 200),
+    ('Jeanne', 'course du berger', 21.10, 200),
+    ('Marc', 'course de Lille', 15.86, 100),
+    ('Patrique', 'course de pot', 20.06, 100);
+
+SELECT nom_coureur AS 'coureur',
+       taille_course AS 'taille course',
+       MAX(temps_course) AS 'temps maxiumum'
+FROM course
+GROUP BY taille_course;
+#+end_src
+
+#+begin_info
+La clause ~GROUP BY~ permet de regrouper les lignes selon une colonne, pour appliquer des fonctions d’agrégation sur chaque groupe.
+#+end_info
+
+*** SUM
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS produit (
+    id INTEGER PRIMARY KEY,
+    nom TEXT,
+    nombre_produit INTEGER,
+    type_produit TEXT
+);
+
+INSERT INTO produit (nom, nombre_produit, type_produit)
+VALUES  ('Baguette', 10, "aliment"),
+        ('Chaise', 5, "objet"),
+        ('Banane', 25, "aliment"),
+        ('Tasse', 8, "aliment");
+
+SELECT type_produit AS 'type de produit',
+        SUM(nombre_produit) AS 'nombre de produit'
+FROM produit
+GROUP BY type_produit;
+#+end_src
+
+*** ORDER BY
 
 ~ORDER BY~ permet de trier les résultats.
 
@@ -198,10 +348,6 @@ ORDER BY dateNaissance DESC;
 
 ** Modification et suppression
 
-- ~INSERT INTO~ : ajouter des lignes  
-- ~UPDATE~ : modifier des lignes  
-- ~DELETE~ : supprimer des lignes
-
 *** INSERT INTO
 
 Ajoute une ou plusieurs lignes dans une table.
@@ -214,7 +360,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ('Lucie', '1995-09-12', 'Marseille'),
        ('Paul', '1988-03-22', 'Lyon');
 
@@ -239,7 +387,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -272,7 +422,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -281,16 +433,14 @@ BEGIN TRANSACTION;
 
 DELETE FROM utilisateur
 WHERE nom = 'Jean';
-
-SELECT *
-FROM utilisateur;
-
 ROLLBACK;
 
 SELECT *
 FROM utilisateur;
-
 #+end_src
+
+Aucun changement de la base !
+
 #+end_caution
 
 - Supprime l’utilisateur “François”  
@@ -304,7 +454,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
        villeNaissance TEXT
 );
 
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
+INSERT INTO utilisateur (nom,
+                        dateNaissance,
+                        villeNaissance)
 VALUES ("Jean", '2000-01-01', "Lille"),
        ("François", '1980-05-07', "Roubaix"),
        ("Thomas", '1990-01-01', "Paris");
@@ -317,23 +469,17 @@ FROM utilisateur;
 
 #+end_src
 
-
-** Les jointures (JOIN)
-
-Les jointures permettent de combiner plusieurs tables.
+** Les jointures
 
 #+begin_info
 Les jointures servent à relier les données de plusieurs tables grâce à des colonnes communes (souvent des identifiants).
 #+end_info
 
-- ~INNER JOIN~ : retourne seulement les lignes correspondantes dans les deux tables  
-- ~LEFT JOIN~ : retourne toutes les lignes de la table de gauche, même sans correspondance  
-- ~RIGHT JOIN~ : retourne toutes les lignes de la table de droite
+*** INNER JOIN
+
+On retourne seulement les lignes correspondantes dans les deux tables
 
 #+begin_src sql
-DROP TABLE IF EXISTS commande;
-DROP TABLE IF EXISTS utilisateur;
-
 CREATE TABLE IF NOT EXISTS utilisateur(
     id INTEGER PRIMARY KEY,
     nom TEXT
@@ -357,49 +503,67 @@ VALUES (1, 'Chaise', 4), (2, 'Table', 1);
 SELECT u.nom, c.produit, c.nombre_produit
 FROM utilisateur AS u
 INNER JOIN commande AS c ON c.utilisateur_id = u.id;
+#+end_src
 
--- LEFT JOIN : tous les utilisateurs, même sans commande
+*** LEFT JOIN
+
+On retourne toutes les lignes de la table de gauche et droite qui correspondent.
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS utilisateur(
+    id INTEGER PRIMARY KEY,
+    nom TEXT
+);
+
+CREATE TABLE IF NOT EXISTS commande(
+    id INTEGER PRIMARY KEY,
+    utilisateur_id INTEGER,
+    produit TEXT,
+    nombre_produit INTERGER,
+    FOREIGN KEY(utilisateur_id) REFERENCES utilisateur(id)
+);
+
+INSERT INTO utilisateur (nom)
+VALUES ('Jean'), ('François'), ("Thomas");
+
+INSERT INTO commande (utilisateur_id, produit, nombre_produit)
+VALUES (1, 'Chaise', 4), (2, 'Table', 1);
+
 SELECT u.nom, c.produit
 FROM utilisateur AS u
 LEFT JOIN commande AS c ON c.utilisateur_id = u.id;
+#+end_src
+
+*** RIGHT JOIN
+
+On retourne toutes les lignes de la table de droite.
+
+#+begin_src sql
+CREATE TABLE IF NOT EXISTS utilisateur(
+    id INTEGER PRIMARY KEY,
+    nom TEXT
+);
+
+CREATE TABLE IF NOT EXISTS commande(
+    id INTEGER PRIMARY KEY,
+    utilisateur_id INTEGER,
+    produit TEXT,
+    nombre_produit INTERGER,
+    FOREIGN KEY(utilisateur_id) REFERENCES utilisateur(id)
+);
+
+INSERT INTO utilisateur (nom)
+VALUES ('Jean'), ('François'), ("Thomas");
+
+INSERT INTO commande (utilisateur_id, produit, nombre_produit)
+VALUES (1, 'Chaise', 4), (2, 'Table', 1);
+
+SELECT u.nom, c.produit
+FROM utilisateur AS u
+RIGHT JOIN commande AS c ON c.utilisateur_id = u.id;
 #+end_src
 
 #+begin_memo
 Dans une jointure, utiliser des alias (ici ~u~ et ~c~) rend le code plus lisible.  
 Toujours écrire les mots-clés SQL en majuscules : ~SELECT~, ~FROM~, ~JOIN~, ~WHERE~, etc.
 #+end_memo
-
-** Fonctions d’agrégation
-
-Les fonctions d’agrégation permettent de calculer des valeurs globales à partir de plusieurs lignes.
-
-Fonctions principales :
-- ~COUNT()~ : compte le nombre d’éléments  
-- ~SUM()~ : somme d’une colonne numérique  
-- ~AVG()~ : moyenne  
-- ~MIN()~ et ~MAX()~ : valeurs extrêmes
-
-#+begin_src sql
-CREATE TABLE IF NOT EXISTS utilisateur(
-       id INTEGER PRIMARY KEY,
-       nom TEXT,
-       dateNaissance DATE,
-       villeNaissance TEXT
-);
-
-INSERT INTO utilisateur (nom, dateNaissance, villeNaissance)
-VALUES ("Jean", '2000-01-01', "Lille"),
-       ("François", '1980-05-07', "Roubaix"),
-       ("Thomas", '1990-01-01', "Paris"),
-       ("Lucie", '1995-09-12', "Lille");
-
-SELECT villeNaissance,
-       COUNT(*) AS nombre_utilisateurs
-FROM utilisateur
-GROUP BY villeNaissance
-ORDER BY nombre_utilisateurs DESC;
-#+end_src
-
-#+begin_info
-La clause ~GROUP BY~ permet de regrouper les lignes selon une colonne, pour appliquer des fonctions d’agrégation sur chaque groupe.
-#+end_info
