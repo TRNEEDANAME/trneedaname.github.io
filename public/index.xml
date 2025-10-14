@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dev blog</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:45807/</link>
     <description>Recent content on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45807/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fiches</title>
-      <link>http://localhost:1313/moc/fiches/</link>
+      <link>http://localhost:45807/moc/fiches/</link>
       <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/moc/fiches/</guid>
+      <guid>http://localhost:45807/moc/fiches/</guid>
       <description>&lt;p&gt;Voici toutes mes fiches de révision !&lt;/p&gt;
 &lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
 &lt;p&gt;Le python est un langage utilisé dans tout, du simple programme au IA les plus avancés.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/python/&#34;&gt; Cours Python &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:45807/fiches/python/&#34;&gt; Cours Python &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;javascript&#34;&gt;Javascript&lt;/h2&gt;
 &lt;p&gt;Le Javascript est un langage utilisé principalement dans le web (Front-end et Back-end).&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/javascript/&#34;&gt; Cours Javascript &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/exercices-de-javascript/&#34;&gt; Exercices Javascript &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:45807/fiches/javascript/&#34;&gt; Cours Javascript &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:45807/fiches/exercices-de-javascript/&#34;&gt; Exercices Javascript &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;sql&#34;&gt;SQL&lt;/h2&gt;
 &lt;p&gt;Le SQL est un langage utilisé dans la requète de bases de données.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/sql/&#34;&gt; Cours SQL &lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;http://localhost:45807/fiches/sql/&#34;&gt; Cours SQL &lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Games</title>
-      <link>http://localhost:1313/moc/games/</link>
+      <link>http://localhost:45807/moc/games/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/moc/games/</guid>
+      <guid>http://localhost:45807/moc/games/</guid>
       <description>&lt;p&gt;This page will have all of the games I play, RP characters I did and others&lt;/p&gt;</description>
     </item>
     <item>
       <title>Project Zomboid</title>
-      <link>http://localhost:1313/gaming/project-zomboid/</link>
+      <link>http://localhost:45807/gaming/project-zomboid/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/gaming/project-zomboid/</guid>
+      <guid>http://localhost:45807/gaming/project-zomboid/</guid>
       <description>&lt;p&gt;Project Zomboid is a game I play a lot, I especially like doing Roleplay&lt;/p&gt;</description>
     </item>
     <item>
       <title>Project Zomboid Roleplay</title>
-      <link>http://localhost:1313/gaming/project-zomboid-roleplay/</link>
+      <link>http://localhost:45807/gaming/project-zomboid-roleplay/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/gaming/project-zomboid-roleplay/</guid>
+      <guid>http://localhost:45807/gaming/project-zomboid-roleplay/</guid>
       <description>&lt;h2 id=&#34;serious-survival-roleplay--ssr&#34;&gt;Serious Survival Roleplay (SSR)&lt;/h2&gt;
 &lt;p&gt;SSR was the first server I played on&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/pages/about/</link>
+      <link>http://localhost:45807/pages/about/</link>
       <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/pages/about/</guid>
+      <guid>http://localhost:45807/pages/about/</guid>
       <description>&lt;h2 id=&#34;who-i-am&#34;&gt;Who I am&lt;/h2&gt;
 &lt;p&gt;Hi &amp;#x1f44b; !&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m TRNEEDANAME, a french game dev / mod maker.
@@ -62,12 +62,12 @@ This site is my blog, where you&amp;rsquo;ll find what I did and what I&amp;rsqu
     </item>
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/fiches/sql/</link>
+      <link>http://localhost:45807/fiches/sql/</link>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/sql/</guid>
+      <guid>http://localhost:45807/fiches/sql/</guid>
       <description>&lt;h2 id=&#34;le-sql-c-est-quoi&#34;&gt;Le SQL c&amp;rsquo;est quoi ?&lt;/h2&gt;
 
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:45807/css/vendors/admonitions.css&#34;&gt;
     &lt;div class=&#34;admonition info&#34;&gt;
       &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;Info&lt;/span&gt;
@@ -77,15 +77,15 @@ This site is my blog, where you&amp;rsquo;ll find what I did and what I&amp;rsqu
     </item>
     <item>
       <title>Exercices de Javascript</title>
-      <link>http://localhost:1313/fiches/exercices-de-javascript/</link>
+      <link>http://localhost:45807/fiches/exercices-de-javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/exercices-de-javascript/</guid>
+      <guid>http://localhost:45807/fiches/exercices-de-javascript/</guid>
       <description>&lt;h2 id=&#34;retour-au-cours&#34;&gt;Retour au cours&lt;/h2&gt;
-&lt;p&gt;Le cours peut se trouver ici : &lt;a href=&#34;http://localhost:1313/fiches/javascript/&#34;&gt; Cours &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Le cours peut se trouver ici : &lt;a href=&#34;http://localhost:45807/fiches/javascript/&#34;&gt; Cours &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;fichier-css&#34;&gt;Fichier CSS&lt;/h2&gt;
 &lt;p&gt;Les styles appliqués aux fichiers HTML/JS.&lt;/p&gt;
 
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:45807/css/vendors/admonitions.css&#34;&gt;
     &lt;div class=&#34;admonition code&#34;&gt;
       &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 640 512&#34;&gt;&lt;path d=&#34;M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;css&lt;/span&gt;
@@ -275,11 +275,11 @@ This site is my blog, where you&amp;rsquo;ll find what I did and what I&amp;rsqu
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/fiches/javascript/</link>
+      <link>http://localhost:45807/fiches/javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/javascript/</guid>
+      <guid>http://localhost:45807/fiches/javascript/</guid>
       <description>&lt;h2 id=&#34;aller-au-exercices&#34;&gt;Aller au exercices&lt;/h2&gt;
-&lt;p&gt;Les exercices peuvent se trouver ici : &lt;a href=&#34;http://localhost:1313/fiches/exercices-de-javascript/&#34;&gt; Exercices &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Les exercices peuvent se trouver ici : &lt;a href=&#34;http://localhost:45807/fiches/exercices-de-javascript/&#34;&gt; Exercices &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;le-javascript-c-est-quoi&#34;&gt;Le JavaScript, c&amp;rsquo;est quoi ?&lt;/h2&gt;
 &lt;p&gt;Le langage &lt;code&gt;JavaScript&lt;/code&gt; est interprété, ce qui veut dire que chaque instruction est exécutée au moment de l’exécution dans le navigateur.
 Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt;
@@ -293,12 +293,12 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt
     </item>
     <item>
       <title>admonitions</title>
-      <link>http://localhost:1313/meta/admonitions/</link>
+      <link>http://localhost:45807/meta/admonitions/</link>
       <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/meta/admonitions/</guid>
+      <guid>http://localhost:45807/meta/admonitions/</guid>
       <description>&lt;p&gt;This page exists to showcase all admonitions and how they look (also to test contrast &amp;amp; colours)&lt;/p&gt;
 
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:45807/css/vendors/admonitions.css&#34;&gt;
     &lt;div class=&#34;admonition quote&#34;&gt;
       &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path d=&#34;M448 296c0 66.3-53.7 120-120 120l-8 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l8 0c30.9 0 56-25.1 56-56l0-8-64 0c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l64 0c35.3 0 64 28.7 64 64l0 32 0 32 0 72zm-256 0c0 66.3-53.7 120-120 120l-8 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l8 0c30.9 0 56-25.1 56-56l0-8-64 0c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l64 0c35.3 0 64 28.7 64 64l0 32 0 32 0 72z&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;Quote&lt;/span&gt;
@@ -308,12 +308,12 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/fiches/python/</link>
+      <link>http://localhost:45807/fiches/python/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/python/</guid>
+      <guid>http://localhost:45807/fiches/python/</guid>
       <description>&lt;h2 id=&#34;le-python-c-est-quoi&#34;&gt;Le Python, c&amp;rsquo;est quoi ?&lt;/h2&gt;
 
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:45807/css/vendors/admonitions.css&#34;&gt;
     &lt;div class=&#34;admonition info&#34;&gt;
       &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;Info&lt;/span&gt;
@@ -324,17 +324,17 @@ Le code est compilé au moment de l’exécution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Xcom Mods</title>
-      <link>http://localhost:1313/moc/xcom-mods/</link>
+      <link>http://localhost:45807/moc/xcom-mods/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/moc/xcom-mods/</guid>
+      <guid>http://localhost:45807/moc/xcom-mods/</guid>
       <description>&lt;h2 id=&#34;mods-for-xcom&#34;&gt;Mods for xcom&lt;/h2&gt;
 &lt;p&gt;This file will have all of the different mods I did and am doing, each mods will have a dedicated page but each ones will have a brief explanation below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:45807/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:45807/about/</guid>
       <description>&lt;h2 id=&#34;who-i-am&#34;&gt;Who I am&lt;/h2&gt;
 &lt;p&gt;Hi &amp;#x1f44b; !&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m TRNEEDANAME, a french game dev / mod maker.

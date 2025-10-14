@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Xcom on Dev blog</title>
-    <link>http://localhost:1313/tags/xcom/</link>
+    <link>http://localhost:45807/tags/xcom/</link>
     <description>Recent content in Xcom on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/xcom/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45807/tags/xcom/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Xcom-mods</title>
-      <link>http://localhost:1313/moc/xcom-mods/</link>
+      <title>Xcom Mods</title>
+      <link>http://localhost:45807/moc/xcom-mods/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/moc/xcom-mods/</guid>
+      <guid>http://localhost:45807/moc/xcom-mods/</guid>
       <description>&lt;h2 id=&#34;mods-for-xcom&#34;&gt;Mods for xcom&lt;/h2&gt;
 &lt;p&gt;This file will have all of the different mods I did and am doing, each mods will have a dedicated page but each ones will have a brief explanation below.&lt;/p&gt;</description>
     </item>

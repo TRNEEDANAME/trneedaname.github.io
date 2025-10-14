@@ -333,3 +333,11 @@ body.dark .sql-run-table > tbody:nth-child(1) > tr >th {
     background-color: var(--nord5);
     color: var(--theme-fg);
 }
+
+.admonition-content code:not(pre > code) {
+      transition: background-color 0s ease, color 0s ease !important;
+}
+
+.admonition-content pre {
+    transition: background-color 0s ease, color 0s ease !important;
+}

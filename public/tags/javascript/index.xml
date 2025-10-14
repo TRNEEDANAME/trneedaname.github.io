@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Javascript on Dev blog</title>
-    <link>http://localhost:1313/tags/javascript/</link>
+    <link>http://localhost:45807/tags/javascript/</link>
     <description>Recent content in Javascript on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45807/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exercices de Javascript</title>
-      <link>http://localhost:1313/fiches/exercices-de-javascript/</link>
+      <link>http://localhost:45807/fiches/exercices-de-javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/exercices-de-javascript/</guid>
+      <guid>http://localhost:45807/fiches/exercices-de-javascript/</guid>
       <description>&lt;h2 id=&#34;retour-au-cours&#34;&gt;Retour au cours&lt;/h2&gt;
-&lt;p&gt;Le cours peut se trouver ici : &lt;a href=&#34;http://localhost:1313/fiches/javascript/&#34;&gt; Cours &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Le cours peut se trouver ici : &lt;a href=&#34;http://localhost:45807/fiches/javascript/&#34;&gt; Cours &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;fichier-css&#34;&gt;Fichier CSS&lt;/h2&gt;
 &lt;p&gt;Les styles appliqués aux fichiers HTML/JS.&lt;/p&gt;
 
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:45807/css/vendors/admonitions.css&#34;&gt;
     &lt;div class=&#34;admonition code&#34;&gt;
       &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 640 512&#34;&gt;&lt;path d=&#34;M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;css&lt;/span&gt;
@@ -208,10 +208,11 @@
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/fiches/javascript/</link>
+      <link>http://localhost:45807/fiches/javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/javascript/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/exercices-de-javascript/&#34;&gt; Exercices &lt;/a&gt;&lt;/p&gt;
+      <guid>http://localhost:45807/fiches/javascript/</guid>
+      <description>&lt;h2 id=&#34;aller-au-exercices&#34;&gt;Aller au exercices&lt;/h2&gt;
+&lt;p&gt;Les exercices peuvent se trouver ici : &lt;a href=&#34;http://localhost:45807/fiches/exercices-de-javascript/&#34;&gt; Exercices &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;le-javascript-c-est-quoi&#34;&gt;Le JavaScript, c&amp;rsquo;est quoi ?&lt;/h2&gt;
 &lt;p&gt;Le langage &lt;code&gt;JavaScript&lt;/code&gt; est interprété, ce qui veut dire que chaque instruction est exécutée au moment de l’exécution dans le navigateur.
 Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt;

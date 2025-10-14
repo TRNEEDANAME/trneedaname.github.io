@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Dev blog</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>http://localhost:45807/tags/python/</link>
     <description>Recent content in Python on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45807/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/fiches/python/</link>
+      <link>http://localhost:45807/fiches/python/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/python/</guid>
+      <guid>http://localhost:45807/fiches/python/</guid>
       <description>&lt;h2 id=&#34;le-python-c-est-quoi&#34;&gt;Le Python, c&amp;rsquo;est quoi ?&lt;/h2&gt;
 
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
+          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:45807/css/vendors/admonitions.css&#34;&gt;
     &lt;div class=&#34;admonition info&#34;&gt;
       &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34;/&gt;&lt;/svg&gt;
         &lt;span&gt;Info&lt;/span&gt;
