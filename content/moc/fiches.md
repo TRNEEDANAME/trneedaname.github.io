@@ -17,12 +17,12 @@ Voici toutes mes fiches de révision !
 
 Le python est un langage utilisé dans tout, du simple programme au IA les plus avancés.
 
-[ cours Python ]({{< relref "../fiches/python" >}})
+[ Cours Python ]({{< relref "../fiches/python" >}})
 
 
 ## Javascript {#javascript}
 
-Le Javascript es un langage utilisé principalement dans le web (Front-end et Back-end).
+Le Javascript est un langage utilisé principalement dans le web (Front-end et Back-end).
 
 [ Cours Javascript ]({{< relref "fiches/javascript" >}})
 
@@ -31,6 +31,6 @@ Le Javascript es un langage utilisé principalement dans le web (Front-end et Ba
 
 ## SQL {#sql}
 
-Le SQL est un langage utilisé dans la requète de bases de données
+Le SQL est un langage utilisé dans la requète de bases de données.
 
 [ Cours SQL ]({{< relref "fiches/SQL" >}})

@@ -19,7 +19,7 @@ Voici toutes mes fiches de révision !
 
 Le python est un langage utilisé dans tout, du simple programme au IA les plus avancés.
 
-{{{relref(cours Python,../fiches/python)}}}
+{{{relref(Cours Python,../fiches/python)}}}
 
 ** Javascript
 
