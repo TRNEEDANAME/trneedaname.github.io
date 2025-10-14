@@ -1,0 +1,16 @@
+
+#+TITLE: Project Zomboid Roleplay
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: Tom Ryckewaert
+#+FILETAGS: gaming
+#+DATE: 2025-10-14
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: true
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: gaming
+
+
+** Serious Survival Roleplay (SSR)
+
+SSR was the first server I played on
