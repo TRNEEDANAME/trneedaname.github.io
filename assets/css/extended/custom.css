@@ -184,7 +184,11 @@ a.entry-link:hover span {
     border-radius: 8px;
     padding: 0.6em;
     font-weight: bolder;
-    margin: 1.5em 0;
+    margin: 1.5em;
+}
+
+#TableOfContents {
+    margin-left: 20px;
 }
 
 /* Ensure toc links follow theme link colors too */
