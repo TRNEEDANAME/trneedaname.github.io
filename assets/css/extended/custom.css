@@ -158,7 +158,7 @@ a:hover {
 /* Remove hover border if it's an .entry-link or inside .logo or .social-icons */
 .logo a:hover,
 .social-icons a:hover,
-a.entry-link:hover, a.anchor:hover, div.breadcrumbs > a:hover {
+a.entry-link:hover, #menu > li > a:hover {
     color: var(--nord15);
     border-bottom: none;
 }
@@ -188,13 +188,16 @@ a.entry-link:hover span {
 }
 
 #TableOfContents {
-    margin-left: 20px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 1.5em;
 }
 
 /* Ensure toc links follow theme link colors too */
-.toc a {
-    color: var(--theme-link);
+.toc a:hover {
+    color: var(--nord15);
     text-decoration: none;
+    border-bottom: 2px solid var(--nord15);
 }
 
 /* dark-mode toc color tweaks */
