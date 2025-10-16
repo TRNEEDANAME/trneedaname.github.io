@@ -52,8 +52,6 @@ params:
       url: "https://github.com/TRNEEDANAME"
     - name: "Discord"
       url: "https://discord.com"
-    - name: "Reddit"
-      url: "https://reddit.com/u/TRENEEDNAME_245"
 
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
