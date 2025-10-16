@@ -11,6 +11,7 @@
     border-radius: 4px;
     cursor: pointer;
     line-height: 1;
+    transition: background 0.2s ease, transform 0.1s ease;
 }
 .lang-run-btn:hover { background:#005fa3; }
 .lang-run-btn:active { transform: scale(.96); }
@@ -36,7 +37,7 @@
 /* Button baseline (inherit PaperMod aesthetic) */
 .pm-run-btn {
     --pm-accent: var(--primary, #3572A5);
-    font: 500 0.70rem/1 "Noto Sans Mono","Fira Code",monospace;
+    font: 500 0.70rem/1 "Droid Sans Mono","Fira Code",monospace;
     display: inline-flex;
     align-items: center;
     gap: .35em;
@@ -47,6 +48,7 @@
     border-radius: 4px;
     letter-spacing: .3px;
     cursor: pointer;
+    transition: background .18s ease, transform .12s ease, opacity .15s;
 }
 .pm-run-btn:hover:not([disabled]) { background: color-mix(in srgb, var(--pm-accent) 85%, #000); }
 .pm-run-btn:active:not([disabled]) { transform: translateY(1px); }
@@ -129,6 +131,7 @@
     border-radius: 4px;
     cursor: pointer;
     letter-spacing: .3px;
+    transition: background .18s ease, transform .12s ease, opacity .15s, border-color .2s;
 }
 .pm-run-btn:hover:not([disabled]) {
     background: color-mix(in srgb, var(--runner-accent) 85%, #000);

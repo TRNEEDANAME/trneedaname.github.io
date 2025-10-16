@@ -2,73 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Dev blog</title>
-    <link>http://localhost:45807/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Dev blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:45807/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gaming</title>
-      <link>http://localhost:45807/tags/gaming/</link>
+      <title>Dev-Xcom</title>
+      <link>http://localhost:1313/tags/dev-xcom/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/gaming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MOC</title>
-      <link>http://localhost:45807/tags/moc/</link>
-      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/moc/</guid>
+      <guid>http://localhost:1313/tags/dev-xcom/</guid>
       <description></description>
     </item>
     <item>
       <title>Fiches</title>
-      <link>http://localhost:45807/tags/fiches/</link>
-      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/fiches/</guid>
+      <link>http://localhost:1313/tags/fiches/</link>
+      <pubDate>Wed, 15 Oct 2025 00:40:04 -0700</pubDate>
+      <guid>http://localhost:1313/tags/fiches/</guid>
       <description></description>
     </item>
     <item>
       <title>Français</title>
-      <link>http://localhost:45807/tags/fran%C3%A7ais/</link>
+      <link>http://localhost:1313/tags/fran%C3%A7ais/</link>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/fran%C3%A7ais/</guid>
+      <guid>http://localhost:1313/tags/fran%C3%A7ais/</guid>
       <description></description>
     </item>
     <item>
       <title>Sql</title>
-      <link>http://localhost:45807/tags/sql/</link>
+      <link>http://localhost:1313/tags/sql/</link>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/sql/</guid>
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:45807/tags/javascript/</link>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
-      <title>English</title>
-      <link>http://localhost:45807/tags/english/</link>
-      <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/english/</guid>
+      <title>MOC</title>
+      <link>http://localhost:1313/tags/moc/</link>
+      <pubDate>Wed, 15 Oct 2025 00:40:04 -0700</pubDate>
+      <guid>http://localhost:1313/tags/moc/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:45807/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Xcom</title>
-      <link>http://localhost:45807/tags/xcom/</link>
+      <link>http://localhost:1313/tags/xcom/</link>
       <pubDate>Wed, 08 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45807/tags/xcom/</guid>
+      <guid>http://localhost:1313/tags/xcom/</guid>
       <description></description>
     </item>
   </channel>

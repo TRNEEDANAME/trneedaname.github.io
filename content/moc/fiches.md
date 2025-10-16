@@ -2,13 +2,18 @@
 title = "Fiches"
 author = ["TRNEEDANAME"]
 date = 2025-10-07
+publishDate = 2025-10-15T00:40:04-07:00
 layout = "page"
-tags = ["MOC", "français", "fiches"]
+tags = ["MOC", "fiches"]
 draft = false
 weight = 1
 ShowToc = false
 ShowPostNavLinks = false
 +++
+
+Toutes mes fiches de révisions.
+
+<!--more-->
 
 Voici toutes mes fiches de révision !
 

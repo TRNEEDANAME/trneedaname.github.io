@@ -3,9 +3,14 @@ title = "Exercices de Javascript"
 author = ["TRNEEDANAME"]
 date = 2025-10-10
 layout = "page"
-tags = ["fiches", "javascript", "français"]
+tags = ["fiches", "javascript"]
 draft = false
 +++
+
+Les exercices de javascript.
+
+<!--more-->
+
 
 ## Retour au cours {#retour-au-cours}
 

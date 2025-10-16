@@ -4,144 +4,198 @@
 
 /* ======== COLOR VARIABLES (LIGHT MODE DEFAULT) ========= */
 :root {
-  /* Polar Night */
-  --nord0: #2e3440;
-  --nord1: #3b4252;
-  --nord2: #434c5e;
-  --nord3: #4c566a;
+    /* Polar Night */
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
 
-  /* Snow Storm */
-  --nord4: #d8dee9;
-  --nord5: #e5e9f0;
-  --nord6: #eceff4;
+    /* Snow Storm */
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #f5f5f5;
 
-  /* Frost */
-  --nord7: #8fbcbb;
-  --nord8: #88c0d0;
-  --nord9: #81a1c1;
-  --nord10: #5e81ac;
+    /* Frost */
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
 
-  /* Aurora — boosted for light mode */
-  --nord11: #d12f2f; /* Red */
-  --nord12: #e06b3d; /* Orange */
-  --nord13: #f2e07b; /* Yellow */
-  --nord14: #70c05c; /* Green */
-  --nord15: #b85bdb; /* Purple */
-  --nord-func: #e6a600; /* Function names */
+    /* Aurora — boosted for light mode */
+    --nord11: #d12f2f; /* Red */
+    --nord12: #e06b3d; /* Orange */
+    --nord13: #ffd100; /* Yellow */
+    --nord14: #6f8f54; /* Green */
+    --nord15: #b85bdb; /* Purple */
+    --nord-func: #e6a600; /* Function names */
 
-  /* Theme variables */
-  --theme-bg: var(--nord6);
-  --theme-fg: var(--nord2);
-  --theme-border: var(--nord5);
-  --theme-accent: var(--nord9);
-  --theme-link: var(--nord10);
-  --theme-link-hover: var(--nord9);
-  --theme-menu-bg: var(--nord5);
-  --theme-menu-link: var(--nord0);
-  --theme-menu-hover: var(--nord10);
-  --theme-code-bg: var(--nord5);
-  --theme-code-fg: var(--nord0);
-  --entry-bg: var(--nord5);
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 800px;
+
+    /* Theme variables */
+    --theme-bg: var(--nord6);
+    --theme-fg: var(--nord3);
+    --theme-border: var(--nord5);
+    --theme-accent: var(--nord9);
+
+    /* Make link colors consistent across light/dark by centralizing them here.
+     Use nord10 as the base link color and nord9 as the hover/active color. */
+    --theme-link: var(--nord10);
+    --theme-link-hover: var(--nord9);
+
+    /* subtle background for hovered/selected links; tuned per theme in body.dark */
+    --theme-link-bg: rgba(94,129,172,0.08);
+    --theme-link-radius: 4px;
+
+    --theme-menu-bg: var(--nord5);
+    --theme-menu-link: var(--nord0);
+    --theme-menu-hover: var(--nord15);
+    --theme-code-bg: var(--nord5);
+    --theme-code-fg: var(--nord0);
+    --entry-bg: var(--nord5);
+    --content: var(--nord1);
 }
 
 /* ==========================================================
    DARK MODE OVERRIDES
    ========================================================== */
 body.dark {
-  --nord0: #2e3440;
-  --nord1: #3b4252;
-  --nord2: #434c5e;
-  --nord3: #4c566a;
-  --nord4: #d8dee9;
-  --nord5: #e5e9f0;
-  --nord6: #eceff4;
-  --nord7: #8fbcbb;
-  --nord8: #88c0d0;
-  --nord9: #81a1c1;
-  --nord10: #5e81ac;
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
 
-  --nord11: #bf616a;
-  --nord12: #d08770;
-  --nord13: #ebcb8b;
-  --nord14: #a3be8c;
-  --nord15: #b48ead;
-  --nord-func: #ebcb8b;
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #6f8f54;
+    --nord15: #b85bdb;
+    --nord-func: #ebcb8b;
 
-  --nord-comment: #616e88;
+    --nord-comment: #616e88;
 
-  --theme-bg: var(--nord0);
-  --theme-fg: var(--nord6);
-  --theme-border: var(--nord1);
-  --theme-accent: var(--nord8);
-  --theme-link: var(--nord8);
-  --theme-link-hover: var(--nord7);
-  --theme-menu-bg: var(--nord1);
-  --theme-menu-link: var(--nord5);
-  --theme-menu-hover: var(--nord8);
-  --theme-code-bg: var(--nord2);
-  --theme-code-fg: var(--nord6);
-  --entry-bg: var(--nord2);
+    --theme-bg: var(--nord0);
+    --theme-fg: var(--nord6);
+    --theme-border: var(--nord1);
+    --theme-accent: var(--nord8);
+
+    --theme-link: var(--nord10);
+    --theme-link-hover: var(--nord9);
+    --theme-link-bg: rgba(94,129,172,0.12);
+
+    --theme-menu-bg: var(--nord1);
+    --theme-menu-link: var(--nord5);
+    --theme-menu-hover: var(--nord8);
+    --theme-code-bg: var(--nord1);
+    --theme-code-fg: var(--nord6);
+    --entry-bg: var(--nord2);
+    --content: var(--nord6);
 }
 
 /* ==========================================================
    GLOBAL STYLES
    ========================================================== */
 body {
-  background-color: var(--theme-bg);
-  color: var(--theme-fg);
-  border-color: var(--theme-border);
-  font-size: 1.1em;
+    background-color: var(--theme-bg);
+    color: var(--theme-fg);
+    border-color: var(--theme-border);
+    font-size: 1.1em;
 }
 
-.admonition-content pre code {
-    font-size: 1.2em !important;
-}
-
-main, .dark.list, .list{
+main, .dark.list, .list {
     background-color: var(--theme-bg);
 }
 
 /* Logo */
 .logo > a:first-child {
-  font-size: 1.5em;
-  color: var(--theme-accent);
+    font-size: 1.5em;
+    color: var(--theme-accent);
 }
 .logo > a:first-child:hover {
-  color: var(--theme-link-hover);
+    color: var(--theme-link-hover);
 }
 
 /* Menu */
 #menu {
-  background-color: var(--code-theme-bg) !important;
-  box-shadow: none;
-}
-#menu > li > a {
-  color: var(--theme-menu-link);
-  font-weight: bolder;
-}
-#menu > li > a:hover {
-  color: var(--theme-menu-hover);
+    background-color: var(--code-theme-bg) !important;
+    box-shadow: none;
 }
 
-/* Links outside menu */
-a:not(.logo > a):not(#menu a) {
-  color: var(--theme-link);
+/* Make menu links use the consistent link color as well (keeps behavior consistent across themes). */
+#menu > li > a {
+    color: var(--theme-link);
+    font-weight: bolder;
 }
-a:not(.logo > a):not(#menu a):hover {
-  color: var(--theme-link-hover);
-  text-decoration-color: var(--theme-link-hover);
+
+/* Links outside menu: centralized, consistent behavior across dark and light */
+a {
+    color: var(--theme-link);
+    transition: color 120ms ease, background-color 120ms ease;
+    text-decoration: none;
+    text-decoration-color: var(--theme-link);
+    box-shadow: none;
 }
+
+.post-content > p > a {
+    box-shadow: none;
+}
+
+/* Normal hover border */
+a:hover {
+    color: var(--nord15);
+    border-bottom: 2px solid var(--nord15);
+}
+
+/* Remove hover border if it's an .entry-link or inside .logo or .social-icons */
+.logo a:hover,
+.social-icons a:hover,
+a.entry-link:hover, a.anchor:hover, div.breadcrumbs > a:hover {
+    color: var(--nord15);
+    border-bottom: none;
+}
+
+/* Your menu-specific span rule, refined */
+#menu li a:hover span {
+    border-bottom: 2px solid var(--nord15);
+}
+
+/* Prevent it if the link is excluded */
+.logo a:hover span,
+.social-icons a:hover span,
+a.entry-link:hover span {
+    border-bottom: none;
+}
+
 
 /* Table of Contents */
 .toc {
-  background-color: var(--entry-bg);
-  border: 1px solid var(--theme-border);
-  border-radius: 8px;
-  padding: 1.2em;
-  margin: 1.5em 0;
+    color: var(--nord1);
+    background-color: var(--entry-bg);
+    border: 1px solid var(--theme-border);
+    border-radius: 8px;
+    padding: 0.6em;
+    font-weight: bolder;
+    margin: 1.5em 0;
 }
 
+/* Ensure toc links follow theme link colors too */
+.toc a {
+    color: var(--theme-link);
+    text-decoration: none;
+}
+
+/* dark-mode toc color tweaks */
 body.dark .toc {
+    color: var(--nord4);
     background-color: var(--nord1);
 }
 
@@ -153,37 +207,41 @@ body.dark .menu {
    CODE BLOCKS — CHROMA HIGHLIGHTER
    ========================================================== */
 pre.chroma, .chroma {
-  background-color: var(--theme-code-bg);
-  color: var(--theme-code-fg);
-  border-radius: 6px;
-  padding: 0.3em;
-  font-family: "Noto Sans Mono", "Fira Code", monospace;
-  line-height: 1.5;
-  overflow-x: auto;
+    background-color: var(--theme-code-bg);
+    color: var(--theme-code-fg);
+    border-radius: 6px;
+    padding: 0.3em;
+    font-family: "Noto Sans Mono", "Fira Code", monospace;
+    line-height: 1.5;
+    overflow-x: auto;
 }
 
-.dark .post-footer > ul > li > a, .dark .paginav{
+.dark pre.chroma, .dark .chroma {
+    background-color: var(--theme-bg);
+}
+
+.dark .post-footer > ul > li > a, .dark .paginav {
     background-color: var(--nord1);
 }
 
-.post-content code {
-    font-size: 1.1em;
+div.code > div > div > div {
+    font-size: 1.3em;
 }
 
 /* Line numbers */
 .chroma .lntable,
 .chroma .lntd {
-  border: none !important;
-  background-color: inherit;
-  padding: 0;
-  margin: 0;
-  border-collapse: collapse;
+    border: none !important;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
 }
 .chroma .lnt {
-  color: #7b88a1;
-  user-select: none;
-  padding: 0 0.8em 0 0.5em;
-  opacity: 0.8;
+    color: #7b88a1;
+    user-select: none;
+    padding: 0 0.8em 0 0.5em;
+    opacity: 0.8;
 }
 .chroma .line { background-color: inherit; }
 .chroma .hl { background-color: rgba(143, 188, 187, 0.1); }
@@ -198,7 +256,7 @@ pre.chroma, .chroma {
 .chroma .nb, .chroma .bp { color: var(--nord10); }
 /* Comments */
 .chroma .c, .chroma .cm, .chroma .ch { color: var(--nord3); font-style: italic; }
-body.dark .chroma .c1 {color: #e5e9f0; font-style: italic;}
+body.dark .chroma .c1 { color: #e5e9f0; font-style: italic; }
 .chroma .o, .chroma .ow { color: var(--nord11); font-weight: bold; }
 .chroma .ni, .chroma .ne { color: var(--nord12); }
 .chroma .gh, .chroma .gu { color: var(--nord13); font-weight: bold; }
@@ -207,68 +265,69 @@ body.dark .chroma .c1 {color: #e5e9f0; font-style: italic;}
 
 /* Copy button */
 button.copy-code {
-  background-color: var(--theme-code-bg);
-  color: var(--theme-fg);
-  border: 1px solid var(--theme-border);
-  border-radius: 4px;
-  padding: 0.25em 0.6em;
-  font-size: 0.8em;
+    background-color: var(--theme-code-bg);
+    color: var(--theme-fg);
+    border: 1px solid var(--theme-border);
+    border-radius: 4px;
+    padding: 0.25em 0.6em;
+    font-size: 0.8em;
 }
 button.copy-code:hover {
-  background-color: var(--theme-accent);
-  color: var(--theme-bg);
+    background-color: var(--theme-accent);
+    color: var(--theme-bg);
 }
 
+/* SQL run tables (dark and light) - unchanged but left for context */
 .dark .sql-run-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: "Noto Sans Mono", "Consolas", monospace;
-  background: var(--nord0);
-  color: var(--content);
-  margin: 1em 0;
-  border-radius: 8px;
-  overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Noto Sans Mono", "Consolas", monospace;
+    background: var(--nord0);
+    color: var(--content);
+    margin: 1em 0;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 body.dark .sql-run-table th, .sql-run-table td {
-  border: 1px solid var(--theme-border);
-  padding: 0.6em 1em;
-  text-align: left;
+    border: 1px solid var(--theme-border);
+    padding: 0.6em 1em;
+    text-align: left;
 }
 
 body.dark .sql-run-table th {
-  color: var(--nord6);
-  font-weight: bold;
-  letter-spacing: 0.02em;
+    color: var(--nord6);
+    font-weight: bold;
+    letter-spacing: 0.02em;
 }
 
 body.dark .sql-run-table tr:nth-child(even) td {
-  background: var(--theme-bg);
+    background: var(--theme-bg);
 }
 
 body.dark .sql-run-table tr:nth-child(odd) td {
-  background: var(--entry-bg);
+    background: var(--entry-bg);
 }
 
 body.dark .sql-run-table tr:hover td {
-  background: var(--nord7);
-  color: var(--nord0);
+    background: var(--nord7);
+    color: var(--nord0);
 }
 
 body.dark .sql-run-table th {
-  background: var(--theme-accent);
-  color: var(--nord6);
+    background: var(--theme-accent);
+    color: var(--nord6);
 }
 
 body.dark .sql-run-table tr:nth-child(even) td {
-  background: var(--theme-bg);
+    background: var(--theme-bg);
 }
 body.dark .sql-run-table tr:nth-child(odd) td {
-  background: var(--entry-bg);
+    background: var(--entry-bg);
 }
 body.dark .sql-run-table tr:hover td {
-  background: var(--nord7);
-  color: var(--nord0);
+    background: var(--nord7);
+    color: var(--nord0);
 }
 
 body.dark .sql-run-table > tbody:nth-child(1) > tr >th {
@@ -278,66 +337,101 @@ body.dark .sql-run-table > tbody:nth-child(1) > tr >th {
 /* LIGHT */
 
 .sql-run-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: "Noto Sans Mono", "Consolas", monospace;
-  background: var(--nord6);
-  color: var(--content);
-  margin: 1em 0;
-  border-radius: 8px;
-  overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Noto Sans Mono", "Consolas", monospace;
+    background: var(--nord6);
+    color: var(--content);
+    margin: 1em 0;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
- .sql-run-table th, .sql-run-table td {
-  border: 1px solid var(--theme-border);
-  padding: 0.6em 1em;
-  text-align: left;
+.sql-run-table th, .sql-run-table td {
+    border: 1px solid var(--theme-border);
+    padding: 0.6em 1em;
+    text-align: left;
 }
 
- .sql-run-table th {
-  color: var(--nord6);
-  font-weight: bold;
-  letter-spacing: 0.02em;
+.sql-run-table th {
+    color: var(--nord6);
+    font-weight: bold;
+    letter-spacing: 0.02em;
 }
 
- .sql-run-table tr:nth-child(even) td {
-  background: var(--nord4);
+.sql-run-table tr:nth-child(even) td {
+    background: var(--nord4);
 }
 
- .sql-run-table tr:nth-child(odd) td {
-  background: var(--entry-bg);
+.sql-run-table tr:nth-child(odd) td {
+    background: var(--entry-bg);
 }
 
- .sql-run-table tr:hover td {
-  background: var(--nord7);
-  color: var(--nord0);
+.sql-run-table tr:hover td {
+    background: var(--nord7);
+    color: var(--nord0);
 }
 
- .sql-run-table th {
-  background: var(--theme-accent);
-  color: var(--nord6);
+.sql-run-table th {
+    background: var(--theme-accent);
+    color: var(--nord6);
 }
 
- .sql-run-table tr:nth-child(even) td {
-  background: var(--theme-bg);
+.sql-run-table tr:nth-child(even) td {
+    background: var(--theme-bg);
 }
- .sql-run-table tr:nth-child(odd) td {
-  background: var(--entry-bg);
+.sql-run-table tr:nth-child(odd) td {
+    background: var(--entry-bg);
 }
- .sql-run-table tr:hover td {
-  background: var(--nord7);
-  color: var(--nord0);
+.sql-run-table tr:hover td {
+    background: var(--nord7);
+    color: var(--nord0);
 }
 
- .sql-run-table > tbody:nth-child(1) > tr >th {
+.sql-run-table > tbody:nth-child(1) > tr >th {
     background-color: var(--nord5);
     color: var(--theme-fg);
 }
 
-.admonition-content code:not(pre > code) {
-      transition: 0s ease, color 0s ease !important;
+/* Ensure code inside admonitions inherits the surrounding text color */
+.admonition-content code:not(pre > code),
+.admonition-content pre,
+.admonition-content pre code,
+div.admonition code,
+div.admonition pre,
+div.admonition pre code {
+    color: inherit !important;
+    transition: 0s ease, color 0s ease !important;
+    border-radius: 0px;
 }
 
-.admonition-content pre {
-    transition: 0s ease, color 0s ease !important;
+/* Admonition inline code + pre styling — preserve background but inherit text color */
+.dark .post-content code,
+.admonition-content code,
+div.admonition > div > p > code,
+.post-content > * > code,
+div.admonition > div > ul > li > code,
+.post-content > p > strong > code {
+    font-size: 1.2em;
+    background-color: var(--nord1);
+    border-radius: 4px;
+    color: inherit;
+    padding: 0.08em 0.28em;
+}
+
+.post-content code,
+.admonition-content code,
+div.admonition > div > p > code,
+.post-content > * > code,
+div.admonition > div > ul > li > code,
+.post-content > p > strong > code {
+    font-size: 1.2em;
+    background-color: var(--nord4);
+    border-radius: 4px;
+    color: inherit;
+    padding: 0.08em 0.28em;
+}
+
+.py-run-stdout {
+    font-size: 1.2em;
 }

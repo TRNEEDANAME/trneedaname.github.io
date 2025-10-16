@@ -1,0 +1,8 @@
+#+hugo_base_dir: ../
+#+HUGO_SECTION: . 
+#+TITLE: 404
+#+AUTHOR: TRNEEDANAME
+#+HUGO_LAYOUT: search
+#+HUGO_SECTION: pages
+#+HUGO_SLUG: search
+#+HUGO_CUSTOM_FRONT_MATTER: :placeholder Search :ShowToc false

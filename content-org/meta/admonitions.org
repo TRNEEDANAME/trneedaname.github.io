@@ -5,7 +5,7 @@
 #+AUTHOR: TRNEEDANAME
 #+DATE: 2025-10-09
 #+HUGO_PUBLISHDATE: null
-#+HUGO_DRAFT: false
+#+HUGO_DRAFT: true
 #+HUGO_SECTION: meta
 #+HUGO_CUSTOM_FRONT_MATTER: :searchHidden true
 

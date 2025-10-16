@@ -7,6 +7,11 @@ tags = ["fiches", "français", "sql"]
 draft = false
 +++
 
+Le SQL est un language de requète de base de données.
+
+<!--more-->
+
+
 ## Le SQL c'est quoi ? {#le-sql-c-est-quoi}
 
 > [!INFO]

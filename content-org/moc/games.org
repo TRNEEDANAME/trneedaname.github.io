@@ -1,7 +1,7 @@
 #+TITLE: Games
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
-#+AUTHOR: Tom Ryckewaert
+#+AUTHOR: TRNEEDANAME
 #+FILETAGS: MOC
 #+DATE: 2025-10-14
 #+HUGO_PUBLISHDATE: null
@@ -11,4 +11,8 @@
 #+HUGO_SECTION: moc
 #+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false
 
-This page will have all of the games I play, RP characters I did and others
+Everything I write about games, from RTS to FPS to the hell that is Satisfactory...
+This page will have all of the games I play, RP characters I did and others stuff
+
+#+HUGO: more
+

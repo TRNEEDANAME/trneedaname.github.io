@@ -2,7 +2,7 @@
 #+TITLE: Project Zomboid Roleplay
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
-#+AUTHOR: Tom Ryckewaert
+#+AUTHOR: TRNEEDANAME
 #+FILETAGS: gaming
 #+DATE: 2025-10-14
 #+HUGO_PUBLISHDATE: null

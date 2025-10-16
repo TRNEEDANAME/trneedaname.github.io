@@ -1,12 +1,4 @@
 .admonition {
-  transition: 0s !important;
-}
-
-.admonition-content {
-  transition: 0s !important;
-}
-
-.admonition {
   margin: 1rem 0;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -97,7 +89,7 @@
 
 .admonition.abstract {
   border-left: 4px solid #209fb5;
-  background-color: rgba(32, 159, 181, 0.3);
+  background-color: rgba(32, 159, 181, 0.5);
 }
 
 .admonition.abstract > .admonition-header {
@@ -133,7 +125,7 @@
 
 .admonition.caution {
   border-left: 4px solid #e64553;
-  background-color: rgba(230, 69, 83, 0.3);
+  background-color: rgba(230, 69, 83, 0.5);
 }
 
 .admonition.caution > .admonition-header {
@@ -169,7 +161,7 @@
 
 .admonition.code {
   border-left: 4px solid #7287fd;
-  background-color: rgba(114, 135, 253, 0.3);
+  background-color: rgba(114, 135, 253, 0.5);
 }
 
 .admonition.code > .admonition-header {
@@ -205,7 +197,7 @@
 
 .admonition.conclusion {
   border-left: 4px solid #dd7878;
-  background-color: rgba(221, 120, 120, 0.3);
+  background-color: rgba(221, 120, 120, 0.5);
 }
 
 .admonition.conclusion > .admonition-header {
@@ -241,7 +233,7 @@
 
 .admonition.danger {
   border-left: 4px solid #fe640b;
-  background-color: rgba(254, 100, 11, 0.3);
+  background-color: rgba(254, 100, 11, 0.5);
 }
 
 .admonition.danger > .admonition-header {
@@ -277,7 +269,7 @@
 
 .admonition.error {
   border-left: 4px solid #d20f39;
-  background-color: rgba(210, 15, 57, 0.3);
+  background-color: rgba(210, 15, 57, 0.5);
 }
 
 .admonition.error > .admonition-header {
@@ -313,7 +305,7 @@
 
 .admonition.example {
   border-left: 4px solid #dc8a78;
-  background-color: rgba(220, 138, 120, 0.3);
+  background-color: rgba(220, 138, 120, 0.5);
 }
 
 .admonition.example > .admonition-header {
@@ -349,7 +341,7 @@
 
 .admonition.experiment {
   border-left: 4px solid #51bb2a;
-  background-color: rgba(81, 187, 42, 0.3);
+  background-color: rgba(81, 187, 42, 0.5);
 }
 
 .admonition.experiment > .admonition-header {
@@ -385,7 +377,7 @@
 
 .admonition.goal {
   border-left: 4px solid #e64553;
-  background-color: rgba(230, 69, 83, 0.3);
+  background-color: rgba(230, 69, 83, 0.5);
 }
 
 .admonition.goal > .admonition-header {
@@ -421,7 +413,7 @@
 
 .admonition.idea {
   border-left: 4px solid #df8e1d;
-  background-color: rgba(223, 142, 29, 0.3);
+  background-color: rgba(223, 142, 29, 0.5);
 }
 
 .admonition.idea > .admonition-header {
@@ -457,7 +449,7 @@
 
 .admonition.important {
   border-left: 4px solid #7d4dda;
-  background-color: rgba(125, 77, 218, 0.3);
+  background-color: rgba(125, 77, 218, 0.5);
 }
 
 .admonition.important > .admonition-header {
@@ -493,7 +485,7 @@
 
 .admonition.info {
   border-left: 4px solid #04a5e5;
-  background-color: rgba(4, 165, 229, 0.3);
+  background-color: rgba(4, 165, 229, 0.5);
 }
 
 .admonition.info > .admonition-header {
@@ -529,7 +521,7 @@
 
 .admonition.memo {
   border-left: 4px solid #e64553;
-  background-color: rgba(230, 69, 83, 0.3);
+  background-color: rgba(230, 69, 83, 0.5);
 }
 
 .admonition.memo > .admonition-header {
@@ -565,7 +557,7 @@
 
 .admonition.note {
   border-left: 4px solid #096ae1;
-  background-color: rgba(9, 106, 225, 0.3);
+  background-color: rgba(9, 106, 225, 0.5);
 }
 
 .admonition.note > .admonition-header {
@@ -601,7 +593,7 @@
 
 .admonition.notify {
   border-left: 4px solid #0d48bd;
-  background-color: rgba(13, 72, 189, 0.3);
+  background-color: rgba(13, 72, 189, 0.5);
 }
 
 .admonition.notify > .admonition-header {
@@ -637,7 +629,7 @@
 
 .admonition.question {
   border-left: 4px solid #179299;
-  background-color: rgba(23, 146, 153, 0.3);
+  background-color: rgba(23, 146, 153, 0.5);
 }
 
 .admonition.question > .admonition-header {
@@ -673,7 +665,7 @@
 
 .admonition.quote {
   border-left: 4px solid #7287fd;
-  background-color: rgba(114, 135, 253, 0.3);
+  background-color: rgba(114, 135, 253, 0.5);
 }
 
 .admonition.quote > .admonition-header {
@@ -709,7 +701,7 @@
 
 .admonition.success {
   border-left: 4px solid #40a02b;
-  background-color: rgba(64, 160, 43, 0.3);
+  background-color: rgba(64, 160, 43, 0.5);
 }
 
 .admonition.success > .admonition-header {
@@ -745,7 +737,7 @@
 
 .admonition.task {
   border-left: 4px solid #8839ef;
-  background-color: rgba(136, 57, 239, 0.3);
+  background-color: rgba(136, 57, 239, 0.5);
 }
 
 .admonition.task > .admonition-header {
@@ -781,7 +773,7 @@
 
 .admonition.tip {
   border-left: 4px solid #179299;
-  background-color: rgba(23, 146, 153, 0.3);
+  background-color: rgba(23, 146, 153, 0.5);
 }
 
 .admonition.tip > .admonition-header {
@@ -817,7 +809,7 @@
 
 .admonition.warning {
   border-left: 4px solid #df8e1d;
-  background-color: rgba(223, 142, 29, 0.3);
+  background-color: rgba(223, 142, 29, 0.5);
 }
 
 .admonition.warning > .admonition-header {
@@ -861,7 +853,7 @@ html[data-theme="dark"] .admonition.abstract > .admonition-content, body[data-th
 }
 
 html[data-theme="dark"] .admonition.abstract > .admonition-content blockquote, body[data-theme="dark"] .admonition.abstract > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.abstract > .admonition-content blockquote, html[data-scheme="dark"] .admonition.abstract > .admonition-content blockquote, body[data-scheme="dark"] .admonition.abstract > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.abstract > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.abstract > .admonition-content blockquote, body.dark .admonition.abstract > .admonition-content blockquote, body.dark-mode .admonition.abstract > .admonition-content blockquote, body.dark-theme .admonition.abstract > .admonition-content blockquote, body.theme-dark .admonition.abstract > .admonition-content blockquote, html.dark .admonition.abstract > .admonition-content blockquote, html.dark-mode .admonition.abstract > .admonition-content blockquote, html.dark-theme .admonition.abstract > .admonition-content blockquote, html.theme-dark .admonition.abstract > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -888,7 +880,7 @@ html[data-theme="dark"] .admonition.caution > .admonition-content, body[data-the
 }
 
 html[data-theme="dark"] .admonition.caution > .admonition-content blockquote, body[data-theme="dark"] .admonition.caution > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.caution > .admonition-content blockquote, html[data-scheme="dark"] .admonition.caution > .admonition-content blockquote, body[data-scheme="dark"] .admonition.caution > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.caution > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.caution > .admonition-content blockquote, body.dark .admonition.caution > .admonition-content blockquote, body.dark-mode .admonition.caution > .admonition-content blockquote, body.dark-theme .admonition.caution > .admonition-content blockquote, body.theme-dark .admonition.caution > .admonition-content blockquote, html.dark .admonition.caution > .admonition-content blockquote, html.dark-mode .admonition.caution > .admonition-content blockquote, html.dark-theme .admonition.caution > .admonition-content blockquote, html.theme-dark .admonition.caution > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -915,7 +907,7 @@ html[data-theme="dark"] .admonition.code > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.code > .admonition-content blockquote, body[data-theme="dark"] .admonition.code > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.code > .admonition-content blockquote, html[data-scheme="dark"] .admonition.code > .admonition-content blockquote, body[data-scheme="dark"] .admonition.code > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.code > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.code > .admonition-content blockquote, body.dark .admonition.code > .admonition-content blockquote, body.dark-mode .admonition.code > .admonition-content blockquote, body.dark-theme .admonition.code > .admonition-content blockquote, body.theme-dark .admonition.code > .admonition-content blockquote, html.dark .admonition.code > .admonition-content blockquote, html.dark-mode .admonition.code > .admonition-content blockquote, html.dark-theme .admonition.code > .admonition-content blockquote, html.theme-dark .admonition.code > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -942,7 +934,7 @@ html[data-theme="dark"] .admonition.conclusion > .admonition-content, body[data-
 }
 
 html[data-theme="dark"] .admonition.conclusion > .admonition-content blockquote, body[data-theme="dark"] .admonition.conclusion > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.conclusion > .admonition-content blockquote, html[data-scheme="dark"] .admonition.conclusion > .admonition-content blockquote, body[data-scheme="dark"] .admonition.conclusion > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.conclusion > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.conclusion > .admonition-content blockquote, body.dark .admonition.conclusion > .admonition-content blockquote, body.dark-mode .admonition.conclusion > .admonition-content blockquote, body.dark-theme .admonition.conclusion > .admonition-content blockquote, body.theme-dark .admonition.conclusion > .admonition-content blockquote, html.dark .admonition.conclusion > .admonition-content blockquote, html.dark-mode .admonition.conclusion > .admonition-content blockquote, html.dark-theme .admonition.conclusion > .admonition-content blockquote, html.theme-dark .admonition.conclusion > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -969,7 +961,7 @@ html[data-theme="dark"] .admonition.danger > .admonition-content, body[data-them
 }
 
 html[data-theme="dark"] .admonition.danger > .admonition-content blockquote, body[data-theme="dark"] .admonition.danger > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.danger > .admonition-content blockquote, html[data-scheme="dark"] .admonition.danger > .admonition-content blockquote, body[data-scheme="dark"] .admonition.danger > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.danger > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.danger > .admonition-content blockquote, body.dark .admonition.danger > .admonition-content blockquote, body.dark-mode .admonition.danger > .admonition-content blockquote, body.dark-theme .admonition.danger > .admonition-content blockquote, body.theme-dark .admonition.danger > .admonition-content blockquote, html.dark .admonition.danger > .admonition-content blockquote, html.dark-mode .admonition.danger > .admonition-content blockquote, html.dark-theme .admonition.danger > .admonition-content blockquote, html.theme-dark .admonition.danger > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -996,7 +988,7 @@ html[data-theme="dark"] .admonition.error > .admonition-content, body[data-theme
 }
 
 html[data-theme="dark"] .admonition.error > .admonition-content blockquote, body[data-theme="dark"] .admonition.error > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.error > .admonition-content blockquote, html[data-scheme="dark"] .admonition.error > .admonition-content blockquote, body[data-scheme="dark"] .admonition.error > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.error > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.error > .admonition-content blockquote, body.dark .admonition.error > .admonition-content blockquote, body.dark-mode .admonition.error > .admonition-content blockquote, body.dark-theme .admonition.error > .admonition-content blockquote, body.theme-dark .admonition.error > .admonition-content blockquote, html.dark .admonition.error > .admonition-content blockquote, html.dark-mode .admonition.error > .admonition-content blockquote, html.dark-theme .admonition.error > .admonition-content blockquote, html.theme-dark .admonition.error > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1023,7 +1015,7 @@ html[data-theme="dark"] .admonition.example > .admonition-content, body[data-the
 }
 
 html[data-theme="dark"] .admonition.example > .admonition-content blockquote, body[data-theme="dark"] .admonition.example > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.example > .admonition-content blockquote, html[data-scheme="dark"] .admonition.example > .admonition-content blockquote, body[data-scheme="dark"] .admonition.example > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.example > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.example > .admonition-content blockquote, body.dark .admonition.example > .admonition-content blockquote, body.dark-mode .admonition.example > .admonition-content blockquote, body.dark-theme .admonition.example > .admonition-content blockquote, body.theme-dark .admonition.example > .admonition-content blockquote, html.dark .admonition.example > .admonition-content blockquote, html.dark-mode .admonition.example > .admonition-content blockquote, html.dark-theme .admonition.example > .admonition-content blockquote, html.theme-dark .admonition.example > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1050,7 +1042,7 @@ html[data-theme="dark"] .admonition.experiment > .admonition-content, body[data-
 }
 
 html[data-theme="dark"] .admonition.experiment > .admonition-content blockquote, body[data-theme="dark"] .admonition.experiment > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.experiment > .admonition-content blockquote, html[data-scheme="dark"] .admonition.experiment > .admonition-content blockquote, body[data-scheme="dark"] .admonition.experiment > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.experiment > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.experiment > .admonition-content blockquote, body.dark .admonition.experiment > .admonition-content blockquote, body.dark-mode .admonition.experiment > .admonition-content blockquote, body.dark-theme .admonition.experiment > .admonition-content blockquote, body.theme-dark .admonition.experiment > .admonition-content blockquote, html.dark .admonition.experiment > .admonition-content blockquote, html.dark-mode .admonition.experiment > .admonition-content blockquote, html.dark-theme .admonition.experiment > .admonition-content blockquote, html.theme-dark .admonition.experiment > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1077,7 +1069,7 @@ html[data-theme="dark"] .admonition.goal > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.goal > .admonition-content blockquote, body[data-theme="dark"] .admonition.goal > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.goal > .admonition-content blockquote, html[data-scheme="dark"] .admonition.goal > .admonition-content blockquote, body[data-scheme="dark"] .admonition.goal > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.goal > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.goal > .admonition-content blockquote, body.dark .admonition.goal > .admonition-content blockquote, body.dark-mode .admonition.goal > .admonition-content blockquote, body.dark-theme .admonition.goal > .admonition-content blockquote, body.theme-dark .admonition.goal > .admonition-content blockquote, html.dark .admonition.goal > .admonition-content blockquote, html.dark-mode .admonition.goal > .admonition-content blockquote, html.dark-theme .admonition.goal > .admonition-content blockquote, html.theme-dark .admonition.goal > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1104,7 +1096,7 @@ html[data-theme="dark"] .admonition.idea > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.idea > .admonition-content blockquote, body[data-theme="dark"] .admonition.idea > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.idea > .admonition-content blockquote, html[data-scheme="dark"] .admonition.idea > .admonition-content blockquote, body[data-scheme="dark"] .admonition.idea > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.idea > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.idea > .admonition-content blockquote, body.dark .admonition.idea > .admonition-content blockquote, body.dark-mode .admonition.idea > .admonition-content blockquote, body.dark-theme .admonition.idea > .admonition-content blockquote, body.theme-dark .admonition.idea > .admonition-content blockquote, html.dark .admonition.idea > .admonition-content blockquote, html.dark-mode .admonition.idea > .admonition-content blockquote, html.dark-theme .admonition.idea > .admonition-content blockquote, html.theme-dark .admonition.idea > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1131,7 +1123,7 @@ html[data-theme="dark"] .admonition.important > .admonition-content, body[data-t
 }
 
 html[data-theme="dark"] .admonition.important > .admonition-content blockquote, body[data-theme="dark"] .admonition.important > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.important > .admonition-content blockquote, html[data-scheme="dark"] .admonition.important > .admonition-content blockquote, body[data-scheme="dark"] .admonition.important > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.important > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.important > .admonition-content blockquote, body.dark .admonition.important > .admonition-content blockquote, body.dark-mode .admonition.important > .admonition-content blockquote, body.dark-theme .admonition.important > .admonition-content blockquote, body.theme-dark .admonition.important > .admonition-content blockquote, html.dark .admonition.important > .admonition-content blockquote, html.dark-mode .admonition.important > .admonition-content blockquote, html.dark-theme .admonition.important > .admonition-content blockquote, html.theme-dark .admonition.important > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1158,7 +1150,7 @@ html[data-theme="dark"] .admonition.info > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.info > .admonition-content blockquote, body[data-theme="dark"] .admonition.info > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.info > .admonition-content blockquote, html[data-scheme="dark"] .admonition.info > .admonition-content blockquote, body[data-scheme="dark"] .admonition.info > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.info > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.info > .admonition-content blockquote, body.dark .admonition.info > .admonition-content blockquote, body.dark-mode .admonition.info > .admonition-content blockquote, body.dark-theme .admonition.info > .admonition-content blockquote, body.theme-dark .admonition.info > .admonition-content blockquote, html.dark .admonition.info > .admonition-content blockquote, html.dark-mode .admonition.info > .admonition-content blockquote, html.dark-theme .admonition.info > .admonition-content blockquote, html.theme-dark .admonition.info > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1185,7 +1177,7 @@ html[data-theme="dark"] .admonition.memo > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.memo > .admonition-content blockquote, body[data-theme="dark"] .admonition.memo > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.memo > .admonition-content blockquote, html[data-scheme="dark"] .admonition.memo > .admonition-content blockquote, body[data-scheme="dark"] .admonition.memo > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.memo > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.memo > .admonition-content blockquote, body.dark .admonition.memo > .admonition-content blockquote, body.dark-mode .admonition.memo > .admonition-content blockquote, body.dark-theme .admonition.memo > .admonition-content blockquote, body.theme-dark .admonition.memo > .admonition-content blockquote, html.dark .admonition.memo > .admonition-content blockquote, html.dark-mode .admonition.memo > .admonition-content blockquote, html.dark-theme .admonition.memo > .admonition-content blockquote, html.theme-dark .admonition.memo > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1212,7 +1204,7 @@ html[data-theme="dark"] .admonition.note > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.note > .admonition-content blockquote, body[data-theme="dark"] .admonition.note > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.note > .admonition-content blockquote, html[data-scheme="dark"] .admonition.note > .admonition-content blockquote, body[data-scheme="dark"] .admonition.note > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.note > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.note > .admonition-content blockquote, body.dark .admonition.note > .admonition-content blockquote, body.dark-mode .admonition.note > .admonition-content blockquote, body.dark-theme .admonition.note > .admonition-content blockquote, body.theme-dark .admonition.note > .admonition-content blockquote, html.dark .admonition.note > .admonition-content blockquote, html.dark-mode .admonition.note > .admonition-content blockquote, html.dark-theme .admonition.note > .admonition-content blockquote, html.theme-dark .admonition.note > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1239,7 +1231,7 @@ html[data-theme="dark"] .admonition.notify > .admonition-content, body[data-them
 }
 
 html[data-theme="dark"] .admonition.notify > .admonition-content blockquote, body[data-theme="dark"] .admonition.notify > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.notify > .admonition-content blockquote, html[data-scheme="dark"] .admonition.notify > .admonition-content blockquote, body[data-scheme="dark"] .admonition.notify > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.notify > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.notify > .admonition-content blockquote, body.dark .admonition.notify > .admonition-content blockquote, body.dark-mode .admonition.notify > .admonition-content blockquote, body.dark-theme .admonition.notify > .admonition-content blockquote, body.theme-dark .admonition.notify > .admonition-content blockquote, html.dark .admonition.notify > .admonition-content blockquote, html.dark-mode .admonition.notify > .admonition-content blockquote, html.dark-theme .admonition.notify > .admonition-content blockquote, html.theme-dark .admonition.notify > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1266,7 +1258,7 @@ html[data-theme="dark"] .admonition.question > .admonition-content, body[data-th
 }
 
 html[data-theme="dark"] .admonition.question > .admonition-content blockquote, body[data-theme="dark"] .admonition.question > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.question > .admonition-content blockquote, html[data-scheme="dark"] .admonition.question > .admonition-content blockquote, body[data-scheme="dark"] .admonition.question > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.question > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.question > .admonition-content blockquote, body.dark .admonition.question > .admonition-content blockquote, body.dark-mode .admonition.question > .admonition-content blockquote, body.dark-theme .admonition.question > .admonition-content blockquote, body.theme-dark .admonition.question > .admonition-content blockquote, html.dark .admonition.question > .admonition-content blockquote, html.dark-mode .admonition.question > .admonition-content blockquote, html.dark-theme .admonition.question > .admonition-content blockquote, html.theme-dark .admonition.question > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1293,7 +1285,7 @@ html[data-theme="dark"] .admonition.quote > .admonition-content, body[data-theme
 }
 
 html[data-theme="dark"] .admonition.quote > .admonition-content blockquote, body[data-theme="dark"] .admonition.quote > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.quote > .admonition-content blockquote, html[data-scheme="dark"] .admonition.quote > .admonition-content blockquote, body[data-scheme="dark"] .admonition.quote > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.quote > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.quote > .admonition-content blockquote, body.dark .admonition.quote > .admonition-content blockquote, body.dark-mode .admonition.quote > .admonition-content blockquote, body.dark-theme .admonition.quote > .admonition-content blockquote, body.theme-dark .admonition.quote > .admonition-content blockquote, html.dark .admonition.quote > .admonition-content blockquote, html.dark-mode .admonition.quote > .admonition-content blockquote, html.dark-theme .admonition.quote > .admonition-content blockquote, html.theme-dark .admonition.quote > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1320,7 +1312,7 @@ html[data-theme="dark"] .admonition.success > .admonition-content, body[data-the
 }
 
 html[data-theme="dark"] .admonition.success > .admonition-content blockquote, body[data-theme="dark"] .admonition.success > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.success > .admonition-content blockquote, html[data-scheme="dark"] .admonition.success > .admonition-content blockquote, body[data-scheme="dark"] .admonition.success > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.success > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.success > .admonition-content blockquote, body.dark .admonition.success > .admonition-content blockquote, body.dark-mode .admonition.success > .admonition-content blockquote, body.dark-theme .admonition.success > .admonition-content blockquote, body.theme-dark .admonition.success > .admonition-content blockquote, html.dark .admonition.success > .admonition-content blockquote, html.dark-mode .admonition.success > .admonition-content blockquote, html.dark-theme .admonition.success > .admonition-content blockquote, html.theme-dark .admonition.success > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1347,7 +1339,7 @@ html[data-theme="dark"] .admonition.task > .admonition-content, body[data-theme=
 }
 
 html[data-theme="dark"] .admonition.task > .admonition-content blockquote, body[data-theme="dark"] .admonition.task > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.task > .admonition-content blockquote, html[data-scheme="dark"] .admonition.task > .admonition-content blockquote, body[data-scheme="dark"] .admonition.task > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.task > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.task > .admonition-content blockquote, body.dark .admonition.task > .admonition-content blockquote, body.dark-mode .admonition.task > .admonition-content blockquote, body.dark-theme .admonition.task > .admonition-content blockquote, body.theme-dark .admonition.task > .admonition-content blockquote, html.dark .admonition.task > .admonition-content blockquote, html.dark-mode .admonition.task > .admonition-content blockquote, html.dark-theme .admonition.task > .admonition-content blockquote, html.theme-dark .admonition.task > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1374,7 +1366,7 @@ html[data-theme="dark"] .admonition.tip > .admonition-content, body[data-theme="
 }
 
 html[data-theme="dark"] .admonition.tip > .admonition-content blockquote, body[data-theme="dark"] .admonition.tip > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.tip > .admonition-content blockquote, html[data-scheme="dark"] .admonition.tip > .admonition-content blockquote, body[data-scheme="dark"] .admonition.tip > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.tip > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.tip > .admonition-content blockquote, body.dark .admonition.tip > .admonition-content blockquote, body.dark-mode .admonition.tip > .admonition-content blockquote, body.dark-theme .admonition.tip > .admonition-content blockquote, body.theme-dark .admonition.tip > .admonition-content blockquote, html.dark .admonition.tip > .admonition-content blockquote, html.dark-mode .admonition.tip > .admonition-content blockquote, html.dark-theme .admonition.tip > .admonition-content blockquote, html.theme-dark .admonition.tip > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 
@@ -1401,7 +1393,7 @@ html[data-theme="dark"] .admonition.warning > .admonition-content, body[data-the
 }
 
 html[data-theme="dark"] .admonition.warning > .admonition-content blockquote, body[data-theme="dark"] .admonition.warning > .admonition-content blockquote, html[data-bs-theme="dark"] .admonition.warning > .admonition-content blockquote, html[data-scheme="dark"] .admonition.warning > .admonition-content blockquote, body[data-scheme="dark"] .admonition.warning > .admonition-content blockquote, html[data-color-mode="dark"] .admonition.warning > .admonition-content blockquote, body[data-color-mode="dark"] .admonition.warning > .admonition-content blockquote, body.dark .admonition.warning > .admonition-content blockquote, body.dark-mode .admonition.warning > .admonition-content blockquote, body.dark-theme .admonition.warning > .admonition-content blockquote, body.theme-dark .admonition.warning > .admonition-content blockquote, html.dark .admonition.warning > .admonition-content blockquote, html.dark-mode .admonition.warning > .admonition-content blockquote, html.dark-theme .admonition.warning > .admonition-content blockquote, html.theme-dark .admonition.warning > .admonition-content blockquote {
-  border-left-color: #434c5e;
+  border-left-color: #2e3440;
   color: inherit;
 }
 

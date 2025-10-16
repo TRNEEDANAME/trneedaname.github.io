@@ -2,9 +2,9 @@
 #+TITLE: Fiches
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
-#+FILETAGS: MOC français fiches
+#+FILETAGS: MOC fiches
 #+DATE: 2025-10-07
-#+HUGO_PUBLISHDATE: null
+#+HUGO_PUBLISHDATE: 2025-10-15T00:40:04-07:00
 #+HUGO_DRAFT: false
 #+OPTIONS: toc:nil
 #+HUGO_SECTION: moc
@@ -12,6 +12,10 @@
 #+AUTHOR: TRNEEDANAME
 #+HUGO_WEIGHT: 1
 #+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false
+
+Toutes mes fiches de révisions.
+
+#+hugo: more
 
 Voici toutes mes fiches de révision !
 

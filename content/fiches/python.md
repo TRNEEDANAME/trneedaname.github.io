@@ -3,9 +3,14 @@ title = "Python"
 author = ["TRNEEDANAME"]
 date = 2025-10-08
 layout = "page"
-tags = ["fiches", "python", "français"]
+tags = ["fiches", "python"]
 draft = false
 +++
+
+Le python est un language interprété utilisé dans beaucoup de domaine
+
+<!--more-->
+
 
 ## Le Python, c'est quoi ? {#le-python-c-est-quoi}
 

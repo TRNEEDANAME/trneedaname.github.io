@@ -3,9 +3,14 @@ title = "Javascript"
 author = ["TRNEEDANAME"]
 date = 2025-10-10
 layout = "page"
-tags = ["fiches", "javascript", "français"]
+tags = ["fiches", "javascript"]
 draft = false
 +++
+
+Le javascript est utilisé dans le web.
+
+<!--more-->
+
 
 ## Aller au exercices {#aller-au-exercices}
 
