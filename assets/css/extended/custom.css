@@ -1,10 +1,53 @@
 /* ==========================================================
-   NORD THEME — MERGED LIGHT / DARK (PaperMod)
-   ========================================================== */
+   NORD THEME*/
+/* ==========================================================
 
-/* ======== COLOR VARIABLES (LIGHT MODE DEFAULT) ========= */
+/* ================= DESIGN TOKENS (EASY TO CHANGE) ================= */
 :root {
-    /* Polar Night */
+    /* Typography */
+    --font-base-size: 1.1em;
+    --font-code-size: 1.1em;
+    --font-sans: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Noto Sans Mono", "Fira Code", "Consolas", monospace;
+    --font-title: "Noto Sans Display", sans-serif;
+    
+    /* Spacing */
+    --spacing-xxs: 0.25em;
+    --spacing-xs: 0.5em;
+    --spacing-sm: 0.6em;
+    --spacing-md: 1em;
+    --spacing-lg: 1.2em;
+    --spacing-xl: 1.5em;
+
+    /* Sizing & radii */
+    --logo-font-size: 1.5em;
+    --radius: 8px;
+    --radius-sm: 6px;
+
+    /* Controls */
+    --copy-btn-padding: 0.25em 0.6em;
+    --copy-btn-font-size: 0.8em;
+    --link-underline-thickness: 2px;
+
+    /* Table */
+    --table-border: 1px solid;
+    --table-zebra-even: var(--entry-bg); /* overridden below after color mapping */
+    --table-zebra-odd: var(--theme-bg); /* overridden below after color mapping */
+
+    /* Code / highlight */
+    --line-number-color: #7b88a1;
+    --highlight-bg: rgba(143, 188, 187, 0.1);
+
+    /* Misc */
+    --menu-box-shadow: none;
+    --menu-font-weight: bolder;
+    --logo-accent: var(--nord15, #b85bdb); /* fallback to nord15 if not defined yet */
+    --hover-accent: var(--nord15, #b85bdb);
+}
+
+/* ======== COLOR VARIABLES (NORD PALETTE & PAPERMOD MAPPING) ========= */
+:root {
+    /* NORD Palette — Polar Night */
     --nord0: #2e3440;
     --nord1: #3b4252;
     --nord2: #434c5e;
@@ -13,7 +56,7 @@
     /* Snow Storm */
     --nord4: #d8dee9;
     --nord5: #e5e9f0;
-    --nord6: #f5f5f5;
+    --nord6: #eceff4;
 
     /* Frost */
     --nord7: #8fbcbb;
@@ -21,104 +64,108 @@
     --nord9: #81a1c1;
     --nord10: #5e81ac;
 
-    /* Aurora — boosted for light mode */
-    --nord11: #d12f2f; /* Red */
+    /* Aurora */
+    --nord11: #d12f2f; /* Red (boosted for light) */
     --nord12: #e06b3d; /* Orange */
-    --nord13: #ffd100; /* Yellow */
-    --nord14: #6f8f54; /* Green */
+    --nord13: #f2e07b; /* Yellow */
+    --nord14: #70c05c; /* Green */
     --nord15: #b85bdb; /* Purple */
-    --nord-func: #e6a600; /* Function names */
+    --nord-func: #e6a600; /* Function names (light) */
 
-    --gap: 24px;
-    --content-gap: 20px;
-    --nav-width: 1024px;
-    --main-width: 800px;
+    /* ===== Map to PaperMod variables (LIGHT as defaults) =====
+     PaperMod expects these custom properties across the site.
+     Setting them makes backgrounds and content colors consistent. */
+    --theme: var(--nord6);
+    --entry: var(--nord5);
+    --primary: var(--nord2);
+    --secondary: var(--nord3);
+    --tertiary: var(--nord4);
+    --content: var(--nord2);
+    --code-block-bg: var(--nord5);
+    --code-bg: var(--nord5);
+    --border: var(--nord5);
 
-    /* Theme variables */
-    --theme-bg: var(--nord6);
-    --theme-fg: var(--nord3);
-    --theme-border: var(--nord5);
+    /* Convenience aliases used below */
+    --theme-bg: var(--theme);
+    --theme-fg: var(--primary);
+    --theme-border: var(--border);
     --theme-accent: var(--nord9);
-
-    /* Make link colors consistent across light/dark by centralizing them here.
-     Use nord10 as the base link color and nord9 as the hover/active color. */
     --theme-link: var(--nord10);
     --theme-link-hover: var(--nord9);
-
-    /* subtle background for hovered/selected links; tuned per theme in body.dark */
-    --theme-link-bg: rgba(94,129,172,0.08);
-    --theme-link-radius: 4px;
-
     --theme-menu-bg: var(--nord5);
     --theme-menu-link: var(--nord0);
     --theme-menu-hover: var(--nord15);
-    --theme-code-bg: var(--nord5);
+    --theme-code-bg: var(--code-block-bg);
     --theme-code-fg: var(--nord0);
-    --entry-bg: var(--nord5);
-    --content: var(--nord1);
+    --entry-bg: var(--entry);
+
+    /* Update table zebra tokens to derived values */
+    --table-zebra-even: var(--theme-bg);
+    --table-zebra-odd: var(--entry-bg);
+
+    /* hover / logo alias to keep consistent with tokens above */
+    --logo-accent: var(--nord15);
+    --hover-accent: var(--nord15);
 }
 
 /* ==========================================================
    DARK MODE OVERRIDES
+   Use the actual selector the page sets: html[data-theme="dark"]
    ========================================================== */
-body.dark {
-    --nord0: #2e3440;
-    --nord1: #3b4252;
-    --nord2: #434c5e;
-    --nord3: #4c566a;
-    --nord4: #d8dee9;
-    --nord5: #e5e9f0;
-    --nord6: #eceff4;
-    --nord7: #8fbcbb;
-    --nord8: #88c0d0;
-    --nord9: #81a1c1;
-    --nord10: #5e81ac;
-
+html[data-theme="dark"] {
+    /* Palette adjustments for dark */
     --nord11: #bf616a;
     --nord12: #d08770;
     --nord13: #ebcb8b;
-    --nord14: #6f8f54;
-    --nord15: #b85bdb;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
     --nord-func: #ebcb8b;
 
-    --nord-comment: #616e88;
+    /* PaperMod variables (DARK) */
+    --theme: var(--nord0);
+    --entry: var(--nord1);
+    --primary: var(--nord6);
+    --secondary: var(--nord4);
+    --tertiary: var(--nord3);
+    --content: var(--nord6);
+    --code-block-bg: var(--nord2);
+    --code-bg: var(--nord2);
+    --border: var(--nord1);
 
-    --theme-bg: var(--nord0);
-    --theme-fg: var(--nord6);
-    --theme-border: var(--nord1);
+    /* Aliases */
+    --theme-bg: var(--theme);
+    --theme-fg: var(--primary);
+    --theme-border: var(--border);
     --theme-accent: var(--nord8);
-
-    --theme-link: var(--nord10);
-    --theme-link-hover: var(--nord9);
-    --theme-link-bg: rgba(94,129,172,0.12);
-
+    --theme-link: var(--nord8);
+    --theme-link-hover: var(--nord15);
     --theme-menu-bg: var(--nord1);
     --theme-menu-link: var(--nord5);
     --theme-menu-hover: var(--nord8);
-    --theme-code-bg: var(--nord1);
+    --theme-code-bg: var(--code-block-bg);
     --theme-code-fg: var(--nord6);
-    --entry-bg: var(--nord2);
-    --content: var(--nord6);
+    --entry-bg: var(--entry);
+
+    /* dark-specific small tokens */
+    --table-zebra-even: var(--theme-bg);
+    --table-zebra-odd: var(--entry-bg);
 }
 
-/* ==========================================================
-   GLOBAL STYLES
-   ========================================================== */
+/* ================= GLOBAL STYLES ================= */
 body {
     background-color: var(--theme-bg);
     color: var(--theme-fg);
     border-color: var(--theme-border);
-    font-size: 1.1em;
-}
-
-main, .dark.list, .list {
-    background-color: var(--theme-bg);
+    font-size: var(--font-base-size);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Logo */
 .logo > a:first-child {
-    font-size: 1.5em;
-    color: var(--theme-accent);
+    font-size: var(--logo-font-size);
+    color: var(--theme-link);
 }
 .logo > a:first-child:hover {
     color: var(--theme-link-hover);
@@ -126,134 +173,109 @@ main, .dark.list, .list {
 
 /* Menu */
 #menu {
-    background-color: var(--code-theme-bg) !important;
-    box-shadow: none;
+    background-color: var(--theme-bg); /* fixed variable name */
+    box-shadow: var(--menu-box-shadow);
 }
-
-/* Make menu links use the consistent link color as well (keeps behavior consistent across themes). */
 #menu > li > a {
+    color: var(--theme-menu-link);
+    font-weight: var(--menu-font-weight);
+}
+#menu > li > a:hover {
+    color: var(--theme-menu-hover);
+}
+
+/* Links outside menu */
+a:not(.logo > a):not(#menu a) {
     color: var(--theme-link);
-    font-weight: bolder;
+}
+a:not(.logo > a):not(#menu a):hover {
+    color: var(--theme-link-hover);
+    text-decoration-color: var(--theme-link-hover);
 }
 
-/* Links outside menu: centralized, consistent behavior across dark and light */
-a {
-    color: var(--theme-link);
-    transition: color 120ms ease, background-color 120ms ease;
-    text-decoration: none;
-    text-decoration-color: var(--theme-link);
-    box-shadow: none;
-}
-
-.post-content > p > a {
-    box-shadow: none;
-}
-
-/* Normal hover border */
+/* General hover accent for many interactive elements */
 a:hover {
-    color: var(--nord15);
-    border-bottom: 2px solid var(--nord15);
+    color: var(--hover-accent);
+    border-bottom: var(--link-underline-thickness) solid var(--hover-accent);
+    font-weight: bold;
 }
 
-/* Remove hover border if it's an .entry-link or inside .logo or .social-icons */
+/* Exceptions where underline isn't desired */
 .logo a:hover,
 .social-icons a:hover,
-a.entry-link:hover, #menu > li > a:hover {
-    color: var(--nord15);
+a.entry-link:hover,
+#menu > li > a:hover {
+    color: var(--hover-accent);
     border-bottom: none;
 }
-
-/* Your menu-specific span rule, refined */
-#menu li a:hover span {
-    border-bottom: 2px solid var(--nord15);
-}
-
-/* Prevent it if the link is excluded */
-.logo a:hover span,
-.social-icons a:hover span,
-a.entry-link:hover span {
-    border-bottom: none;
-}
-
 
 /* Table of Contents */
 .toc {
-    color: var(--nord1);
     background-color: var(--entry-bg);
-    border: 1px solid var(--theme-border);
-    border-radius: 8px;
-    padding: 0.6em;
-    font-weight: bolder;
-    margin: 1.5em;
+    border: var(--table-border) var(--theme-border);
+    border-radius: var(--radius);
+    padding: 1.3em;
+    margin: var(--spacing-lg) 0;
 }
 
 #TableOfContents {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: 1.5em;
+    margin-left: 0.5em;
 }
 
-/* Ensure toc links follow theme link colors too */
-.toc a:hover {
-    color: var(--nord15);
-    text-decoration: none;
-    border-bottom: 2px solid var(--nord15);
-}
-
-/* dark-mode toc color tweaks */
-body.dark .toc {
-    color: var(--nord4);
+html[data-theme="dark"] .toc {
     background-color: var(--nord1);
 }
 
-body.dark .menu {
-    color: var(--theme);
+/* Main & lists */
+main,
+.list {
+    background-color: var(--theme-bg);
 }
+
+/* Admonition / inline code sizing */
+.admonition-content pre code,
+.post-content code,
+code {
+    font-size: var(--font-code-size);
+    font-family: var(--font-mono);
+}
+
+/* Make sure we didn't accidentally duplicate styles */
+.admonition-content pre code { font-size: var(--font-code-size); }
 
 /* ==========================================================
    CODE BLOCKS — CHROMA HIGHLIGHTER
    ========================================================== */
-pre.chroma, .chroma {
+pre.chroma,
+.chroma {
     background-color: var(--theme-code-bg);
     color: var(--theme-code-fg);
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     padding: 0.3em;
-    font-family: "Noto Sans Mono", "Fira Code", monospace;
+    font-family: var(--font-mono);
     line-height: 1.5;
     overflow-x: auto;
-}
-
-.dark pre.chroma, .dark .chroma {
-    background-color: var(--theme-bg);
-}
-
-.dark .post-footer > ul > li > a, .dark .paginav {
-    background-color: var(--nord1);
-}
-
-div.code > div > div > div {
-    font-size: 1.3em;
 }
 
 /* Line numbers */
 .chroma .lntable,
 .chroma .lntd {
-    border: none !important;
+    border: none;
     background-color: inherit;
     padding: 0;
     margin: 0;
     border-collapse: collapse;
 }
 .chroma .lnt {
-    color: #7b88a1;
+    color: var(--line-number-color);
     user-select: none;
     padding: 0 0.8em 0 0.5em;
     opacity: 0.8;
 }
 .chroma .line { background-color: inherit; }
-.chroma .hl { background-color: rgba(143, 188, 187, 0.1); }
+.chroma .hl { background-color: var(--highlight-bg); }
 
-/* Syntax Highlighting */
+/* Syntax Highlighting (mapped to nord variables) */
 .chroma .k, .chroma .kd, .chroma .kn, .chroma .kr, .chroma .kt { color: var(--nord10); }
 .chroma .s, .chroma .s1, .chroma .s2, .chroma .sb, .chroma .sd { color: var(--nord14); }
 .chroma .m, .chroma .mi, .chroma .mf, .chroma .mh { color: var(--nord13); }
@@ -263,7 +285,7 @@ div.code > div > div > div {
 .chroma .nb, .chroma .bp { color: var(--nord10); }
 /* Comments */
 .chroma .c, .chroma .cm, .chroma .ch { color: var(--nord3); font-style: italic; }
-body.dark .chroma .c1 { color: #e5e9f0; font-style: italic; }
+html[data-theme="dark"] .chroma .c1 { color: var(--nord6); font-style: italic; }
 .chroma .o, .chroma .ow { color: var(--nord11); font-weight: bold; }
 .chroma .ni, .chroma .ne { color: var(--nord12); }
 .chroma .gh, .chroma .gu { color: var(--nord13); font-weight: bold; }
@@ -276,169 +298,91 @@ button.copy-code {
     color: var(--theme-fg);
     border: 1px solid var(--theme-border);
     border-radius: 4px;
-    padding: 0.25em 0.6em;
-    font-size: 0.8em;
+    padding: var(--copy-btn-padding);
+    font-size: var(--copy-btn-font-size);
 }
 button.copy-code:hover {
     background-color: var(--theme-accent);
     color: var(--theme-bg);
 }
 
-/* SQL run tables (dark and light) - unchanged but left for context */
-.dark .sql-run-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: "Noto Sans Mono", "Consolas", monospace;
-    background: var(--nord0);
-    color: var(--content);
-    margin: 1em 0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-body.dark .sql-run-table th, .sql-run-table td {
-    border: 1px solid var(--theme-border);
-    padding: 0.6em 1em;
-    text-align: left;
-}
-
-body.dark .sql-run-table th {
-    color: var(--nord6);
-    font-weight: bold;
-    letter-spacing: 0.02em;
-}
-
-body.dark .sql-run-table tr:nth-child(even) td {
-    background: var(--theme-bg);
-}
-
-body.dark .sql-run-table tr:nth-child(odd) td {
-    background: var(--entry-bg);
-}
-
-body.dark .sql-run-table tr:hover td {
-    background: var(--nord7);
-    color: var(--nord0);
-}
-
-body.dark .sql-run-table th {
-    background: var(--theme-accent);
-    color: var(--nord6);
-}
-
-body.dark .sql-run-table tr:nth-child(even) td {
-    background: var(--theme-bg);
-}
-body.dark .sql-run-table tr:nth-child(odd) td {
-    background: var(--entry-bg);
-}
-body.dark .sql-run-table tr:hover td {
-    background: var(--nord7);
-    color: var(--nord0);
-}
-
-body.dark .sql-run-table > tbody:nth-child(1) > tr >th {
-    background-color: var(--nord1);
-}
-
-/* LIGHT */
-
+/* ==========================================================
+   SQL RUNNER TABLE (LIGHT & DARK)
+   Uses table tokens so it's easy to tweak zebra & hover styles
+   ========================================================== */
 .sql-run-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: "Noto Sans Mono", "Consolas", monospace;
-    background: var(--nord6);
+    font-family: var(--font-mono);
+    background: var(--theme-bg);
     color: var(--content);
-    margin: 1em 0;
-    border-radius: 8px;
+    margin: var(--spacing-md) 0;
+    border-radius: var(--radius);
     overflow: hidden;
 }
-
-.sql-run-table th, .sql-run-table td {
-    border: 1px solid var(--theme-border);
-    padding: 0.6em 1em;
+.sql-run-table th,
+.sql-run-table td {
+    border: var(--table-border) var(--theme-border);
+    padding: var(--spacing-sm) var(--spacing-md);
     text-align: left;
 }
-
 .sql-run-table th {
+    background: var(--theme-accent);
     color: var(--nord6);
     font-weight: bold;
     letter-spacing: 0.02em;
 }
-
-.sql-run-table tr:nth-child(even) td {
-    background: var(--nord4);
-}
-
-.sql-run-table tr:nth-child(odd) td {
-    background: var(--entry-bg);
-}
-
+.sql-run-table tr:nth-child(even) td { background: var(--table-zebra-even); }
+.sql-run-table tr:nth-child(odd) td { background: var(--table-zebra-odd); }
 .sql-run-table tr:hover td {
-    background: var(--nord7);
-    color: var(--nord0);
+    background: var(--table-hover-bg, var(--nord7));
+    color: var(--table-hover-fg, var(--nord0));
 }
-
-.sql-run-table th {
-    background: var(--theme-accent);
-    color: var(--nord6);
-}
-
-.sql-run-table tr:nth-child(even) td {
-    background: var(--theme-bg);
-}
-.sql-run-table tr:nth-child(odd) td {
-    background: var(--entry-bg);
-}
-.sql-run-table tr:hover td {
-    background: var(--nord7);
-    color: var(--nord0);
-}
-
-.sql-run-table > tbody:nth-child(1) > tr >th {
+.sql-run-table > tbody:nth-child(1) > tr > th {
     background-color: var(--nord5);
     color: var(--theme-fg);
 }
 
-/* Ensure code inside admonitions inherits the surrounding text color */
-.admonition-content code:not(pre > code),
-.admonition-content pre,
-.admonition-content pre code,
-div.admonition code,
-div.admonition pre,
-div.admonition pre code {
-    color: inherit !important;
-    transition: 0s ease, color 0s ease !important;
-    border-radius: 0px;
+/* Dark-specific table adjustments (keeps tokens consistent) */
+html[data-theme="dark"] .sql-run-table {
+    background: var(--nord0);
+    color: var(--content);
 }
-
-/* Admonition inline code + pre styling — preserve background but inherit text color */
-.dark .post-content code,
-.admonition-content code,
-div.admonition > div > p > code,
-.post-content > * > code,
-div.admonition > div > ul > li > code,
-.post-content > p > strong > code {
-    font-size: 1.2em;
+html[data-theme="dark"] .sql-run-table th,
+html[data-theme="dark"] .sql-run-table td {
+    border: var(--table-border) var(--theme-border);
+}
+html[data-theme="dark"] .sql-run-table th {
+    background: var(--theme-accent);
+    color: var(--nord6);
+}
+html[data-theme="dark"] .sql-run-table tr:nth-child(even) td { background: var(--theme-bg); }
+html[data-theme="dark"] .sql-run-table tr:nth-child(odd) td { background: var(--entry-bg); }
+html[data-theme="dark"] .sql-run-table tr:hover td {
+    background: var(--table-hover-bg, var(--nord7));
+    color: var(--table-hover-fg, var(--nord0));
+}
+html[data-theme="dark"] .sql-run-table > tbody:nth-child(1) > tr > th {
     background-color: var(--nord1);
-    border-radius: 4px;
-    color: inherit;
-    padding: 0.08em 0.28em;
 }
 
-.post-content code,
-.admonition-content code,
-div.admonition > div > p > code,
-.post-content > * > code,
-div.admonition > div > ul > li > code,
-.post-content > p > strong > code {
-    font-size: 1.2em;
-    background-color: var(--nord4);
-    border-radius: 4px;
-    color: inherit;
-    padding: 0.08em 0.28em;
+/* Footer / pagination accents in dark */
+html[data-theme="dark"] .post-footer > ul > li > a,
+html[data-theme="dark"] .paginav {
+    background-color: var(--nord1);
 }
 
-.py-run-stdout {
-    font-size: 1.2em;
+/* Small fixes / tweaks */
+/* Replace old incorrect selector body.dark .menu with the actual data-theme selector */
+html[data-theme="dark"] .menu {
+    color: var(--theme-bg);
+}
+
+/* Unusual list style in nav (kept from original) */
+nav > ul, nav > ul > li > ul {
+    list-style-type: decimal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
 }
