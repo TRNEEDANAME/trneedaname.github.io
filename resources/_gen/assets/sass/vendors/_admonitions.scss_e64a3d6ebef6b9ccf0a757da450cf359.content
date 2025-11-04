@@ -57,14 +57,14 @@
   border-left-width: 3px;
   border-left-style: solid;
   font-style: italic;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition: none;
 }
 
 .admonition-content code:not(pre > code) {
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-size: 0.9em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: none;
 }
 
 .admonition-content pre {
@@ -72,7 +72,7 @@
   padding: 0.8rem 1rem;
   border-radius: 3px;
   overflow-x: auto;
-  transition: background-color 0.3s ease;
+  transition: none;
 }
 
 .admonition-content pre code {

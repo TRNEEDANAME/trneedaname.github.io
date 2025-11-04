@@ -6,27 +6,41 @@
     <description>Recent content in Tags on Dev blog</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fiches</title>
+      <link>http://localhost:1313/tags/fiches/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/fiches/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js</title>
+      <link>http://localhost:1313/tags/js/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wiki-Xcom</title>
+      <link>http://localhost:1313/tags/wiki-xcom/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wiki-xcom/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Dev-Xcom</title>
       <link>http://localhost:1313/tags/dev-xcom/</link>
       <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/dev-xcom/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Fiches</title>
-      <link>http://localhost:1313/tags/fiches/</link>
-      <pubDate>Wed, 15 Oct 2025 00:40:04 -0700</pubDate>
-      <guid>http://localhost:1313/tags/fiches/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Français</title>
-      <link>http://localhost:1313/tags/fran%C3%A7ais/</link>
-      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/fran%C3%A7ais/</guid>
       <description></description>
     </item>
     <item>

@@ -9,7 +9,10 @@
 #+AUTHOR: TRNEEDANAME
 #+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false
 
-
 ** Mods for xcom
 
 This file will have all of the different mods I did and am doing, each mods will have a dedicated page but each ones will have a brief explanation below.
+
+*** Ability Creator
+
+Allows for the creation of abilities using only config.

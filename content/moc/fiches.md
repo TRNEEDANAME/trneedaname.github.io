@@ -11,10 +11,6 @@ ShowToc = false
 ShowPostNavLinks = false
 +++
 
-Toutes mes fiches de révisions.
-
-<!--more-->
-
 Voici toutes mes fiches de révision !
 
 
@@ -32,6 +28,13 @@ Le Javascript est un langage utilisé principalement dans le web (Front-end et B
 [ Cours Javascript ]({{< relref "fiches/javascript" >}})
 
 [ Exercices Javascript ]({{< relref "Exercices de Javascript" >}})
+
+
+## CSS {#css}
+
+Le CSS est utilisé pour stylisé les pages web.
+
+[ Cours CSS ]({{< relref "fiches/css" >}})
 
 
 ## SQL {#sql}

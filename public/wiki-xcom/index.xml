@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wiki-Xcoms on Dev blog</title>
+    <link>http://localhost:1313/wiki-xcom/</link>
+    <description>Recent content in Wiki-Xcoms on Dev blog</description>
+    <generator>Hugo -- 0.147.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/wiki-xcom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ability Creator</title>
+      <link>http://localhost:1313/wiki-xcom/ability-creator/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/wiki-xcom/ability-creator/</guid>
+      <description>&lt;h2 id=&#34;the-mod&#34;&gt;The mod&lt;/h2&gt;
+&lt;p&gt;The goal of this mod is to allow any players the ability to create abilities using only configuration.&lt;/p&gt;
+&lt;h2 id=&#34;the-config-files&#34;&gt;The config files&lt;/h2&gt;
+&lt;h3 id=&#34;files&#34;&gt;Files&lt;/h3&gt;
+&lt;p&gt;The config files are as follows :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;XComAbilityCreatorEffects.ini&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;XComAbilityCreatorMain.ini&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;explanation&#34;&gt;Explanation&lt;/h3&gt;
+&lt;h4 id=&#34;xcomabilitycreatoreffects&#34;&gt;XComAbilityCreatorEffects&lt;/h4&gt;
+&lt;p&gt;This file lists all of the effects that can be used to create abilities.&lt;/p&gt;
+&lt;h4 id=&#34;xcomabilitycreatormain&#34;&gt;XComAbilityCreatorMain&lt;/h4&gt;
+&lt;p&gt;This file is the main config, where abilities are created.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

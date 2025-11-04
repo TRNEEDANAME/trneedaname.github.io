@@ -5,4 +5,4 @@
 #+HUGO_LAYOUT: search
 #+HUGO_SECTION: pages
 #+HUGO_SLUG: search
-#+HUGO_CUSTOM_FRONT_MATTER: :placeholder Search :ShowToc false
+#+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false

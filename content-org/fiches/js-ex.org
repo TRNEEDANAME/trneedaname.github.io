@@ -5,7 +5,7 @@
 #+DATE: 2025-10-10
 #+HUGO_PUBLISHDATE: null
 #+HUGO_DRAFT: false
-#+HUGO_SECTION: fiches
+#+HUGO_SECTION: fiches javascript web
 #+AUTHOR: TRNEEDANAME
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 

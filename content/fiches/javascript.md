@@ -3,7 +3,7 @@ title = "Javascript"
 author = ["TRNEEDANAME"]
 date = 2025-10-10
 layout = "page"
-tags = ["fiches", "javascript"]
+tags = ["fiches", "javascript", "web"]
 draft = false
 +++
 
@@ -85,6 +85,7 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.
 >  let animaux = ["chien","chat","poisson","chameau"];
 >  console.log(age);
 >  console.log(nom);
+>  console.log(animaux[0]);
 >  console.log(`Le type de 'age' est ${typeof age} et celui de 'nom' est ${typeof nom}`);
 > ```
 
@@ -170,6 +171,7 @@ Demander une entrée utilisateur avec `prompt()`.
 > [!CODE] javascript
 >  ```javascript
 >  function maFonction(age) {
+>    age = parseInt(age);
 >    age = age + 1;
 >    console.log(`Vous avez ${age} ans`);
 >  }

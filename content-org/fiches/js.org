@@ -1,7 +1,7 @@
 #+TITLE: Javascript
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
-#+FILETAGS: fiches javascript
+#+FILETAGS: fiches javascript web
 #+DATE: 2025-10-10
 #+HUGO_PUBLISHDATE: null
 #+HUGO_DRAFT: false
@@ -78,6 +78,7 @@ let animaux = ["chien","chat","poisson","chameau"];
 
 console.log(age);
 console.log(nom);
+console.log(animaux[0]);
 console.log(`Le type de 'age' est ${typeof age} et celui de 'nom' est ${typeof nom}`);
 #+end_src
 
@@ -154,6 +155,7 @@ console.log("Hello World !");
 
 #+begin_src javascript
 function maFonction(age) {
+  age = parseInt(age);
   age = age + 1;
   console.log(`Vous avez ${age} ans`);
 }

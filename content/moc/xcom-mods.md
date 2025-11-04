@@ -12,3 +12,8 @@ ShowPostNavLinks = false
 ## Mods for xcom {#mods-for-xcom}
 
 This file will have all of the different mods I did and am doing, each mods will have a dedicated page but each ones will have a brief explanation below.
+
+
+### Ability Creator {#ability-creator}
+
+Allows for the creation of abilities using only config.

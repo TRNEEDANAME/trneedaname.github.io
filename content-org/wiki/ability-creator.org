@@ -1,0 +1,33 @@
+#+TITLE: Ability Creator
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: wiki-xcom
+#+DATE: 2025-11-03
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: true
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: wiki-xcom
+
+
+** The mod
+
+The goal of this mod is to allow any players the ability to create abilities using only configuration.
+
+** The config files
+
+*** Files
+
+The config files are as follows :
+- =XComAbilityCreatorEffects.ini=
+- =XComAbilityCreatorMain.ini=
+
+*** Explanation
+
+**** XComAbilityCreatorEffects
+
+This file lists all of the effects that can be used to create abilities.
+
+**** XComAbilityCreatorMain
+
+This file is the main config, where abilities are created.

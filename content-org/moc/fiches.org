@@ -13,10 +13,6 @@
 #+HUGO_WEIGHT: 1
 #+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false
 
-Toutes mes fiches de révisions.
-
-#+hugo: more
-
 Voici toutes mes fiches de révision !
 
 ** Python
@@ -32,6 +28,12 @@ Le Javascript est un langage utilisé principalement dans le web (Front-end et B
 {{{relref(Cours Javascript,fiches/javascript)}}}
 
 {{{relref(Exercices Javascript,Exercices de Javascript)}}}
+
+** CSS
+
+Le CSS est utilisé pour stylisé les pages web.
+
+{{{relref(Cours CSS,fiches/css)}}}
 
 ** SQL
 

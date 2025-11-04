@@ -1,0 +1,68 @@
+#+TITLE: css
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: fiches web
+#+DATE: 2025-11-03
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: true
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: fiches
+
+** Le CSS, c'est quoi ?
+
+Le ~CSS~[fn:1] est utilisé pour styliser les pages web.
+Il peut utiliser des variables et conditions.
+
+#+begin_src css
+element {
+    attribut: valeur;
+}
+#+end_src
+
+** Ordre d'applications
+
+Les attributs utilise un ordre, par exemple ~font-family~, ~font-style~...
+
+Le ~Cascading~ explique comment le CSS est appliqué.
+
+*** Cascade
+
+#+begin_src css
+/* Je sélectionne l'élément paragraphe */
+p {
+    color: red; /* Les couleurs peuvent être écrites en RGB / Hex ou utilisant des noms pour les plus communs */
+}
+
+/* Je redéfinie la couleur */ 
+p {
+    color: green;
+}
+#+end_src
+
+*** ID et class
+
+Les ~id~ et ~class~ sont utilisés pour différenciés des élements spécifique.
+
+#+begin_src css
+p#souligne {
+    text-decoration: underline;
+}
+
+p.important {
+    color: red;
+    font-weight: bolder;
+}
+#+end_src
+
+#+begin_important
+La ~class~ et le ~id~ sont différents !
+
+L'~id~ doit être unique dans la page (barre de navigation, titre du site, footer...) alors qu'une ~class~ peut être utilisé plusieurs fois.
+#+end_important
+
+
+
+* Footnotes
+
+[fn:1] Cascading Style Sheet

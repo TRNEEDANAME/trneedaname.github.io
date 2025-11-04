@@ -3,7 +3,7 @@ title = "SQL"
 author = ["TRNEEDANAME"]
 date = 2025-10-12
 layout = "page"
-tags = ["fiches", "français", "sql"]
+tags = ["fiches", "sql"]
 draft = false
 +++
 
@@ -21,15 +21,6 @@ Le SQL est un language de requète de base de données.
 > [!MEMO] Convention
 > En SQL on utilise le [Snake Case](https://fr.wikipedia.org/wiki/Snake_case), les objets sont au singulier, exemple :
 > 
->> [!CODE] sql
->>  ```sql
->>  CREATE TABLE produit (
->>      id INTEGER PRIMARY KEY,
->>      nom TEXT,
->>      prix INTEGER
->>  );
->> ```
->> 
 > Les tables descriptives sont plus faciles à comprendre, les colonnes doivent être lisibles :
 > `date_achat` et non `dt_achat` !
 > 

@@ -4,6 +4,6 @@ author = ["TRNEEDANAME"]
 layout = "search"
 slug = "search"
 draft = false
-placeholder = "Search demo site with full text fuzzy search ..."
+placeholder = "placeholder text in search input box"
 ShowToc = false
 +++

@@ -1,0 +1,14 @@
+
+#+TITLE: profs-js
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: fiches javascript web
+#+DATE: 2025-11-03
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: false
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: fiches
+
+- Utiliser ~console.log(...)~ n'est pas autoriser.
+

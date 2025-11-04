@@ -22,8 +22,6 @@ Le ~Structured Query Language~ est un langage de ~requète~ de bases de données
 #+begin_memo Convention
 En SQL on utilise le [[https://fr.wikipedia.org/wiki/Snake_case][Snake Case]], les objets sont au singulier, exemple :
 
-#+INCLUDE: "~/BTS-SIO/BDD/2025-10-14-bdd-site_sql.org::*init prod" src sql :only-contents t :lines "18-23"
-
 Les tables descriptives sont plus faciles à comprendre, les colonnes doivent être lisibles :
 ~date_achat~ et non ~dt_achat~ !
 
