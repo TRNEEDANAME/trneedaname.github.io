@@ -7,16 +7,6 @@ tags = ["fiches", "javascript", "web"]
 draft = false
 +++
 
-Le javascript est utilisé dans le web.
-
-<!--more-->
-
-
-## Aller au exercices {#aller-au-exercices}
-
-Les exercices peuvent se trouver ici : [ Exercices ]({{< relref "Exercices de Javascript" >}})
-
-
 ## Le JavaScript, c'est quoi ? {#le-javascript-c-est-quoi}
 
 Le langage `JavaScript` est interprété, ce qui veut dire que chaque instruction est exécutée au moment de l’exécution dans le navigateur.
@@ -34,6 +24,19 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.
 >> JS est sensible à la syntaxe mais utilise des accolades `{}` pour définir les blocs, contrairement à Python qui utilise l'indentation.
 >> 
 > Toutes les conventions sont disponibles sur [W3School](https://www.w3schools.com/js/js_conventions.asp).
+
+
+## Les liens {#les-liens}
+
+
+### Exercices {#exercices}
+
+Les exercices peuvent se trouver ici : [ Exercices ]({{< relref "Exercices de Javascript" >}})
+
+
+### Demandes du prof {#demandes-du-prof}
+
+Le professeur à des demandes spécifiques : [ attentes du prof ]({{< relref "profs-js" >}})
 
 
 ## Les types et variables {#les-types-et-variables}
@@ -85,9 +88,38 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.
 >  let animaux = ["chien","chat","poisson","chameau"];
 >  console.log(age);
 >  console.log(nom);
->  console.log(animaux[0]);
->  console.log(`Le type de 'age' est ${typeof age} et celui de 'nom' est ${typeof nom}`);
+>  console.log(animaux);
+>  console.log(`Le type de 'age' est ${typeof age} et celui de 'nom' est ${typeof nom}, le type de 'animaux' est ${typeof animaux}`);
 > ```
+> 
+
+> [!TIP]- A voir
+> Le `type` de la liste `animaux` est un `object`.
+> 
+> Le javascript est un language dit "orienté objet", cela veut dire qu'il est possible d'encapsuler des conceptes en objets
+> 
+> Par exemple
+> 
+>> [!CODE] javascript
+>>  ```javascript
+>>  class voiture {
+>>      constructor(marque, nom) {
+>>          this.marque = marque;
+>>          /*
+>>            le `this.marque` définit l'élément de la classe, le `marque` est le paramètre de la fonction
+>>          ,*/
+>>          this.nom = nom;
+>>      }
+>>      donneInfo() {
+>>          console.log(`La voiture ${this.nom} est de marque ${this.marque}`);
+>>      }
+>>  }
+>>  // On instancie 2 voitures différentes
+>>  var voiture1 = new voiture("Toyota", "Corolla");
+>>  var voiture2 = new voiture("Renault", "Espace");
+>>  voiture1.donneInfo();
+>>  voiture2.donneInfo();
+>> ```
 
 Comme montré, le Javascript n'a pas de `types` prédéfinis comme d'autres langages (Java, C++, C, ...). Les types sont définis par l'interpréteur.
 Cela permet de redéfinir les types à la volée.

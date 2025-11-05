@@ -67,7 +67,16 @@ Il peut utiliser des variables et conditions.&lt;/p&gt;
       <link>http://localhost:1313/fiches/javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/fiches/javascript/</guid>
-      <description>&lt;p&gt;Le javascript est utilisé dans le web.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;le-javascript-c-est-quoi&#34;&gt;Le JavaScript, c&amp;rsquo;est quoi ?&lt;/h2&gt;
+&lt;p&gt;Le langage &lt;code&gt;JavaScript&lt;/code&gt; est interprété, ce qui veut dire que chaque instruction est exécutée au moment de l’exécution dans le navigateur.
+Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt;
+
+    &lt;div class=&#34;admonition memo&#34;&gt;
+      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;path d=&#34;M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z&#34;/&gt;&lt;/svg&gt;
+        &lt;span&gt;Convention&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;admonition-content&#34;&gt;
+        &lt;p&gt;Le Javascript utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Camel_case&#34;&gt;Camel Case&lt;/a&gt; pour nommer les variables et fonctions, par exemple on écrira &lt;code&gt;maVariable&lt;/code&gt;, les opération on toujours un espace&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python</title>
