@@ -1,0 +1,311 @@
+#+TITLE: Bash
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: fiches
+#+DATE: 2025-11-05
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: true
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: fiches
+
+** Le Bash, c’est quoi ?
+
+Le langage =Bash= (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.  
+Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.
+
+#+begin_memo Convention
+Les scripts Bash ont généralement l’extension =~.sh~= et commencent toujours par une ligne d’en-tête (appelée *shebang*) :
+
+#+begin_src bash
+#!/bin/bash
+#+end_src
+
+Les conventions recommandent :
+- d’utiliser des *minuscules* pour les noms de variables et de fonctions ;
+- de séparer les mots par des underscores `_` :  
+  ~ma_variable~, ~ma_fonction()~ ;
+- d’éviter les espaces autour des opérateurs d’affectation :
+  ~x=10~ (et non ~x = 10~).
+#+end_memo
+
+** Les variables
+
+#+begin_src bash
+#!/bin/bash
+
+nom="Tom"
+age=20
+etudiant=true
+
+echo "Nom : $nom"
+echo "Âge : $age"
+echo "Étudiant : $etudiant"
+#+end_src
+
+#+begin_tip À savoir
+- Pas d’espace avant ou après ~=~
+- Pour utiliser une variable, on écrit ~$nom_variable~
+- Les variables sont toujours des chaînes de caractères, même si elles contiennent des nombres
+#+end_tip
+
+*** Les tableaux
+
+#+begin_src bash
+animaux=("chien" "chat" "poisson" "chameau")
+
+echo "Premier animal : ${animaux[0]}"
+echo "Tous les animaux : ${animaux[@]}"
+echo "Nombre d'animaux : ${#animaux[@]}"
+#+end_src
+
+#+begin_tip À savoir
+Les indices commencent à 0.  
+~[@]~ permet d’afficher tous les éléments, ~#~ donne la taille du tableau.
+#+end_tip
+
+** Entrées / sorties
+
+*** Les entrées
+
+Lire une valeur entrée par l’utilisateur avec ~read~ :
+
+#+begin_src bash
+read -p "Quel est ton nom ? " nom
+echo "Bonjour $nom !"
+#+end_src
+
+*** Les sorties
+
+Afficher un texte avec ~echo~ :
+
+#+begin_src bash
+echo "Hello World !"
+#+end_src
+
+#+begin_note Options utiles
+- ~-n~ : n’ajoute pas de retour à la ligne  
+- ~-e~ : permet d’interpréter les caractères spéciaux comme ~\n~ (nouvelle ligne)
+#+end_note
+
+** Les conditions
+
+#+begin_src bash
+read -p "Quel est ton âge ? " age
+
+if [ "$age" -lt 18 ]; then
+  echo "Tu es mineur."
+elif [ "$age" -eq 18 ]; then
+  echo "Tu viens d’avoir la majorité !"
+else
+  echo "Tu es majeur."
+fi
+#+end_src
+
+#+begin_tip À savoir
+- Les crochets ~[~ et ~]~ entourent les conditions (avec espaces obligatoires)  
+- Les opérateurs numériques :  
+  ~-lt~ (~<~), ~-le~ (~<=~), ~-gt~ (~>~), ~-ge~ (~>=~), ~-eq~ (~=~), ~-ne~ (~!=~)
+- Les chaînes de caractères :  
+  ~==~, ~!=~, ~-z~ (vide), ~-n~ (non vide)
+#+end_tip
+
+** Les boucles
+
+*** Boucle for
+
+#+begin_src bash
+for i in {1..5}; do
+  echo "Itération $i"
+done
+#+end_src
+
+*** Boucle while
+
+#+begin_src bash
+i=0
+while [ $i -lt 5 ]; do
+  echo "Valeur : $i"
+  ((i++))
+done
+#+end_src
+
+*** Boucle until
+
+#+begin_src bash
+i=0
+until [ $i -ge 5 ]; do
+  echo "Compteur : $i"
+  ((i++))
+done
+#+end_src
+
+** Les fonctions
+
+#+begin_src bash
+ma_fonction() {
+  echo "Hello depuis une fonction !"
+}
+
+ma_fonction
+#+end_src
+
+#+begin_note Avec paramètres
+#+begin_src bash
+dire_bonjour() {
+  nom=$1
+  echo "Bonjour $nom !"
+}
+
+dire_bonjour "Alice"
+dire_bonjour "Bob"
+#+end_src
+#+end_note
+
+** Les cas (switch)
+
+#+begin_src bash
+read -p "Entre une lettre : " lettre
+
+case $lettre in
+  a|e|i|o|u|y)
+    echo "C'est une voyelle"
+    ;;
+  *)
+    echo "Pas une voyelle"
+    ;;
+esac
+#+end_src
+
+#+begin_note Décomposition
+- Chaque *motif* est séparé par ~|~  
+- ~;;~ marque la fin d’un bloc  
+- ~*~ correspond au cas par défaut  
+- ~esac~ termine la structure
+#+end_note
+
+** Les tests de fichiers
+
+#+begin_src bash
+fichier="test.txt"
+
+if [ -f "$fichier" ]; then
+  echo "Le fichier existe."
+else
+  echo "Le fichier n'existe pas."
+fi
+#+end_src
+
+#+begin_note Options utiles
+- ~-f~ : fichier régulier  
+- ~-d~ : dossier  
+- ~-e~ : existe  
+- ~-r~, ~-w~, ~-x~ : lisible, modifiable, exécutable
+#+end_note
+
+** Piping et redirections
+
+Les pipes (~|~) permettent d’envoyer la sortie d’une commande comme entrée d’une autre commande.  
+Les redirections (~>~, ~>>~, ~<~) permettent de manipuler les flux d’entrée/sortie.
+
+#+begin_src bash
+# Exemple simple : envoyer la sortie de ~ls~ à ~grep~
+ls | grep ".sh"
+
+# Rediriger la sortie vers un fichier
+echo "Bonjour" > fichier.txt
+
+# Ajouter sans écraser
+echo "Encore une ligne" >> fichier.txt
+
+# Lire depuis un fichier
+cat < fichier.txt
+#+end_src
+
+#+begin_note Décomposition
+- ~|~ : enchaîne les commandes  
+- ~>~ : écrit dans un fichier (écrase)  
+- ~>>~ : ajoute à un fichier  
+- ~<~ : lit à partir d’un fichier
+#+end_note
+
+** Commandes utiles en ligne de commande
+
+*** grep
+
+~grep~ cherche du texte dans un fichier ou dans la sortie d’une commande.
+
+#+begin_src bash
+grep "chien" animaux.txt          # cherche les lignes contenant "chien"
+ls | grep "sh"                    # filtre uniquement les fichiers .sh
+grep -i "bonjour" fichier.txt     # ignore la casse
+grep -r "main" ./src              # recherche récursive dans un dossier
+#+end_src
+
+*** cut
+
+~cut~ découpe les lignes selon un délimiteur.
+
+#+begin_src bash
+cat data.csv | cut -d "," -f 1    # affiche la première colonne
+#+end_src
+
+*** sort
+
+Trie les lignes d’un fichier ou d’une commande.
+
+#+begin_src bash
+sort noms.txt             # tri alphabétique
+sort -n notes.txt         # tri numérique
+sort -r noms.txt          # tri inverse
+#+end_src
+
+*** uniq
+
+Supprime les doublons (souvent combiné avec ~sort~).
+
+#+begin_src bash
+sort noms.txt | uniq
+#+end_src
+
+*** wc
+
+Compte le nombre de lignes, mots, ou caractères.
+
+#+begin_src bash
+wc -l fichier.txt   # lignes
+wc -w fichier.txt   # mots
+wc -c fichier.txt   # caractères
+#+end_src
+
+*** awk
+
+Permet de manipuler et formater des colonnes (langage de traitement de texte).
+
+#+begin_src bash
+awk '{print $1, $3}' data.txt       # affiche la 1re et 3e colonne
+awk -F, '{print $2}' data.csv       # colonne 2 avec virgule comme séparateur
+#+end_src
+
+*** sed
+
+Permet de rechercher et remplacer du texte.
+
+#+begin_src bash
+sed 's/chat/chien/g' animaux.txt        # remplace "chat" par "chien"
+sed -i 's/chien/loup/g' animaux.txt     # remplace directement dans le fichier
+#+end_src
+
+#+begin_tip Astuce
+Les combiner permet de créer de puissants pipelines de traitement de texte :
+
+#+begin_src bash
+cat log.txt | grep "ERROR" | cut -d " " -f 3 | sort | uniq -c | sort -nr
+#+end_src
+
+Ce pipeline :
+1. extrait les lignes contenant “ERROR”  
+2. prend la 3e colonne  
+3. trie et compte les occurrences  
+4. affiche les plus fréquentes
+#+end_tip

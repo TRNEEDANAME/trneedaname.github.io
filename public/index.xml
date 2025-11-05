@@ -6,7 +6,7 @@
     <description>Recent content on Dev blog</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fiches</title>
@@ -26,6 +26,22 @@
 &lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/css/&#34;&gt; Cours CSS &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;sql&#34;&gt;SQL&lt;/h2&gt;
 &lt;p&gt;Le SQL est un langage utilisé dans la requète de bases de données.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/fiches/bash/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/bash/</guid>
+      <description>&lt;h2 id=&#34;le-bash-c-est-quoi&#34;&gt;Le Bash, c’est quoi ?&lt;/h2&gt;
+&lt;p&gt;Le langage &lt;code&gt;Bash&lt;/code&gt; (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
+Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.&lt;/p&gt;
+
+    &lt;div class=&#34;admonition memo&#34;&gt;
+      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;path d=&#34;M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z&#34;/&gt;&lt;/svg&gt;
+        &lt;span&gt;Convention&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;admonition-content&#34;&gt;
+        &lt;p&gt;Les scripts Bash ont généralement l’extension &lt;code&gt;~.sh~&lt;/code&gt; et commencent toujours par une ligne d’en-tête (appelée &lt;strong&gt;shebang&lt;/strong&gt;) :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ability Creator</title>
@@ -80,12 +96,44 @@ Il peut utiliser des variables et conditions.&lt;/p&gt;
 &lt;p&gt;Les attributs utilise un ordre, par exemple &lt;code&gt;font-family&lt;/code&gt;, &lt;code&gt;font-style&lt;/code&gt;&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>demande prof</title>
+      <link>http://localhost:1313/fiches/demande-prof/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/demande-prof/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Utiliser &lt;code&gt;console.log(...)&lt;/code&gt; n&amp;rsquo;est pas autoriser.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
       <title>profs-js</title>
       <link>http://localhost:1313/fiches/profs-js/</link>
       <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/fiches/profs-js/</guid>
       <description>&lt;h2 id=&#34;output&#34;&gt;Output&lt;/h2&gt;
 &lt;p&gt;Utiliser &lt;code&gt;console.log(...)&lt;/code&gt; n&amp;rsquo;est pas autoriser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Games</title>
+      <link>http://localhost:1313/moc/games/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/moc/games/</guid>
+      <description>&lt;p&gt;Everything I write about games, from RTS to FPS to the hell that is Satisfactory&amp;hellip;
+This page will have all of the games I play, RP characters I did and others stuff&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Project Zomboid</title>
+      <link>http://localhost:1313/gaming/project-zomboid/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/gaming/project-zomboid/</guid>
+      <description>&lt;p&gt;Project Zomboid is a game I play a lot, I especially like doing Roleplay&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Project Zomboid Roleplay</title>
+      <link>http://localhost:1313/gaming/project-zomboid-roleplay/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/gaming/project-zomboid-roleplay/</guid>
+      <description>&lt;h2 id=&#34;serious-survival-roleplay--ssr&#34;&gt;Serious Survival Roleplay (SSR)&lt;/h2&gt;
+&lt;p&gt;SSR was the first server I played on&lt;/p&gt;</description>
     </item>
     <item>
       <title>The resistance</title>
@@ -135,7 +183,9 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt
         &lt;span&gt;Convention&lt;/span&gt;
       &lt;/div&gt;
       &lt;div class=&#34;admonition-content&#34;&gt;
-        &lt;p&gt;Le Javascript utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Camel_case&#34;&gt;Camel Case&lt;/a&gt; pour nommer les variables et fonctions, par exemple on écrira &lt;code&gt;maVariable&lt;/code&gt;, les opération on toujours un espace&lt;/p&gt;</description>
+        &lt;p&gt;Le JavaScript utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Camel_case&#34;&gt;Camel Case&lt;/a&gt; pour nommer les variables et fonctions.
+Par exemple, on écrira &lt;code&gt;maVariable&lt;/code&gt;.
+Les opérations comportent toujours un espace :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python</title>

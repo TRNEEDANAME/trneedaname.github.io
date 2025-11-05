@@ -1,14 +1,3 @@
-<!-- DEBUG language-runners forced (defensive) -->
-{{/* Adjust these lists if you later re-enable detection */}}
-
-{{/* CSS */}}
-{{ $css := resources.Get "css/code-runner.css" }}
-{{ if $css }}
-  {{ $cssPipe := $css | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $cssPipe.RelPermalink }}" integrity="{{ $cssPipe.Data.Integrity }}">
-{{ else }}
-  <!-- MISSING assets/css/code-runner.css -->
-{{ end }}
 
 {{/* PYTHON */}}
 {{ $py := resources.Get "js/python-runner.js" }}
@@ -19,20 +8,26 @@
   <!-- MISSING assets/js/python-runner.js -->
 {{ end }}
 
-{{/* JS runner (optional) */}}
+{{/* JS runner */}}
 {{ $js := resources.Get "js/js-runner.js" }}
 {{ if $js }}
   {{ $jsPipe := $js | minify | fingerprint }}
-  <script defer src="{{ $jsPipe.RelPermalink }}" integrity="{{ $jsPipe.Data.Integrity }}"></script>
+<script defer src="{{ $jsPipe.RelPermalink }}" integrity="{{ $jsPipe.Data.Integrity }}"></script>
 {{ else }}
-  <!-- MISSING assets/js/js-runner.js -->
 {{ end }}
 
-{{/* SQL runner (optional) */}}
+{{/* SQL runner */}}
 {{ $sql := resources.Get "js/sql-runner.js" }}
 {{ if $sql }}
-  {{ $sqlPipe := $sql | minify | fingerprint }}
-  <script defer src="{{ $sqlPipe.RelPermalink }}" integrity="{{ $sqlPipe.Data.Integrity }}"></script>
+{{ $sqlPipe := $sql | minify | fingerprint }}
+<script defer src="{{ $sqlPipe.RelPermalink }}" integrity="{{ $sqlPipe.Data.Integrity }}"></script>
 {{ else }}
-  <!-- MISSING assets/js/sql-runner.js -->
+{{ end }}
+
+{{/* BASH runner */}}
+{{ $bash := resources.Get "js/bash-runner.js" }}
+{{ if $bash }}
+{{ $bashPipe := $bash | minify | fingerprint }}
+<script defer src="{{ $bashPipe.RelPermalink }}" integrity="{{ $bashPipe.Data.Integrity }}"></script>
+{{ else }}
 {{ end }}

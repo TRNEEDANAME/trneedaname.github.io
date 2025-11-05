@@ -13,7 +13,9 @@ Le langage `JavaScript` est interprété, ce qui veut dire que chaque instructio
 Il peut manipuler des variables, des fonctions, le DOM, et plus encore.
 
 > [!MEMO] Convention
-> Le Javascript utilise le [Camel Case](https://fr.wikipedia.org/wiki/Camel_case) pour nommer les variables et fonctions, par exemple on écrira `maVariable`, les opération on toujours un espace
+> Le JavaScript utilise le [Camel Case](https://fr.wikipedia.org/wiki/Camel_case) pour nommer les variables et fonctions.
+> Par exemple, on écrira `maVariable`.
+> Les opérations comportent toujours un espace :
 > 
 >> [!CODE] javascript
 >>  ```javascript
@@ -36,21 +38,21 @@ Les exercices peuvent se trouver ici : [ Exercices ]({{< relref "Exercices de Ja
 
 ### Demandes du prof {#demandes-du-prof}
 
-Le professeur à des demandes spécifiques : [ attentes du prof ]({{< relref "profs-js" >}})
+Le professeur a des demandes spécifiques : [ attentes du prof ]({{< relref "demande prof" >}})
 
 
 ## Les types et variables {#les-types-et-variables}
 
 
-### Différences de `var` et `let` {#différences-de-var-et-let}
+### Différences entre `var` et `let` {#différences-entre-var-et-let}
 
 > [!TIP] Utilisation de var et let
 > 
 > 
-> `var` à plusieurs problèmes :
+> `var` présente plusieurs problèmes :
 > 
 > -   Portée : fonction (ou globale si déclarée en dehors d’une fonction).
-> -   Remontée : la déclaration est remontée en haut de la portée, mais l’initialisation ne l’est pas.
+> -   Remontée : la déclaration est remontée en haut de la portée, mais pas l’initialisation.
 > -   Peut être redéclarée dans la même portée sans erreur.
 > 
 > <!--listend-->
@@ -65,7 +67,7 @@ Le professeur à des demandes spécifiques : [ attentes du prof ]({{< relref "pr
 >>  console.log(x); // 20 (toujours la même variable)
 >> ```
 >> 
-> `let` est moderne et ne présente pas ces problèmes.
+> `let` est plus moderne et ne présente pas ces problèmes.
 > 
 >> [!CODE] javascript
 >>  ```javascript
@@ -85,28 +87,26 @@ Le professeur à des demandes spécifiques : [ attentes du prof ]({{< relref "pr
 >  let age = 20;
 >  let nom = "Tom";
 >  let etudiant = true;
->  let animaux = ["chien","chat","poisson","chameau"];
+>  let animaux = ["chien", "chat", "poisson", "chameau"];
 >  console.log(age);
 >  console.log(nom);
 >  console.log(animaux);
->  console.log(`Le type de 'age' est ${typeof age} et celui de 'nom' est ${typeof nom}, le type de 'animaux' est ${typeof animaux}`);
+>  console.log(`Le type de 'age' est ${typeof age}, celui de 'nom' est ${typeof nom} et le type de 'animaux' est ${typeof animaux}`);
 > ```
 > 
 
-> [!TIP]- A voir
+> [!TIP]- À savoir
 > Le `type` de la liste `animaux` est un `object`.
 > 
-> Le javascript est un language dit "orienté objet", cela veut dire qu'il est possible d'encapsuler des conceptes en objets
-> 
-> Par exemple
+> Le JavaScript est un langage dit "orienté objet", ce qui signifie qu’il est possible d’encapsuler des concepts en objets.
 > 
 >> [!CODE] javascript
 >>  ```javascript
->>  class voiture {
+>>  class Voiture {
 >>      constructor(marque, nom) {
 >>          this.marque = marque;
 >>          /*
->>            le `this.marque` définit l'élément de la classe, le `marque` est le paramètre de la fonction
+>>            le `this.marque` définit l'attribut de la classe, le `marque` est le paramètre de la fonction
 >>          ,*/
 >>          this.nom = nom;
 >>      }
@@ -115,13 +115,14 @@ Le professeur à des demandes spécifiques : [ attentes du prof ]({{< relref "pr
 >>      }
 >>  }
 >>  // On instancie 2 voitures différentes
->>  var voiture1 = new voiture("Toyota", "Corolla");
->>  var voiture2 = new voiture("Renault", "Espace");
+>>  var voiture1 = new Voiture("Toyota", "Corolla");
+>>  var voiture2 = new Voiture("Renault", "Espace");
 >>  voiture1.donneInfo();
 >>  voiture2.donneInfo();
 >> ```
 
-Comme montré, le Javascript n'a pas de `types` prédéfinis comme d'autres langages (Java, C++, C, ...). Les types sont définis par l'interpréteur.
+Comme montré, le JavaScript n’a pas de `types` prédéfinis comme d’autres langages (Java, C++, C, ...).
+Les types sont définis par l’interpréteur.
 Cela permet de redéfinir les types à la volée.
 
 
@@ -139,9 +140,9 @@ Cela permet de redéfinir les types à la volée.
 >>  console.log(typeof age === "string");
 >> ```
 
-> [!TIP] A savoir
-> Même si utiliser `==` semble être bon il est recommandé de ne pas l'utiliser.
-> Privilégiez `===` pour la vérification de types
+> [!TIP] À savoir
+> Même si utiliser `==` semble fonctionner, il est recommandé de ne pas l’utiliser.
+> Privilégiez `===` pour la vérification stricte des types.
 
 
 ## Entrées / sorties {#entrées-sorties}
@@ -149,7 +150,7 @@ Cela permet de redéfinir les types à la volée.
 
 ### Les entrées {#les-entrées}
 
-Demander une entrée utilisateur avec `prompt()`.
+Demander une entrée utilisateur avec `prompt()` :
 
 > [!CODE] javascript
 >  ```javascript
@@ -169,12 +170,12 @@ Demander une entrée utilisateur avec `prompt()`.
 > ```
 
 
-#### Version site {#version-site}
+#### Version site (texte) {#version-site--texte}
 
 > [!CODE] html
 >  ```html
 >  <!doctype html>
->  <html lang="en">
+>  <html lang="fr">
 >    <head>
 >      <meta charset="UTF-8"/>
 >      <link href="style.css" rel="stylesheet"/>
@@ -185,17 +186,25 @@ Demander une entrée utilisateur avec `prompt()`.
 >      <p id="texte_a_changer"></p>
 >    </body>
 >         <script>
->           let texte = document.getElementById("texte_a_changer")
->           texte.textContent = "Hello World !"
+>           let texte = document.getElementById("texte_a_changer");
+>           texte.textContent = "Hello World !";
 >         </script>
 >  </html>
 > ```
 > 
 
 > [!NOTE] Décomposition
-> -   `let texte` : crée un variable `texte`
-> -   `document.getElementById("texte_a_changer")` : `document` désigne simplement la page web, `getElementById` selectionne l'élément avec l'id `texte_a_changer` (ici un `<p>`)
-> -   `texte.textContent` : redéfini le contenu de la variable (donc ici le contenue de l'HTML)
+> -   `let texte` : crée une variable `texte`
+> -   `document.getElementById("texte_a_changer")` : `document` désigne la page web ; `getElementById` sélectionne l’élément avec l’id `texte_a_changer` (ici un `<p>`)
+> -   `texte.textContent` : redéfinit le contenu de la variable (et donc le contenu HTML)
+
+
+#### Version site (alert) {#version-site--alert}
+
+> [!CODE] javascript
+>  ```javascript
+>  alert("Une alerte");
+> ```
 
 
 ## Les fonctions {#les-fonctions}
@@ -203,21 +212,30 @@ Demander une entrée utilisateur avec `prompt()`.
 > [!CODE] javascript
 >  ```javascript
 >  function maFonction(age) {
+>    if (isNaN(age)) {
+>      alert("Veuillez rentrer un nombre.");
+>      return maFonction(prompt("Quel est votre âge ?"));
+>     /*
+>     Ici on return la même fonction si la condition `isNaN` (Is Not A Number -> 'N'est pas un nombre) est vrai, c'est la récursivité.
+>     C'est utilisé pour ce genre de code demandant un input à l'utilisateur pour éviter les erreurs d'entrées.
+>     C'est aussi utile pour les PGCD et autres formules mathématiques.
+>     ,*/
+>    }
 >    age = parseInt(age);
 >    age = age + 1;
 >    console.log(`Vous avez ${age} ans`);
 >  }
->  maFonction(prompt("Quel est votre age ?"));
+>  maFonction(prompt("Quel est votre âge ?"));
 > ```
 
 
 ## Les conditions {#les-conditions}
 
-Les conditions permettent de vérifier si une valeur est vrai ou fausse
+Les conditions permettent de vérifier si une valeur est vraie ou fausse.
 
 > [!CODE] javascript
 >  ```javascript
->  let age = prompt("Age ?");
+>  let age = prompt("Âge ?");
 >  if (age < 18) {
 >    console.log("Tu es mineur");
 >  } else {
@@ -258,7 +276,7 @@ En JavaScript, le `switch` permet de comparer une expression à plusieurs valeur
 > [!CODE] javascript
 >  ```javascript
 >  let t = prompt("Saisir un caractère :");
->  switch(t) {
+>  switch (t) {
 >      case "a":
 >      case "e":
 >      case "i":
@@ -275,7 +293,7 @@ En JavaScript, le `switch` permet de comparer une expression à plusieurs valeur
 > 
 
 > [!NOTE] Décomposition
-> -   `switch(expression)` évalue l'`expression`.
-> -   Chaque `case` compare la valeur de l'expression.
-> -   `break` empêche l'exécution des cases suivantes.
-> -   `default` est exécuté si aucune valeur ne correspond.
+> -   `switch(expression)` évalue l’~expression~
+> -   Chaque `case` compare la valeur de l’expression
+> -   `break` empêche l’exécution des cases suivantes
+> -   `default` est exécuté si aucune valeur ne correspond

@@ -1,5 +1,5 @@
 
-#+TITLE: profs-js
+#+TITLE: demande prof
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
 #+AUTHOR: TRNEEDANAME

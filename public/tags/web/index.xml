@@ -41,6 +41,15 @@ Il peut utiliser des variables et conditions.&lt;/p&gt;
 &lt;p&gt;Les attributs utilise un ordre, par exemple &lt;code&gt;font-family&lt;/code&gt;, &lt;code&gt;font-style&lt;/code&gt;&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>demande prof</title>
+      <link>http://localhost:1313/fiches/demande-prof/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/demande-prof/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Utiliser &lt;code&gt;console.log(...)&lt;/code&gt; n&amp;rsquo;est pas autoriser.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
       <title>Javascript</title>
       <link>http://localhost:1313/fiches/javascript/</link>
       <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
@@ -54,7 +63,9 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.&lt;/p&gt
         &lt;span&gt;Convention&lt;/span&gt;
       &lt;/div&gt;
       &lt;div class=&#34;admonition-content&#34;&gt;
-        &lt;p&gt;Le Javascript utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Camel_case&#34;&gt;Camel Case&lt;/a&gt; pour nommer les variables et fonctions, par exemple on écrira &lt;code&gt;maVariable&lt;/code&gt;, les opération on toujours un espace&lt;/p&gt;</description>
+        &lt;p&gt;Le JavaScript utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Camel_case&#34;&gt;Camel Case&lt;/a&gt; pour nommer les variables et fonctions.
+Par exemple, on écrira &lt;code&gt;maVariable&lt;/code&gt;.
+Les opérations comportent toujours un espace :&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
