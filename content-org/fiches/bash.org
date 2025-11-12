@@ -15,7 +15,7 @@ Le langage =Bash= (Bourne Again SHell) est un langage de script interprété par
 Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.
 
 #+begin_memo Convention
-Les scripts Bash ont généralement l’extension =~.sh~= et commencent toujours par une ligne d’en-tête (appelée *shebang*) :
+Les scripts Bash ont généralement l’extension =.sh= et commencent toujours par une ligne d’en-tête (appelée *shebang*) :
 
 #+begin_src bash
 #!/bin/bash
@@ -71,7 +71,7 @@ Les indices commencent à 0.
 Lire une valeur entrée par l’utilisateur avec ~read~ :
 
 #+begin_src bash
-read -p "Quel est ton nom ? " nom
+read "Quel est ton nom ? " nom
 echo "Bonjour $nom !"
 #+end_src
 
@@ -209,7 +209,7 @@ Les pipes (~|~) permettent d’envoyer la sortie d’une commande comme entrée 
 Les redirections (~>~, ~>>~, ~<~) permettent de manipuler les flux d’entrée/sortie.
 
 #+begin_src bash
-# Exemple simple : envoyer la sortie de ~ls~ à ~grep~
+# Exemple simple : envoyer la sortie de `ls` à `grep`
 ls | grep ".sh"
 
 # Rediriger la sortie vers un fichier
@@ -276,6 +276,22 @@ Compte le nombre de lignes, mots, ou caractères.
 wc -l fichier.txt   # lignes
 wc -w fichier.txt   # mots
 wc -c fichier.txt   # caractères
+#+end_src
+
+*** tails
+
+Renvoi les dernière ligne(s) d'un fichier
+
+#+begin_src bash
+tail -n 1 fichier.txt # lignes
+#+end_src
+
+*** head
+
+Renvoi les première ligne(s) d'un fichier
+
+#+begin_src bash
+head -n 1 fichier.txt
 #+end_src
 
 *** awk

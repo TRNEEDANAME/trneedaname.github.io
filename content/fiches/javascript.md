@@ -204,7 +204,12 @@ Demander une entrée utilisateur avec `prompt()` :
 > [!CODE] javascript
 >  ```javascript
 >  alert("Une alerte");
+>  confirm("Confirmez ?")
 > ```
+
+La fonction `alert` prend le focus et force l'utilisateur à lire le texte.
+
+La fonction `confirm` renvoi `true` si l'utilisateur appuie sur `OK` ou `false` sinon.
 
 
 ## Les fonctions {#les-fonctions}

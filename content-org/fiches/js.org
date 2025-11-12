@@ -189,7 +189,12 @@ console.log("Hello World !");
 
 #+begin_src javascript
 alert("Une alerte");
+confirm("Confirmez ?")
 #+end_src
+
+La fonction ~alert~ prend le focus et force l'utilisateur à lire le texte.
+
+La fonction ~confirm~ renvoi ~true~ si l'utilisateur appuie sur =OK= ou ~false~ sinon.
 
 ** Les fonctions
 

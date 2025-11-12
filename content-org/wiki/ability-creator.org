@@ -31,3 +31,6 @@ This file lists all of the effects that can be used to create abilities.
 **** XComAbilityCreatorMain
 
 This file is the main config, where abilities are created.
+
+** The struct
+

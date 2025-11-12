@@ -10,5 +10,6 @@
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 #+HUGO_SECTION: fiches
 
-- Utiliser ~console.log(...)~ n'est pas autoriser.
-
+- Utilisez ~console.log(...)~ n'est pas autoriser.
+- Utilisez ~prompt(...)~ pour les entrées.
+- Utilisez ~alert(...)~ et ~confirm(...)~ pour les sorties

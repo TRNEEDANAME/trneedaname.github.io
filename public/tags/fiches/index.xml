@@ -6,7 +6,7 @@
     <description>Recent content in Fiches on Dev blog</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/fiches/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fiches</title>
@@ -26,22 +26,6 @@
 &lt;p&gt;&lt;a href=&#34;http://localhost:1313/fiches/css/&#34;&gt; Cours CSS &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;sql&#34;&gt;SQL&lt;/h2&gt;
 &lt;p&gt;Le SQL est un langage utilisé dans la requète de bases de données.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>http://localhost:1313/fiches/bash/</link>
-      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/bash/</guid>
-      <description>&lt;h2 id=&#34;le-bash-c-est-quoi&#34;&gt;Le Bash, c’est quoi ?&lt;/h2&gt;
-&lt;p&gt;Le langage &lt;code&gt;Bash&lt;/code&gt; (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
-Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.&lt;/p&gt;
-
-    &lt;div class=&#34;admonition memo&#34;&gt;
-      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;path d=&#34;M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z&#34;/&gt;&lt;/svg&gt;
-        &lt;span&gt;Convention&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&#34;admonition-content&#34;&gt;
-        &lt;p&gt;Les scripts Bash ont généralement l’extension &lt;code&gt;~.sh~&lt;/code&gt; et commencent toujours par une ligne d’en-tête (appelée &lt;strong&gt;shebang&lt;/strong&gt;) :&lt;/p&gt;</description>
     </item>
     <item>
       <title>css</title>

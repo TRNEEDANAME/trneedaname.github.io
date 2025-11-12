@@ -5,9 +5,13 @@
 #+FILETAGS: dev-xcom
 #+DATE: 2025-10-14
 #+HUGO_PUBLISHDATE: null
-#+HUGO_DRAFT: false
+#+HUGO_DRAFT: true
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 #+HUGO_SECTION: dev-xcom
 
-The resistance in Xcom
+The resistance in Xcom is, in the lore at least, very capable, they hold ADVENT at bay for a while (mostly by hiding but it works).
+
+In game however, they are supersoldiers and the worst rookies ever at the same time.
+
+They have better accuracy than your soldiers on the first retaliation mission and could defend themselves without you, after a while however, they become useless because their gear and AI never evolve.
 

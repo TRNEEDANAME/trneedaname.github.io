@@ -5,19 +5,10 @@
     <loc>http://localhost:1313/moc/fiches/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/fiches/bash/</loc>
-    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fiches/</loc>
-    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/fiches/</loc>
-    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-11-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/wiki-xcom/ability-creator/</loc>
@@ -29,6 +20,9 @@
     <loc>http://localhost:1313/fiches/demande-prof/</loc>
     <lastmod>2025-11-03T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/fiches/</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2025-11-03T00:00:00+00:00</lastmod>
   </url><url>
@@ -36,6 +30,9 @@
     <lastmod>2025-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fiches/profs-js/</loc>
+    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web/</loc>
@@ -53,25 +50,10 @@
     <loc>http://localhost:1313/dev-xcom/</loc>
     <lastmod>2025-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/moc/games/</loc>
-    <lastmod>2025-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/gaming/</loc>
-    <lastmod>2025-10-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/gaming/</loc>
     <lastmod>2025-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/moc/</loc>
-    <lastmod>2025-10-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/moc/</loc>
-    <lastmod>2025-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/gaming/project-zomboid/</loc>
-    <lastmod>2025-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/gaming/project-zomboid-roleplay/</loc>
     <lastmod>2025-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/dev-xcom/the-resistance/</loc>
@@ -94,6 +76,9 @@
   </url><url>
     <loc>http://localhost:1313/fiches/javascript/</loc>
     <lastmod>2025-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/moc/</loc>
+    <lastmod>2025-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fiches/python/</loc>
     <lastmod>2025-10-08T00:00:00+00:00</lastmod>

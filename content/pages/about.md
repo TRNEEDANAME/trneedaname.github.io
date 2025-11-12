@@ -42,4 +42,4 @@ This site is made using [Hugo](https://gohugo.io/) with [ox-hugo](https://ox-hug
 
 ## Contact me {#contact-me}
 
-To contact me please send me an email to [trneedaname@proton.me](mailto:trneedaname@proton.me) if it is related to this site, otherwise please use fill a bug report on the github repository of the mod / steam page.
+To contact me about this website, please send me an email to [trneedaname@proton.me](mailto:trneedaname@proton.me). Otherwise please use fill a bug / feature report on the github repository of the mod / steam page.
