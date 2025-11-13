@@ -3,12 +3,57 @@
 /* ==========================================================
 
 /* ================= DESIGN TOKENS (EASY TO CHANGE) ================= */
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-VariableFont_wdth,wght.woff2");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-Italic-VariableFont_wdth,wght.woff2");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Noto Sans Display (Variable) */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("/fonts/NotoSansDisplay-VariableFont_wdth,wght.woff2");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("/fonts/NotoSansDisplay-Italic-VariableFont_wdth,wght.woff2");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Ioskeley Mono */
+@font-face {
+  font-family: "Ioskeley Mono";
+  src: url("/fonts/IoskeleyMono-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
     /* Typography */
     --font-base-size: 1.1em;
     --font-code-size: 1.1em;
     --font-sans: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "Noto Sans Mono", "Fira Code", "Consolas", monospace;
+    --font-mono: "Ioskeley Mono", "Fira Code", "Consolas", monospace;
     --font-title: "Noto Sans Display", sans-serif;
     
     /* Spacing */
@@ -152,6 +197,9 @@ html[data-theme="dark"] {
 }
 
 /* ================= GLOBAL STYLES ================= */
+
+
+
 body {
     background-color: var(--theme-bg);
     color: var(--theme-fg);

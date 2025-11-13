@@ -65,7 +65,9 @@ Il peut utiliser des variables et conditions.&lt;/p&gt;
       <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/fiches/demande-prof/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;Utiliser &lt;code&gt;console.log(...)&lt;/code&gt; n&amp;rsquo;est pas autoriser.&lt;/li&gt;
+&lt;li&gt;Utilisez &lt;code&gt;console.log(...)&lt;/code&gt; n&amp;rsquo;est pas autoriser.&lt;/li&gt;
+&lt;li&gt;Utilisez &lt;code&gt;prompt(...)&lt;/code&gt; pour les entrées.&lt;/li&gt;
+&lt;li&gt;Utilisez &lt;code&gt;alert(...)&lt;/code&gt; et &lt;code&gt;confirm(...)&lt;/code&gt; pour les sorties&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>

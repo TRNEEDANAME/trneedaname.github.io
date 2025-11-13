@@ -247,19 +247,13 @@ Si la condition n'est pas vraie mais que l'on veut tester d'autres conditions, o
 
 > [!CODE] python
 >  ```python
->  nombre = 42
+>  nombre = int(input("Veuillez entrer un nombre : "))
 >  if nombre == 42:
 >      print("Le nombre est bien la vie")
 >  elif nombre < 42:
 >      print("Le nombre est inférieur")
 >  elif nombre > 42:
 >      print("Le nombre est supérieur")
->  elif nombre <= 42:
->      print("Le nombre est strictement inférieur")
->  elif nombre >= 42:
->      print("Le nombre est strictement positif")
->  else:
->      print("Autre")
 > ```
 
 

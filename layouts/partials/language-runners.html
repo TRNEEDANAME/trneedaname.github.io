@@ -23,11 +23,3 @@
 <script defer src="{{ $sqlPipe.RelPermalink }}" integrity="{{ $sqlPipe.Data.Integrity }}"></script>
 {{ else }}
 {{ end }}
-
-{{/* BASH runner */}}
-{{ $bash := resources.Get "js/bash-runner.js" }}
-{{ if $bash }}
-{{ $bashPipe := $bash | minify | fingerprint }}
-<script defer src="{{ $bashPipe.RelPermalink }}" integrity="{{ $bashPipe.Data.Integrity }}"></script>
-{{ else }}
-{{ end }}
