@@ -8,7 +8,7 @@
 <!-- MISSING assets/js/python-runner.js -->
 {{ end }}
 {{ end }}
-
+ 
 {{ if in $tags "javascript" }}
 {{ with resources.Get "js/js-runner.js" }}
 {{ $jsPipe := . | minify | fingerprint }}

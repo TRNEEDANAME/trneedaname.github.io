@@ -1,0 +1,26 @@
+#+TITLE: Plane catcher
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: dev
+#+DATE: 2025-11-13
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: true
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: dev
+
+** A plane catcher written in C
+
+The idea is pretty simple, an app that prioritise a parameter when choosing a plane (or multiple) for going from point A to point B.
+
+It can prioritise speed or cost (maybe more later...)
+
+It can also search for multiple planes.
+
+Example, you go from A to B but if you do
+
+#+begin_src goat
+A --> C --> B
+#+end_src
+
+it's cheaper, then it will provide this as an option

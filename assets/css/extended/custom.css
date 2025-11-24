@@ -41,11 +41,13 @@
 
 /* Ioskeley Mono */
 @font-face {
-  font-family: "Ioskeley Mono";
-  src: url("/fonts/IoskeleyMono-Medium.woff2");
+  font-family: "TX-02";
+  src: url("/fonts/TX-02-Regular.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
+  font-style:unset;
   font-display: swap;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "kern" 1;
 }
 
 :root {
@@ -53,7 +55,7 @@
     --font-base-size: 1.1em;
     --font-code-size: 1.1em;
     --font-sans: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "Ioskeley Mono", "Fira Code", "Consolas", monospace;
+    --font-mono: "TX-02", "Fira Code", "Consolas", monospace;
     --font-title: "Noto Sans Display", sans-serif;
     
     /* Spacing */

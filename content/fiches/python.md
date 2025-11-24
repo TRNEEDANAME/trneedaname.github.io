@@ -75,7 +75,7 @@ Le python est un language interprété utilisé dans beaucoup de domaine
 >  animaux = ["chien", "chat", "poisson", "chameau"]
 >  print(age)
 >  print(nom)
->  print(f"Le type de la variable 'age' est {type(age)} alors que le type de 'nom' est {type(nom)}")
+>  print(f"Le type de la variable 'age' est {type(age)} alors que le type de 'nom' est {type(nom)}, le type de 'etudiant' est {type(etudiant)}")
 > ```
 
 Comme montré, Python n'a pas de `types` prédéfinis comme d'autres langages (Java, C++, C, ...). Les types sont définis par l'interpréteur.
@@ -97,7 +97,7 @@ Cela permet de redéfinir les types à la volée.
 >> ```
 
 > [!TIP] Booléens
-> Pour les vérifications booléennes (`True` ou `False`), utiliser `==` peut être remplacé par `is` pour plus de lisibilité.
+> Pour les vérifications booléennes (`true` ou `false`), utiliser `==` peut être remplacé par `is` pour plus de lisibilité.
 > Les vérifications fausses sont donc `is not`.
 > 
 
@@ -112,10 +112,10 @@ Comme vous pouvez le voir, le résultat est le même.
 >  ```python
 >  nom = "Tom"
 >  print(type(nom) == str)
->  print(type(nom) == bool)
+>  print(type(nom) != bool)
 >  print("Utilisation de 'is' et 'is not'")
 >  print(type(nom) is str)
->  print(type(nom) is bool)
+>  print(type(nom) is not bool)
 > ```
 
 **Utiliser `is` fonctionne quant même.**
@@ -141,7 +141,7 @@ Dans tout les language l'`I/O` (input / output) est très commun, le python rend
 > 
 
 > [!TIP]- String & f-string
-> La fonction `print()` peut paraître un peu différente.
+> La fonction `print()` que j'utilise peut paraître un peu différente.
 > J'utilise des `f-strings` qui permettent d'insérer des variables directement dans les chaînes de caractères avec `{}`.
 
 Pour demander un nombre il faut mettre le `input()` dans un `int()` ou autre.
@@ -175,7 +175,7 @@ Avec le `input()` transformé :
 >  ```python
 >  age = int(input("Quel est votre age ? "))
 >  age = age + 1
->  print("Votre age est donc " + str(age))
+>  print(f"Votre age est donc + {str(age)}")
 > ```
 > 
 
@@ -232,7 +232,7 @@ On peut créer des fonctions avec un nombre illimité de paramètres, par exempl
 
 ## Les conditions {#les-conditions}
 
-Une condition vérifie si ce que vous demandez est `vrai` (`True`) ou `faux` (`False`).
+Une condition vérifie si ce que vous demandez est `vrai` (`true`) ou `faux` (`false`).
 
 > [!CODE] python
 >  ```python
@@ -278,10 +278,12 @@ Les conditions peuvent être enchaînées.
 
 ## Les boucles {#les-boucles}
 
+Les boucle permettent de répeter une suite d'instructions un nombre `n` de fois.
+
 
 ### Boucle for {#boucle-for}
 
-Boucle qui itère sur une séquence.
+Les boucle `for` itère sur une séquence.
 
 Tant que le tableau a des valeurs, on affiche chaque élément
 
@@ -296,7 +298,7 @@ Tant que le tableau a des valeurs, on affiche chaque élément
 > 
 >> [!NOTE] Décomposition
 >> -   `for` : boucle qui itère sur chaque élément d'une séquence.
->> -   `i` : variable représentant l'élément courant.
+>> -   `i` : variable représentant l'élément actuellement lu.
 >> -   `in` : définit sur quelle séquence la boucle s'exécute.
 >> 
 >> Tant que nous sommes dans la plage [0;10], on affiche la valeur.
@@ -317,7 +319,7 @@ Tant que le tableau a des valeurs, on affiche chaque élément
 
 ### Boucle while {#boucle-while}
 
-Boucle qui s'exécute tant que la condition est vraie.
+La boucle `while` s'exécute tant que la condition est vraie.
 
 > [!EXPERIMENT] Exemple n°1
 > Tant que la valeur est inférieure à 5, on l'affiche et on l'incrémente
@@ -327,7 +329,7 @@ Boucle qui s'exécute tant que la condition est vraie.
 >>  i = 0
 >>  while i < 5:
 >>      print(i)
->>      i += 1
+>>      i += 1 # i = i + 1 fait la même chose
 >> ```
 > 
 >> [!NOTE] Décomposition
@@ -348,4 +350,4 @@ Boucle qui s'exécute tant que la condition est vraie.
 >> [!NOTE] Décomposition
 >> -   `liste` : la séquence sur laquelle on travaille
 >> -   `while liste` : boucle continue tant que la liste n'est pas vide
->> -   `pop(0)` : retire le premier élément et le retourne
+>> -   `pop(0)` q: retire le premier élément et le renvoi

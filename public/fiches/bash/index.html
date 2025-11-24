@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bash | Dev blog</title>
+<meta name="keywords" content="fiches">
+<meta name="description" content="Le Bash, c’est quoi ?
+Le langage Bash (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
+Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.
+
+    
+      
+        Convention
+      
+      
+        Les scripts Bash ont généralement l’extension ~.sh~ et commencent toujours par une ligne d’en-tête (appelée shebang) :">
+<meta name="author" content="TRNEEDANAME">
+<link rel="canonical" href="http://localhost:1313/fiches/bash/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1c51f43ded98ac65c1f85dc0403335f756e8a668873141ca23db55ea5a810710.css" integrity="sha256-HFH0Pe2YrGXB&#43;F3AQDM191bopmiHMUHKI9tV6lqBBxA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/fiches/bash/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Dev blog (Alt + H)">Dev blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/fiches/">Fiches</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Bash
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2025-11-05 00:00:00 +0000 UTC'>November 5, 2025</span>&nbsp;·&nbsp;<span>TRNEEDANAME</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary class="toc-title">
+            
+            Table of Contents
+            
+        </summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#le-bash-c-est-quoi">Le Bash, c’est quoi ?</a></li>
+    <li><a href="#les-variables">Les variables</a>
+      <ul>
+        <li><a href="#les-tableaux">Les tableaux</a></li>
+      </ul>
+    </li>
+    <li><a href="#entrées-sorties">Entrées / sorties</a>
+      <ul>
+        <li><a href="#les-entrées">Les entrées</a></li>
+        <li><a href="#les-sorties">Les sorties</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-conditions">Les conditions</a></li>
+    <li><a href="#les-boucles">Les boucles</a>
+      <ul>
+        <li><a href="#boucle-for">Boucle for</a></li>
+        <li><a href="#boucle-while">Boucle while</a></li>
+        <li><a href="#boucle-until">Boucle until</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-fonctions">Les fonctions</a></li>
+    <li><a href="#les-cas--switch">Les cas (switch)</a></li>
+    <li><a href="#les-tests-de-fichiers">Les tests de fichiers</a></li>
+    <li><a href="#piping-et-redirections">Piping et redirections</a></li>
+    <li><a href="#commandes-utiles-en-ligne-de-commande">Commandes utiles en ligne de commande</a>
+      <ul>
+        <li><a href="#grep">grep</a></li>
+        <li><a href="#cut">cut</a></li>
+        <li><a href="#sort">sort</a></li>
+        <li><a href="#uniq">uniq</a></li>
+        <li><a href="#wc">wc</a></li>
+        <li><a href="#awk">awk</a></li>
+        <li><a href="#sed">sed</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="le-bash-c-est-quoi">Le Bash, c’est quoi ?<a hidden class="anchor" aria-hidden="true" href="#le-bash-c-est-quoi">#</a></h2>
+<p>Le langage <code>Bash</code> (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
+Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.</p>
+
+    <div class="admonition memo">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        <span>Convention</span>
+      </div>
+      <div class="admonition-content">
+        <p>Les scripts Bash ont généralement l’extension <code>~.sh~</code> et commencent toujours par une ligne d’en-tête (appelée <strong>shebang</strong>) :</p>
+
+          <link rel="stylesheet" href="/css/vendors/admonitions.css">
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><p>Les conventions recommandent :</p>
+<ul>
+<li>d’utiliser des <strong>minuscules</strong> pour les noms de variables et de fonctions ;</li>
+<li>de séparer les mots par des underscores `_` :
+<code>ma_variable</code>, <code>ma_fonction()</code> ;</li>
+<li>d’éviter les espaces autour des opérateurs d’affectation :
+<code>x=10</code> (et non <code>x = 10</code>).</li>
+</ul>
+      </div>
+    </div><h2 id="les-variables">Les variables<a hidden class="anchor" aria-hidden="true" href="#les-variables">#</a></h2>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">nom</span><span class="o">=</span><span class="s2">&#34;Tom&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">age</span><span class="o">=</span><span class="m">20</span>
+</span></span><span class="line"><span class="cl"><span class="nv">etudiant</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Nom : </span><span class="nv">$nom</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Âge : </span><span class="nv">$age</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Étudiant : </span><span class="nv">$etudiant</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition tip">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+        <span>À savoir</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li>Pas d’espace avant ou après <code>=</code></li>
+<li>Pour utiliser une variable, on écrit <code>$nom_variable</code></li>
+<li>Les variables sont toujours des chaînes de caractères, même si elles contiennent des nombres</li>
+</ul>
+      </div>
+    </div><h3 id="les-tableaux">Les tableaux<a hidden class="anchor" aria-hidden="true" href="#les-tableaux">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">animaux</span><span class="o">=(</span><span class="s2">&#34;chien&#34;</span> <span class="s2">&#34;chat&#34;</span> <span class="s2">&#34;poisson&#34;</span> <span class="s2">&#34;chameau&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Premier animal : </span><span class="si">${</span><span class="nv">animaux</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Tous les animaux : </span><span class="si">${</span><span class="nv">animaux</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Nombre d&#39;animaux : </span><span class="si">${#</span><span class="nv">animaux</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition tip">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+        <span>À savoir</span>
+      </div>
+      <div class="admonition-content">
+        <p>Les indices commencent à 0.
+<code>[@]</code> permet d’afficher tous les éléments, <code>#</code> donne la taille du tableau.</p>
+      </div>
+    </div><h2 id="entrées-sorties">Entrées / sorties<a hidden class="anchor" aria-hidden="true" href="#entrées-sorties">#</a></h2>
+<h3 id="les-entrées">Les entrées<a hidden class="anchor" aria-hidden="true" href="#les-entrées">#</a></h3>
+<p>Lire une valeur entrée par l’utilisateur avec <code>read</code> :</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Quel est ton nom ? &#34;</span> nom
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Bonjour </span><span class="nv">$nom</span><span class="s2"> !&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="les-sorties">Les sorties<a hidden class="anchor" aria-hidden="true" href="#les-sorties">#</a></h3>
+<p>Afficher un texte avec <code>echo</code> :</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Hello World !&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition note">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+        <span>Options utiles</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li><code>-n</code> : n’ajoute pas de retour à la ligne</li>
+<li><code>-e</code> : permet d’interpréter les caractères spéciaux comme <code>\n</code> (nouvelle ligne)</li>
+</ul>
+      </div>
+    </div><h2 id="les-conditions">Les conditions<a hidden class="anchor" aria-hidden="true" href="#les-conditions">#</a></h2>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Quel est ton âge ? &#34;</span> age
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$age</span><span class="s2">&#34;</span> -lt <span class="m">18</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Tu es mineur.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$age</span><span class="s2">&#34;</span> -eq <span class="m">18</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Tu viens d’avoir la majorité !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Tu es majeur.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition tip">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+        <span>À savoir</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li>Les crochets <code>[</code> et <code>]</code> entourent les conditions (avec espaces obligatoires)</li>
+<li>Les opérateurs numériques :
+<code>-lt</code> (<code>&lt;</code>), <code>-le</code> (<code>&lt;=</code>), <code>-gt</code> (<code>&gt;</code>), <code>-ge</code> (<code>&gt;=</code>), <code>-eq</code> (<code>=</code>), <code>-ne</code> (<code>!=</code>)</li>
+<li>Les chaînes de caractères :
+<code>==</code>, <code>!=</code>, <code>-z</code> (vide), <code>-n</code> (non vide)</li>
+</ul>
+      </div>
+    </div><h2 id="les-boucles">Les boucles<a hidden class="anchor" aria-hidden="true" href="#les-boucles">#</a></h2>
+<h3 id="boucle-for">Boucle for<a hidden class="anchor" aria-hidden="true" href="#boucle-for">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> i in <span class="o">{</span>1..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Itération </span><span class="nv">$i</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="boucle-while">Boucle while<a hidden class="anchor" aria-hidden="true" href="#boucle-while">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">[</span> <span class="nv">$i</span> -lt <span class="m">5</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Valeur : </span><span class="nv">$i</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">((</span>i++<span class="o">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="boucle-until">Boucle until<a hidden class="anchor" aria-hidden="true" href="#boucle-until">#</a></h3>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">until</span> <span class="o">[</span> <span class="nv">$i</span> -ge <span class="m">5</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Compteur : </span><span class="nv">$i</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">((</span>i++<span class="o">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h2 id="les-fonctions">Les fonctions<a hidden class="anchor" aria-hidden="true" href="#les-fonctions">#</a></h2>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ma_fonction<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Hello depuis une fonction !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">ma_fonction
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition note">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+        <span>Avec paramètres</span>
+      </div>
+      <div class="admonition-content">
+        
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dire_bonjour<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">nom</span><span class="o">=</span><span class="nv">$1</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Bonjour </span><span class="nv">$nom</span><span class="s2"> !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">dire_bonjour <span class="s2">&#34;Alice&#34;</span>
+</span></span><span class="line"><span class="cl">dire_bonjour <span class="s2">&#34;Bob&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+      </div>
+    </div><h2 id="les-cas--switch">Les cas (switch)<a hidden class="anchor" aria-hidden="true" href="#les-cas--switch">#</a></h2>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Entre une lettre : &#34;</span> lettre
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="nv">$lettre</span> in
+</span></span><span class="line"><span class="cl">  a<span class="p">|</span>e<span class="p">|</span>i<span class="p">|</span>o<span class="p">|</span>u<span class="p">|</span>y<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;C&#39;est une voyelle&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  ,*<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Pas une voyelle&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition note">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+        <span>Décomposition</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li>Chaque <strong>motif</strong> est séparé par <code>|</code></li>
+<li><code>;;</code> marque la fin d’un bloc</li>
+<li><code>*</code> correspond au cas par défaut</li>
+<li><code>esac</code> termine la structure</li>
+</ul>
+      </div>
+    </div><h2 id="les-tests-de-fichiers">Les tests de fichiers<a hidden class="anchor" aria-hidden="true" href="#les-tests-de-fichiers">#</a></h2>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">fichier</span><span class="o">=</span><span class="s2">&#34;test.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$fichier</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Le fichier existe.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Le fichier n&#39;existe pas.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition note">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+        <span>Options utiles</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li><code>-f</code> : fichier régulier</li>
+<li><code>-d</code> : dossier</li>
+<li><code>-e</code> : existe</li>
+<li><code>-r</code>, <code>-w</code>, <code>-x</code> : lisible, modifiable, exécutable</li>
+</ul>
+      </div>
+    </div><h2 id="piping-et-redirections">Piping et redirections<a hidden class="anchor" aria-hidden="true" href="#piping-et-redirections">#</a></h2>
+<p>Les pipes (<code>|</code>) permettent d’envoyer la sortie d’une commande comme entrée d’une autre commande.
+Les redirections (<code>&gt;</code>, <code>&gt;&gt;</code>, <code>&lt;</code>) permettent de manipuler les flux d’entrée/sortie.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Exemple simple : envoyer la sortie de ~ls~ à ~grep~</span>
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep <span class="s2">&#34;.sh&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Rediriger la sortie vers un fichier</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Bonjour&#34;</span> &gt; fichier.txt
+</span></span><span class="line"><span class="cl"><span class="c1"># Ajouter sans écraser</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Encore une ligne&#34;</span> &gt;&gt; fichier.txt
+</span></span><span class="line"><span class="cl"><span class="c1"># Lire depuis un fichier</span>
+</span></span><span class="line"><span class="cl">cat &lt; fichier.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition note">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+        <span>Décomposition</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li><code>|</code> : enchaîne les commandes</li>
+<li><code>&gt;</code> : écrit dans un fichier (écrase)</li>
+<li><code>&gt;&gt;</code> : ajoute à un fichier</li>
+<li><code>&lt;</code> : lit à partir d’un fichier</li>
+</ul>
+      </div>
+    </div><h2 id="commandes-utiles-en-ligne-de-commande">Commandes utiles en ligne de commande<a hidden class="anchor" aria-hidden="true" href="#commandes-utiles-en-ligne-de-commande">#</a></h2>
+<h3 id="grep">grep<a hidden class="anchor" aria-hidden="true" href="#grep">#</a></h3>
+<p><code>grep</code> cherche du texte dans un fichier ou dans la sortie d’une commande.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep <span class="s2">&#34;chien&#34;</span> animaux.txt          <span class="c1"># cherche les lignes contenant &#34;chien&#34;</span>
+</span></span><span class="line"><span class="cl">ls <span class="p">|</span> grep <span class="s2">&#34;sh&#34;</span>                    <span class="c1"># filtre uniquement les fichiers .sh</span>
+</span></span><span class="line"><span class="cl">grep -i <span class="s2">&#34;bonjour&#34;</span> fichier.txt     <span class="c1"># ignore la casse</span>
+</span></span><span class="line"><span class="cl">grep -r <span class="s2">&#34;main&#34;</span> ./src              <span class="c1"># recherche récursive dans un dossier</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="cut">cut<a hidden class="anchor" aria-hidden="true" href="#cut">#</a></h3>
+<p><code>cut</code> découpe les lignes selon un délimiteur.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat data.csv <span class="p">|</span> cut -d <span class="s2">&#34;,&#34;</span> -f <span class="m">1</span>    <span class="c1"># affiche la première colonne</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="sort">sort<a hidden class="anchor" aria-hidden="true" href="#sort">#</a></h3>
+<p>Trie les lignes d’un fichier ou d’une commande.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sort noms.txt             <span class="c1"># tri alphabétique</span>
+</span></span><span class="line"><span class="cl">sort -n notes.txt         <span class="c1"># tri numérique</span>
+</span></span><span class="line"><span class="cl">sort -r noms.txt          <span class="c1"># tri inverse</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="uniq">uniq<a hidden class="anchor" aria-hidden="true" href="#uniq">#</a></h3>
+<p>Supprime les doublons (souvent combiné avec <code>sort</code>).</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sort noms.txt <span class="p">|</span> uniq
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="wc">wc<a hidden class="anchor" aria-hidden="true" href="#wc">#</a></h3>
+<p>Compte le nombre de lignes, mots, ou caractères.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wc -l fichier.txt   <span class="c1"># lignes</span>
+</span></span><span class="line"><span class="cl">wc -w fichier.txt   <span class="c1"># mots</span>
+</span></span><span class="line"><span class="cl">wc -c fichier.txt   <span class="c1"># caractères</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="awk">awk<a hidden class="anchor" aria-hidden="true" href="#awk">#</a></h3>
+<p>Permet de manipuler et formater des colonnes (langage de traitement de texte).</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">awk <span class="s1">&#39;{print $1, $3}&#39;</span> data.txt       <span class="c1"># affiche la 1re et 3e colonne</span>
+</span></span><span class="line"><span class="cl">awk -F, <span class="s1">&#39;{print $2}&#39;</span> data.csv       <span class="c1"># colonne 2 avec virgule comme séparateur</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><h3 id="sed">sed<a hidden class="anchor" aria-hidden="true" href="#sed">#</a></h3>
+<p>Permet de rechercher et remplacer du texte.</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed <span class="s1">&#39;s/chat/chien/g&#39;</span> animaux.txt        <span class="c1"># remplace &#34;chat&#34; par &#34;chien&#34;</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/chien/loup/g&#39;</span> animaux.txt     <span class="c1"># remplace directement dans le fichier</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div>
+    <div class="admonition tip">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+        <span>Astuce</span>
+      </div>
+      <div class="admonition-content">
+        <p>Les combiner permet de créer de puissants pipelines de traitement de texte :</p>
+
+    <div class="admonition code">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        <span>bash</span>
+      </div>
+      <div class="admonition-content">
+        <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat log.txt <span class="p">|</span> grep <span class="s2">&#34;ERROR&#34;</span> <span class="p">|</span> cut -d <span class="s2">&#34; &#34;</span> -f <span class="m">3</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> sort -nr
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+      </div>
+    </div><p>Ce pipeline :</p>
+<ol>
+<li>extrait les lignes contenant “ERROR”</li>
+<li>prend la 3e colonne</li>
+<li>trie et compte les occurrences</li>
+<li>affiche les plus fréquentes</li>
+</ol>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/fiches/">Fiches</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Dev blog</a></span> · 
+        Made with &#x2764;&#xfe0f; by TRNEEDANAME · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+
+
+
+
+
+<script defer src="/js/js-runner.min.b5d98bd196a4ccf920dd6cd744357c88ece4ccb02387b46dd40680bbbafaa2ba.js" integrity="sha256-tdmL0ZakzPkg3WzXRDV8iOzkzLAjh7Rt1AaAu7r6oro="></script>
+
+
+
+
+
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
