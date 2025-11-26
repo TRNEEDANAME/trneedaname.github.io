@@ -4,7 +4,7 @@
 #+DATE: 2025-10-13
 #+HUGO_PUBLISHDATE: 2025-10-13
 #+HUGO_DRAFT: false
-#+HUGO_SECTION: pages
+#+HUGO_SECTION: .
 #+AUTHOR: TRNEEDANAME
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 #+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false ShowBreadCrumbs: false :ShowPostNavLinks false
@@ -26,26 +26,34 @@ The file you're reading is in fact a ~.org~ file !
 
 *** What I do
 
-I make mods for [[https://projectzomboid.com/blog/][Project Zomboid]] and [[https://xcom.com][Xcom]] in my spare time, I started with Xcom 2 in ~2020, in 2024 I joined the Project Zomboid RP scene as a player, then admin / mod maker for another server.
+I make mods for [[https://projectzomboid.com/blog/][Project Zomboid]] and [[https://xcom.com][Xcom]] in my spare time, I started with Xcom 2 in ~2020, in 2024 I joined the Project Zomboid RP scene as a player, then admin / mod maker for different servers.
 
-I also play games, as of now I'm playing +Satisfactory+ Factorio took over my life / Project Zomboid.
+I also play games, as of now I'm playing +Satisfactory+ Factorio (it took over my life) and Project Zomboid.
 
-I enjoy writing wikis, as show by my [[https://github.com/TRNEEDANAME/Militia_Wiki/wiki][Militia wiki]] for Xcom 2 (still in the work as of now)
+I enjoy writing wikis, as shown by my [[https://github.com/TRNEEDANAME/Militia_Wiki/wiki][Militia wiki]] for Xcom 2 (still in the work as of now)
+
+Outside of things computer related, I do archery.
 
 *** Technology used by this site
 
-The theme used is [[https://github.com/adityatelange/hugo-PaperMod][PaperMod]] with a nord inspired theme.
+The theme used is [[https://github.com/adityatelange/hugo-PaperMod][PaperMod]] with a nord inspired theme (subject to change as to increase contrast if people feel like it's not enough).
 
-This site is made using [[https://gohugo.io/][Hugo]] with [[https://ox-hugo.scripter.co/][ox-hugo]], I have [[https://github.com/KKKZOZ/hugo-admonitions][Hugo admonitions]] as a plugin installed, but as it doesn't work with [[https://orgmode.org/][org-mode]], I had to write a minor mode for it, it evolved into an export backend using ox-hugo (templates and such).
+This site is made using [[https://gohugo.io/][Hugo]] with [[https://ox-hugo.scripter.co/][ox-hugo]] as the ~org -> md~ part
 
-The fonts used are :
+**** The fonts used
 
 - Titles : Noto Sans Display
 - Main body text : Noto Sans
-- Code / monospace : Noto Sans Mono
+- Code / monospace : Berkely-Mono
 
-They are ~.woff2~ files because it seemed like something fun to do.
+They are ~.woff2~ files because they are smaller to load.
 
 ** Contact me
 
 To contact me about this website, please send me an email to [[mailto:trneedaname@proton.me][trneedaname@proton.me]]. Otherwise please use fill a bug / feature report on the github repository of the mod / steam page.
+
+** Licences
+
+All the content on this site (unless otherwise specified) is under GNU GPLv3 licence, all of the code is under the same licence.
+
+My mods / content will never be behind a paywall, as this go against the core idea of programming for me, they will always be under MIT License.

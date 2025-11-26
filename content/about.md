@@ -1,10 +1,12 @@
 +++
 title = "About"
 author = ["TRNEEDANAME"]
+date = 2025-10-13
+publishDate = 2025-10-13
 layout = "page"
-slug = "about"
 draft = false
-ShowToc = false
+ShowToc = "false ShowBreadCrumbs: false"
+ShowPostNavLinks = false
 +++
 
 ## Who I am {#who-i-am}
@@ -26,18 +28,38 @@ The file you're reading is in fact a `.org` file !
 
 ### What I do {#what-i-do}
 
-I make mods for [Project Zomboid](https://projectzomboid.com/blog/) and [Xcom](https://xcom.com) in my spare time, I started with Xcom 2 in ~2020, in 2024 I joined the Project Zomboid RP scene as a player, then admin / mod maker for another server.
+I make mods for [Project Zomboid](https://projectzomboid.com/blog/) and [Xcom](https://xcom.com) in my spare time, I started with Xcom 2 in ~2020, in 2024 I joined the Project Zomboid RP scene as a player, then admin / mod maker for different servers.
 
-I also play games, as of now I'm playing Satisfactory / Project Zomboid.
+I also play games, as of now I'm playing ~~Satisfactory~~ Factorio (it took over my life) and Project Zomboid.
 
-I enjoy writing wikis, as show by my [Militia wiki](https://github.com/TRNEEDANAME/Militia_Wiki/wiki) for Xcom 2 (still in the work as of now)
+I enjoy writing wikis, as shown by my [Militia wiki](https://github.com/TRNEEDANAME/Militia_Wiki/wiki) for Xcom 2 (still in the work as of now)
+
+Outside of things computer related, I do archery.
 
 
 ### Technology used by this site {#technology-used-by-this-site}
 
-This site is made using [Hugo](https://gohugo.io/) with [ox-hugo](https://ox-hugo.scripter.co/), I have [Hugo admonitions](https://github.com/KKKZOZ/hugo-admonitions) as a plugin installed, but as it doesn't work with [org-mode](https://orgmode.org/), I had to write a minor mode for it.
+The theme used is [PaperMod](https://github.com/adityatelange/hugo-PaperMod) with a nord inspired theme (subject to change as to increase contrast if people feel like it's not enough).
+
+This site is made using [Hugo](https://gohugo.io/) with [ox-hugo](https://ox-hugo.scripter.co/) as the `org -> md` part
+
+
+#### The fonts used {#the-fonts-used}
+
+-   Titles : Noto Sans Display
+-   Main body text : Noto Sans
+-   Code / monospace : Berkely-Mono
+
+They are `.woff2` files because they are smaller to load.
 
 
 ## Contact me {#contact-me}
 
-To contact me please send me an email to [trneedaname@proton.me](mailto:trneedaname@proton.me) if it is related to this site, otherwise please use fill a bug report on the github repository of the mod / steam page.
+To contact me about this website, please send me an email to [trneedaname@proton.me](mailto:trneedaname@proton.me). Otherwise please use fill a bug / feature report on the github repository of the mod / steam page.
+
+
+## Licences {#licences}
+
+All the content on this site (unless otherwise specified) is under GNU GPLv3 licence, all of the code is under the same licence.
+
+My mods / content will never be behind a paywall, as this go against the core idea of programming for me, they will always be under MIT License.
