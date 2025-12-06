@@ -3,7 +3,7 @@ title = "Bash"
 author = ["TRNEEDANAME"]
 date = 2025-11-05
 layout = "page"
-tags = ["fiches"]
+tags = ["fiches", "bash"]
 draft = true
 +++
 
@@ -12,8 +12,16 @@ draft = true
 Le langage `Bash` (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
 Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.
 
+Le Bash est un language de programmation, mais en tant que tel il n'est pas très utile, il est principalement utilisé en conjonction avec des commandes qui permettent d'interagir avec le système.
+
+Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des distribution Linux.
+
+> [!INFO] Le manuel
+> Si vous utilisez une distribution Linux (ou WSL sur windows / une VM), la commande `man` va être très utile, `man commande` vous donne le manuel de la commande en question, ce qui est pratique (surtout pour les différents flags et autre fonctions)
+> 
+
 > [!MEMO] Convention
-> Les scripts Bash ont généralement l’extension `~.sh~` et commencent toujours par une ligne d’en-tête (appelée **shebang**) :
+> Les scripts Bash ont généralement l’extension `.sh` et commencent toujours par une ligne d’en-tête (appelée **shebang**) :
 > 
 >> [!CODE] bash
 >>  ```bash
@@ -23,9 +31,9 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
 > Les conventions recommandent :
 >
 > -   d’utiliser des **minuscules** pour les noms de variables et de fonctions ;
-> -   de séparer les mots par des underscores \`_\` :
+> -   de séparer les mots par des underscores `_` :
 >     `ma_variable`, `ma_fonction()` ;
-> -   d’éviter les espaces autour des opérateurs d’affectation :
+> -   Pas d'espaces entre les affectations :
 >     `x=10` (et non `x = 10`).
 
 
@@ -74,7 +82,7 @@ Lire une valeur entrée par l’utilisateur avec `read` :
 
 > [!CODE] bash
 >  ```bash
->  read -p "Quel est ton nom ? " nom
+>  read "Quel est ton nom ? " nom
 >  echo "Bonjour $nom !"
 > ```
 
@@ -128,6 +136,12 @@ Afficher un texte avec `echo` :
 >    echo "Itération $i"
 >  done
 > ```
+> 
+
+> [!TIP] Info
+> Les boucles utilise `..` pour donner un début et une fin
+> 
+> `1..5` va de `1` à `5` (inclut)
 
 
 ### Boucle while {#boucle-while}
@@ -228,19 +242,20 @@ Les redirections (`>`, `>>`, `<`) permettent de manipuler les flux d’entrée/s
 
 > [!CODE] bash
 >  ```bash
->  # Exemple simple : envoyer la sortie de ~ls~ à ~grep~
+>  # Exemple simple : envoyer la sortie de `ls` à `grep`
+>  # ls permet de lister tout les fichiers d'un dossier
 >  ls | grep ".sh"
->  # Rediriger la sortie vers un fichier
+>  # Rediriger la sortie vers un fichier (écrase le contenue)
 >  echo "Bonjour" > fichier.txt
 >  # Ajouter sans écraser
 >  echo "Encore une ligne" >> fichier.txt
->  # Lire depuis un fichier
+>  # Lire depuis un fichier, équivalent à ~cat fichier.txt~
 >  cat < fichier.txt
 > ```
 > 
 
 > [!NOTE] Décomposition
-> -   `|` : enchaîne les commandes
+> -   `|` : utilise la sortie d'une commande comme l'entrée d'une autre
 > -   `>` : écrit dans un fichier (écrase)
 > -   `>>` : ajoute à un fichier
 > -   `<` : lit à partir d’un fichier
@@ -256,9 +271,71 @@ Les redirections (`>`, `>>`, `<`) permettent de manipuler les flux d’entrée/s
 > [!CODE] bash
 >  ```bash
 >  grep "chien" animaux.txt          # cherche les lignes contenant "chien"
->  ls | grep "sh"                    # filtre uniquement les fichiers .sh
+>  ls | grep ".sh"                    # filtre uniquement les fichiers .sh
 >  grep -i "bonjour" fichier.txt     # ignore la casse
->  grep -r "main" ./src              # recherche récursive dans un dossier
+>  grep -r "maFonction" ./src              # recherche récursive dans un dossier
+> ```
+> 
+
+> [!CAUTION] Attention
+> La fonction `grep` permet d'utiliser des patternes Regex.
+> 
+>> [!NOTE] Les bases du Regex
+>> 
+>>> [!ABSTRACT]- Les classes de caractère
+>>> 
+>>> 
+>>> -   `[abc]` : un caractère, soit `a` soit `b` soit `c`
+>>> -   `[^abc]` : un caractère, sauf `a`, `b` ou `c`
+>>> -   `[a-c]` : un caractère de `a` à `c`
+>>> -   `[^a-c]` : un caractère, sauf de `a` à `c`
+>>> -   `[0-9` : un nombre (aussi possible d'utiliser `\d`)
+>>> -   `[a-cA-C]` : un caractère de `a` à `c` ou `A` à `C`
+>>> 
+>>> Il y a aussi les classes de caractères UNIX
+>>> 
+>>> -   `[[:alnum:]]`: tout les caractères (équivalent à `[0-9A-Za-z]`)
+>>> -   `[[:alpha]]` : tout les caractères (équivalent à `[A-Za-z`)
+>>> -   `[[:digit:]]` : tout les nombres (équivalent à `[0-9]`)
+>>> -   `[[:lower:]] & [[:upper:]]` tout les caractères en minuscules et majuscules
+>> 
+>>> [!ABSTRACT]- Quantité
+>>> **Tout les quantificateurs supportent les classes de caractère**
+>>> 
+>>> -   `a?` : zero ou un `a`
+>>> -   `a*` : zero ou plusieurs `a`
+>>> -   `a+` : un ou plusieurs `a`
+>>> -   `a{4}` : exactement 4 `a`
+>>> -   `a{4,}` : 4 ou plus de `a`
+>>> -   `a{1,4}` : entre 1 et 4 `a`
+>> 
+>>> [!ABSTRACT]- Séquences spéciales
+>>> Ces séquences permettent de définir des concepts et caractères non commun
+>>> 
+>>> -   `.` : n'importe quel caractère unique
+>>> -   `\s` : les espaces
+>>> -   `\S` : les non espaces
+>>> -   `\d` : les nombres
+>>> -   `\D` : les non nombres
+>>> -   `R` : les retour à la lignes
+>
+> Pour plus d'info, allez sur [quickref : Regex](https:quickref.me/regex)
+
+
+### tr {#tr}
+
+Change ou modifie les caractères (supporte les classes de caractères UNIX `[:alpha]` / `[:alnum:]`...).
+
+> [!CODE] bash
+>  ```bash
+>  echo "toto" | tr o 8 # renvoi t8t8
+> ```
+
+Il est possible d'utiliser une partie des classes UNIX
+
+> [!CODE] shell
+>  ```shell
+>  echo "La commande tr permet de changer du texte" | tr [:lower:] [:upper:] # renvoi "lA COMMANDE TR PERMET DE CHANGER DU TEXTE"
 > ```
 
 
@@ -270,6 +347,24 @@ Les redirections (`>`, `>>`, `<`) permettent de manipuler les flux d’entrée/s
 >  ```bash
 >  cat data.csv | cut -d "," -f 1    # affiche la première colonne
 > ```
+> 
+
+> [!NOTE] Décomposition
+> -   `-d` : donne le délimiteur à utiliser
+> -   `-f` : quel field(s) à renvoyer (peut être une liste)
+
+
+#### Exemple {#exemple}
+
+> [!CODE] bash
+>  ```bash
+>  echo "ceci,est,un,fichier,csv" > file.csv
+>  cat file.csv | cut -d "," -f ,2,3
+> ```
+> 
+
+> [!CONCLUSION]- Résultat
+> ceci,est,un
 
 
 ### sort {#sort}
@@ -306,6 +401,26 @@ Compte le nombre de lignes, mots, ou caractères.
 > ```
 
 
+### tails {#tails}
+
+Renvoi les dernière ligne(s) d'un fichier
+
+> [!CODE] bash
+>  ```bash
+>  tail -n 1 fichier.txt # lignes
+> ```
+
+
+### head {#head}
+
+Renvoi les première ligne(s) d'un fichier
+
+> [!CODE] bash
+>  ```bash
+>  head -n 1 fichier.txt
+> ```
+
+
 ### awk {#awk}
 
 Permet de manipuler et formater des colonnes (langage de traitement de texte).
@@ -320,25 +435,10 @@ Permet de manipuler et formater des colonnes (langage de traitement de texte).
 ### sed {#sed}
 
 Permet de rechercher et remplacer du texte.
+La commande `sed` supporte aussi le Regex.
 
 > [!CODE] bash
 >  ```bash
 >  sed 's/chat/chien/g' animaux.txt        # remplace "chat" par "chien"
 >  sed -i 's/chien/loup/g' animaux.txt     # remplace directement dans le fichier
 > ```
-> 
-
-> [!TIP] Astuce
-> Les combiner permet de créer de puissants pipelines de traitement de texte :
-> 
->> [!CODE] bash
->>  ```bash
->>  cat log.txt | grep "ERROR" | cut -d " " -f 3 | sort | uniq -c | sort -nr
->> ```
->> 
-> Ce pipeline :
->
-> 1.  extrait les lignes contenant “ERROR”
-> 2.  prend la 3e colonne
-> 3.  trie et compte les occurrences
-> 4.  affiche les plus fréquentes

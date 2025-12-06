@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bash on Dev blog</title>
+    <link>http://localhost:1313/tags/bash/</link>
+    <description>Recent content in Bash on Dev blog</description>
+    <generator>Hugo -- 0.147.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/fiches/bash/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/bash/</guid>
+      <description>&lt;h2 id=&#34;le-bash-c-est-quoi&#34;&gt;Le Bash, c’est quoi ?&lt;/h2&gt;
+&lt;p&gt;Le langage &lt;code&gt;Bash&lt;/code&gt; (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
+Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.&lt;/p&gt;
+&lt;p&gt;Le Bash est un language de programmation, mais en tant que tel il n&amp;rsquo;est pas très utile, il est principalement utilisé en conjonction avec des commandes qui permettent d&amp;rsquo;interagir avec le système.&lt;/p&gt;
+&lt;p&gt;Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des distribution Linux.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

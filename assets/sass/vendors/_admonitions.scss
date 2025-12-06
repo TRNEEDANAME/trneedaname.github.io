@@ -60,8 +60,8 @@ $admonition-dark-header-text-overrides: () !default;
 // --- Header Background Opacity ---
 // Controls the opacity of the background color tint applied to the whole admonition block.
 // Value should be between 0 (transparent) and 1 (opaque).
-$admonition-light-header-bg-opacity: 0.1 !default; // Opacity for light mode background tint
-$admonition-dark-header-bg-opacity: 0.1 !default; // Opacity for dark mode background tint
+$admonition-light-header-bg-opacity: 1 !default; // Opacity for light mode background tint
+$admonition-dark-header-bg-opacity: 1 !default; // Opacity for dark mode background tint
 
 // User-provided map for overriding/adding specific admonition type colors.
 // Users should define '$admonition-colors-overrides' in their custom-variables file.

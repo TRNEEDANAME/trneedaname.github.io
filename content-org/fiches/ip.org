@@ -1,9 +1,8 @@
-
 #+TITLE: IP
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
 #+AUTHOR: TRNEEDANAME
-#+FILETAGS: fiches
+#+FILETAGS: fiches reseaux
 #+DATE: 2025-11-24
 #+HUGO_PUBLISHDATE: null
 #+HUGO_DRAFT: false
@@ -47,10 +46,14 @@ Le nombre d'adresse total est donc ~2^n - 1~ ou ~n~ est le masque en notation bi
 Le masque est sur 4 octets et s'écrit en décimal ou bits
 Il permet de savoir ou l'id de réseaux finit (tout les bits à 1 sur le masque sont le réseau)
 
-#+begin_example
+#+begin_note Exemple
 ~143.177.222.11/16~ définit le masque comme faisant 16 bits, donc 2 octets.
 
 On peut aussi écrire le masque comme faisant ~255.255.0.0~
 
 L'id de réseau est donc ~143.177~, l'id d'hôte est donc ~222.11~
-#+end_example
+#+end_note
+
+*** Les sous réseaux
+
+Pour les sous réseaux, une fiche spéciale à été faite {{{relref(Sous Séseaux,sous-reseaux)}}}

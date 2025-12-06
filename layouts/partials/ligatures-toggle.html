@@ -1,0 +1,14 @@
+<!-- Button partial to place next to your theme toggle -->
+<button id="ligature-toggle"
+        class="pm-ligature-toggle"
+        aria-pressed="false"
+        title="Toggle font ligatures"
+        aria-label="Toggle font ligatures">
+  <!-- Simple icon/text — replace with your SVG if you prefer -->
+  <span class="pm-ligature-icon" aria-hidden="true">ƒ</span>
+<span class="pm-ligature-label sr-only">Toggle font ligatures</span>
+</button>
+
+<!-- Load the static assets (put css/js in static/) -->
+<link rel="stylesheet" href="{{ " css/ligatures.css" | relURL }}">
+<script src="{{ " js/ligature-toggle.js" | relURL }}" defer></script>

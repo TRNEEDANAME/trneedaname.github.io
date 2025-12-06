@@ -12,6 +12,7 @@ caches:
   images:
     dir: :cacheDir/images
 params:
+  math: true
   assets:
     disableHLJS: true
   mainsections:

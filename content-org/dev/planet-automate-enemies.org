@@ -1,0 +1,58 @@
+
+#+TITLE: Planet automate enemies
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: dev-factorio
+#+DATE: 2025-12-02
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: true
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: dev-factorio
+
+This is a Factorio mod designed to use a ressource that is mostly unused, enemies.
+It forces the user to play around nests instead of doing the usual tactic of nuking them into another world.
+
+** Planet : enemies to fuel
+
+This planet uses enemies to automate, use the bodies to crush them into oil, smelt them into iron powder and copper.
+
+It forces the player to not destroy nests, instead work around them and make enclosure for them
+Enemies killed by fire have 25% of the ressources, 75% are destroyed.
+Laser destroys 20% of the ressources
+
+It introduce new buildings
+
+- Synthatic nests, which allows the creation of specific types of enemies at a lower rate and ressources than natural ones
+
+** Enemy types
+
+- Special bitter / spitter - small
+- Special bitter / spitter - medium
+- Special bitter / spitter - large
+- Special bitter / spitter - behemoth
+
+Bitters have more ore powder and spitter gives more oil
+
+** The planet
+
+There is no sunlight or a lot of water, the way to make energy is using spitters to make oil, then use this oil in a power generator, which creates a lot of pullution
+
+Stone is abundant and is the only ore naturally occuring along with uranium.
+
+** Ressources
+
+The loop is as so :
+
+- bitter -> die -> remains are crushed into copper or iron powder in a foundry, then put in a furnace to turn into plates
+- spitter -> die -> remains are crushed then put in an assembling machine along with iron powder to make oil
+
+  Coal can be made with oil and iron powder in a foundry.
+
+** Buildings
+
+~Synthetic nests~ : made from biter nests remains (an item that appears after destroying these nests), bitter eggs and plastic, they create bitters or spitters depending on the eggs inside, they have reduced spawn rates and give lower powder / oil than the natural one
+
+To automate it, the remains can be gathered by ~reclaiming towers~ which grab all remains in a 15x15 radius and can be moved by conveyor belts / trains.
+
+~Oil power generator~, it creates power using oil.

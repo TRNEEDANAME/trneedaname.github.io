@@ -119,9 +119,6 @@
     --nord15: #b85bdb; /* Purple */
     --nord-func: #e6a600; /* Function names (light) */
 
-    /* ===== Map to PaperMod variables (LIGHT as defaults) =====
-     PaperMod expects these custom properties across the site.
-     Setting them makes backgrounds and content colors consistent. */
     --theme: var(--nord6);
     --entry: var(--nord5);
     --primary: var(--nord2);
@@ -132,7 +129,6 @@
     --code-bg: var(--nord5);
     --border: var(--nord5);
 
-    /* Convenience aliases used below */
     --theme-bg: var(--theme);
     --theme-fg: var(--primary);
     --theme-border: var(--border);
@@ -146,21 +142,14 @@
     --theme-code-fg: var(--nord0);
     --entry-bg: var(--entry);
 
-    /* Update table zebra tokens to derived values */
     --table-zebra-even: var(--theme-bg);
     --table-zebra-odd: var(--entry-bg);
 
-    /* hover / logo alias to keep consistent with tokens above */
     --logo-accent: var(--nord15);
     --hover-accent: var(--nord15);
 }
 
-/* ==========================================================
-   DARK MODE OVERRIDES
-   Use the actual selector the page sets: html[data-theme="dark"]
-   ========================================================== */
 html[data-theme="dark"] {
-    /* Palette adjustments for dark */
     --nord11: #bf616a;
     --nord12: #d08770;
     --nord13: #ebcb8b;
@@ -168,7 +157,6 @@ html[data-theme="dark"] {
     --nord15: #b48ead;
     --nord-func: #ebcb8b;
 
-    /* PaperMod variables (DARK) */
     --theme: var(--nord0);
     --entry: var(--nord1);
     --primary: var(--nord6);
@@ -224,7 +212,7 @@ body {
 
 /* Menu */
 #menu {
-    background-color: var(--theme-bg); /* fixed variable name */
+    background-color: var(--theme-bg);
     box-shadow: var(--menu-box-shadow);
 }
 #menu > li > a {
@@ -244,14 +232,12 @@ a:not(.logo > a):not(#menu a):hover {
     text-decoration-color: var(--theme-link-hover);
 }
 
-/* General hover accent for many interactive elements */
 a:hover {
     color: var(--hover-accent);
     border-bottom: var(--link-underline-thickness) solid var(--hover-accent);
     font-weight: bold;
 }
 
-/* Exceptions where underline isn't desired */
 .logo a:hover,
 .social-icons a:hover,
 a.entry-link:hover,
@@ -291,7 +277,6 @@ code {
     font-family: var(--font-mono);
 }
 
-/* Make sure we didn't accidentally duplicate styles */
 .admonition-content pre code { font-size: var(--font-code-size); }
 
 /* ==========================================================
@@ -357,10 +342,6 @@ button.copy-code:hover {
     color: var(--theme-bg);
 }
 
-/* ==========================================================
-   SQL RUNNER TABLE (LIGHT & DARK)
-   Uses table tokens so it's easy to tweak zebra & hover styles
-   ========================================================== */
 .sql-run-table {
     width: 100%;
     border-collapse: collapse;
@@ -417,19 +398,15 @@ html[data-theme="dark"] .sql-run-table > tbody:nth-child(1) > tr > th {
     background-color: var(--nord1);
 }
 
-/* Footer / pagination accents in dark */
 html[data-theme="dark"] .post-footer > ul > li > a,
 html[data-theme="dark"] .paginav {
     background-color: var(--nord1);
 }
 
-/* Small fixes / tweaks */
-/* Replace old incorrect selector body.dark .menu with the actual data-theme selector */
 html[data-theme="dark"] .menu {
     color: var(--theme-bg);
 }
 
-/* Unusual list style in nav (kept from original) */
 nav > ul, nav > ul > li > ul {
     list-style-type: decimal;
 }
@@ -439,5 +416,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
+    color: var(--nord10);
     font-family: TX-02;
 }
