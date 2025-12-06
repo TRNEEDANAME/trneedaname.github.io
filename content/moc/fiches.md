@@ -42,3 +42,11 @@ Le CSS est utilisé pour stylisé les pages web.
 Le SQL est un langage utilisé dans la requète de bases de données.
 
 [ Cours SQL ]({{< relref "fiches/SQL" >}})
+
+
+## Le web {#le-web}
+
+Les fiches sont plus concentré sur le réseaux en lui même
+
+[ Les adresses IP ]({{< relref "IP" >}})
+[ Les sous réseaux ]({{< relref "sous-reseaux" >}})
