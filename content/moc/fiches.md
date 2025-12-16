@@ -51,3 +51,9 @@ Les fiches sont plus concentré sur le réseaux en lui même
 [ Les adresses IP ]({{< relref "IP" >}})
 
 [ Les sous réseaux ]({{< relref "sous-reseaux" >}})
+
+
+## Le bash {#le-bash}
+
+La fiche sur le Bash
+[ Bash ]({{< relref "bash$" >}})

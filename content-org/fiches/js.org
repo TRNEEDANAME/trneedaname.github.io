@@ -36,13 +36,9 @@ Toutes les conventions sont disponibles sur [[https://www.w3schools.com/js/js_co
 
 Les exercices peuvent se trouver ici : {{{relref(Exercices,Exercices de Javascript)}}}
 
-*** Demandes du prof
-
-Le professeur a des demandes spécifiques : {{{relref(attentes du prof,demande prof)}}}
-
 ** Les types et variables
 
-*** Différences entre ~var~ et ~let~
+*** Différences entre var et let
 
 #+begin_tip Utilisation de var et let
 

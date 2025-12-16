@@ -48,3 +48,8 @@ Les fiches sont plus concentré sur le réseaux en lui même
 {{{relref(Les adresses IP,IP)}}}
 
 {{{relref(Les sous réseaux,sous-reseaux)}}}
+
+** Le bash
+
+La fiche sur le Bash
+{{{relref(Bash,bash$)}}}

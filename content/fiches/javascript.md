@@ -36,15 +36,10 @@ Il peut manipuler des variables, des fonctions, le DOM, et plus encore.
 Les exercices peuvent se trouver ici : [ Exercices ]({{< relref "Exercices de Javascript" >}})
 
 
-### Demandes du prof {#demandes-du-prof}
-
-Le professeur a des demandes spécifiques : [ attentes du prof ]({{< relref "demande prof" >}})
-
-
 ## Les types et variables {#les-types-et-variables}
 
 
-### Différences entre `var` et `let` {#différences-entre-var-et-let}
+### Différences entre var et let {#différences-entre-var-et-let}
 
 > [!TIP] Utilisation de var et let
 > 
