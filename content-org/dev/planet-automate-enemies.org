@@ -18,12 +18,12 @@ It forces the user to play around nests instead of doing the usual tactic of nuk
 This planet uses enemies to automate, use the bodies to crush them into oil, smelt them into iron powder and copper.
 
 It forces the player to not destroy nests, instead work around them and make enclosure for them
-Enemies killed by fire have 25% of the ressources, 75% are destroyed.
-Laser destroys 20% of the ressources
+Enemies killed by fire have 5% of the ressources, 95% are destroyed.
+Laser destroys 20% of the ressources.
 
 It introduce new buildings
 
-- Synthatic nests, which allows the creation of specific types of enemies at a lower rate and ressources than natural ones
+- Synthetic nests, which allows the creation of specific types of enemies at a lower rate and ressources than natural ones
 
 ** Enemy types
 
@@ -38,7 +38,7 @@ Bitters have more ore powder and spitter gives more oil
 
 There is no sunlight or a lot of water, the way to make energy is using spitters to make oil, then use this oil in a power generator, which creates a lot of pullution
 
-Stone is abundant and is the only ore naturally occuring along with uranium.
+Stone is abundant and is the only ore naturally occuring.
 
 ** Ressources
 
@@ -48,6 +48,8 @@ The loop is as so :
 - spitter -> die -> remains are crushed then put in an assembling machine along with iron powder to make oil
 
   Coal can be made with oil and iron powder in a foundry.
+
+Uranium can be harvested from special bitters that are tougher than the rest (put in centrifuge)
 
 ** Buildings
 

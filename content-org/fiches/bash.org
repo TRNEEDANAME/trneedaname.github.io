@@ -5,7 +5,7 @@
 #+FILETAGS: fiches bash
 #+DATE: 2025-11-05
 #+HUGO_PUBLISHDATE: null
-#+HUGO_DRAFT: true
+#+HUGO_DRAFT: false
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 #+HUGO_SECTION: fiches
 
@@ -20,6 +20,10 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 
 #+begin_info Le manuel
 Si vous utilisez une distribution Linux (ou WSL sur windows / une VM), la commande ~man~ va être très utile, ~man commande~ vous donne le manuel de la commande en question, ce qui est pratique (surtout pour les différents flags et autre fonctions)
+
+#+begin_tip info
+La commande ~info~ est aussi utile mais plus complète (je recommande de lire le man sur emacs mais cela prend du temps à comprendre), elle est utilisé par plusieurs programme (~tar~, ~bash~, ~emacs~ ainsi que de nombreuses commandes du standard ~GNU~ l'utilise en complément de ~man~)
+#+end_tip
 #+end_info
 
 #+begin_memo Convention
@@ -30,11 +34,15 @@ Les scripts Bash ont généralement l’extension =.sh= et commencent toujours p
 #+end_src
 
 Les conventions recommandent :
-- d’utiliser des *minuscules* pour les noms de variables et de fonctions ;
-- de séparer les mots par des underscores ~_~ :  
-  ~ma_variable~, ~ma_fonction()~ ;
+- d’utiliser des *minuscules* pour les noms de variables et de fonctions
+- de séparer les mots par des underscores ~_~ (aussi appelé le ~Snake Case~) :  
+  ~ma_variable~, ~ma_fonction()~
 - Pas d'espaces entre les affectations :
   ~x=10~ (et non ~x = 10~).
+
+#+begin_warning Attention
+Mettre des espaces entre les affectations casse le système d'affectation !
+#+end_warning
 #+end_memo
 
 ** Les variables
@@ -52,9 +60,8 @@ echo "Étudiant : $etudiant"
 #+end_src
 
 #+begin_tip À savoir
-- Pas d’espace avant ou après ~=~
 - Pour utiliser une variable, on écrit ~$nom_variable~
-- Les variables sont toujours des chaînes de caractères, même si elles contiennent des nombres
+- Les variables sont toujours des chaînes de caractères en Bash, même si elles contiennent des nombres
 #+end_tip
 
 *** Les tableaux
@@ -64,11 +71,12 @@ animaux=("chien" "chat" "poisson" "chameau")
 
 echo "Premier animal : ${animaux[0]}"
 echo "Tous les animaux : ${animaux[@]}"
+echo "Taille du tableau : ${#animaux}"
 echo "Nombre d'animaux : ${#animaux[@]}"
 #+end_src
 
 #+begin_tip À savoir
-Les indices commencent à 0.  
+Les indices commencent à 0.
 ~[@]~ permet d’afficher tous les éléments, ~#~ donne la taille du tableau.
 #+end_tip
 
@@ -79,9 +87,16 @@ Les indices commencent à 0.
 Lire une valeur entrée par l’utilisateur avec ~read~ :
 
 #+begin_src bash
-read "Quel est ton nom ? " nom
+read -p "Quel est ton nom: " nom
 echo "Bonjour $nom !"
 #+end_src
+
+#+begin_note Options utiles
+- ~-p~ : n’ajoute pas de retour à la ligne
+- ~-i~ : permet d'entrer une liste
+- ~-d~ : continue jusqu'à ce que la lettre delimitante est lue (~-d "i"~ par exemple)
+#+end_note
+
 
 *** Les sorties
 
@@ -153,6 +168,12 @@ until [ $i -ge 5 ]; do
   ((i++))
 done
 #+end_src
+
+#+begin_tip La différence entre while et until
+[[https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs][Page info de Bash sur les boucles]]
+
+Et oui, tout les manuels / pages info sont en anglais (à moins de changer le ~locale~)https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs
+#+end_tip
 
 ** Les fonctions
 
@@ -338,7 +359,7 @@ cat data.csv | cut -d "," -f 1    # affiche la première colonne
 
 #+begin_src bash
 echo "ceci,est,un,fichier,csv" > file.csv
-cat file.csv | cut -d "," -f ,2,3
+cat file.csv | cut -d "," -f 1,2,3
 #+end_src
 
 #+begin_conclusion - Résultat

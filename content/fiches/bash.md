@@ -4,7 +4,7 @@ author = ["TRNEEDANAME"]
 date = 2025-11-05
 layout = "page"
 tags = ["fiches", "bash"]
-draft = true
+draft = false
 +++
 
 ## Le Bash, c’est quoi ? {#le-bash-c-est-quoi}
@@ -19,6 +19,8 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 > [!INFO] Le manuel
 > Si vous utilisez une distribution Linux (ou WSL sur windows / une VM), la commande `man` va être très utile, `man commande` vous donne le manuel de la commande en question, ce qui est pratique (surtout pour les différents flags et autre fonctions)
 > 
+>> [!TIP] info
+>> La commande `info` est aussi utile mais plus complète (je recommande de lire le man sur emacs mais cela prend du temps à comprendre), elle est utilisé par plusieurs programme (`tar`, `bash`, `emacs` ainsi que de nombreuses commandes du standard `GNU` l'utilise en complément de `man`)
 
 > [!MEMO] Convention
 > Les scripts Bash ont généralement l’extension `.sh` et commencent toujours par une ligne d’en-tête (appelée **shebang**) :
@@ -30,11 +32,14 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 >> 
 > Les conventions recommandent :
 >
-> -   d’utiliser des **minuscules** pour les noms de variables et de fonctions ;
-> -   de séparer les mots par des underscores `_` :
->     `ma_variable`, `ma_fonction()` ;
+> -   d’utiliser des **minuscules** pour les noms de variables et de fonctions
+> -   de séparer les mots par des underscores `_` (aussi appelé le `Snake Case`) :
+>     `ma_variable`, `ma_fonction()`
 > -   Pas d'espaces entre les affectations :
 >     `x=10` (et non `x = 10`).
+> 
+>> [!WARNING] Attention
+>> Mettre des espaces entre les affectations casse le système d'affectation !
 
 
 ## Les variables {#les-variables}
@@ -52,9 +57,8 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 > 
 
 > [!TIP] À savoir
-> -   Pas d’espace avant ou après `=`
 > -   Pour utiliser une variable, on écrit `$nom_variable`
-> -   Les variables sont toujours des chaînes de caractères, même si elles contiennent des nombres
+> -   Les variables sont toujours des chaînes de caractères en Bash, même si elles contiennent des nombres
 
 
 ### Les tableaux {#les-tableaux}
@@ -64,6 +68,7 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 >  animaux=("chien" "chat" "poisson" "chameau")
 >  echo "Premier animal : ${animaux[0]}"
 >  echo "Tous les animaux : ${animaux[@]}"
+>  echo "Taille du tableau : ${#animaux}"
 >  echo "Nombre d'animaux : ${#animaux[@]}"
 > ```
 > 
@@ -82,9 +87,15 @@ Lire une valeur entrée par l’utilisateur avec `read` :
 
 > [!CODE] bash
 >  ```bash
->  read "Quel est ton nom ? " nom
+>  read -p "Quel est ton nom: " nom
 >  echo "Bonjour $nom !"
 > ```
+> 
+
+> [!NOTE] Options utiles
+> -   `-p` : n’ajoute pas de retour à la ligne
+> -   `-i` : permet d'entrer une liste
+> -   `-d` : continue jusqu'à ce que la lettre delimitante est lue (`-d "i"` par exemple)
 
 
 ### Les sorties {#les-sorties}
@@ -166,6 +177,12 @@ Afficher un texte avec `echo` :
 >    ((i++))
 >  done
 > ```
+> 
+
+> [!TIP] La différence entre while et until
+> [Page info de Bash sur les boucles](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs)
+> 
+> Et oui, tout les manuels / pages info sont en anglais (à moins de changer le `locale`)<https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs>
 
 
 ## Les fonctions {#les-fonctions}
@@ -359,7 +376,7 @@ Il est possible d'utiliser une partie des classes UNIX
 > [!CODE] bash
 >  ```bash
 >  echo "ceci,est,un,fichier,csv" > file.csv
->  cat file.csv | cut -d "," -f ,2,3
+>  cat file.csv | cut -d "," -f 1,2,3
 > ```
 > 
 
