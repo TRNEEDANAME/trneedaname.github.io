@@ -56,4 +56,4 @@ Les fiches sont plus concentré sur le réseaux en lui même
 ## Le bash {#le-bash}
 
 La fiche sur le Bash
-[ Bash ]({{< relref "bash$" >}})
+[ Bash ]({{< relref "bash" >}})

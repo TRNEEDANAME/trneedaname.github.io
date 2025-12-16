@@ -52,4 +52,4 @@ Les fiches sont plus concentré sur le réseaux en lui même
 ** Le bash
 
 La fiche sur le Bash
-{{{relref(Bash,bash$)}}}
+{{{relref(Bash,bash)}}}
