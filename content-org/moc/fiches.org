@@ -45,11 +45,10 @@ Le SQL est un langage utilisé dans la requète de bases de données.
 
 Les fiches sont plus concentré sur le réseaux en lui même
 
-{{{relref(Les adresses IP,IP)}}}
+{{{relref(Les adresses IP,fiches/IP)}}}
 
-{{{relref(Les sous réseaux,sous-reseaux)}}}
+{{{relref(Les sous réseaux,fiches/sous-reseaux)}}}
 
 ** Le bash
 
-La fiche sur le Bash
-{{{relref(Bash,bash)}}}
+{{{relref(Bash,fiches/Bash)}}}
