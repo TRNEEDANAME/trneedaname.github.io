@@ -14,13 +14,7 @@
     <loc>http://localhost:1313/tags/fiches/</loc>
     <lastmod>2025-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/fiches-reseaux/</loc>
-    <lastmod>2025-12-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/reseaux/</loc>
-    <lastmod>2025-12-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fiches-reseaux/sous-reseaux/</loc>
     <lastmod>2025-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fiches/sous-reseaux/</loc>
@@ -29,25 +23,22 @@
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/fiches-reseaux/ip/</loc>
-    <lastmod>2025-11-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/fiches/ip/</loc>
     <lastmod>2025-11-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/dev/</loc>
     <lastmod>2025-11-13T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/fiches/bash/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/bash/</loc>
+    <lastmod>2025-11-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/wiki-xcom/ability-creator/</loc>
     <lastmod>2025-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fiches/css/</loc>
-    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fiches/demande-prof/</loc>
-    <lastmod>2025-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2025-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web/</loc>
@@ -89,6 +80,9 @@
     <loc>http://localhost:1313/fiches/javascript/</loc>
     <lastmod>2025-10-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
+    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/moc/</loc>
     <lastmod>2025-10-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -103,8 +97,6 @@
   </url><url>
     <loc>http://localhost:1313/moc/xcom-mods/</loc>
     <lastmod>2025-10-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/search/</loc>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>

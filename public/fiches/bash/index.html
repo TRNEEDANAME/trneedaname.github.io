@@ -135,12 +135,6 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/fiches/">Fiches</a></div>
     <h1 class="post-title entry-hint-parent">
       Bash
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
     </h1>
     <div class="post-meta"><span title='2025-11-05 00:00:00 +0000 UTC'>November 5, 2025</span>&nbsp;·&nbsp;<span>TRNEEDANAME</span>
 
@@ -203,13 +197,22 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
 <p>Le Bash est un language de programmation, mais en tant que tel il n&rsquo;est pas très utile, il est principalement utilisé en conjonction avec des commandes qui permettent d&rsquo;interagir avec le système.</p>
 <p>Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des distribution Linux.</p>
 
-          <link rel="stylesheet" href="/css/vendors/admonitions.css">
     <div class="admonition info">
       <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
         <span>Le manuel</span>
       </div>
       <div class="admonition-content">
         <p>Si vous utilisez une distribution Linux (ou WSL sur windows / une VM), la commande <code>man</code> va être très utile, <code>man commande</code> vous donne le manuel de la commande en question, ce qui est pratique (surtout pour les différents flags et autre fonctions)</p>
+
+          <link rel="stylesheet" href="/css/vendors/admonitions.css">
+    <div class="admonition tip">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+        <span>info</span>
+      </div>
+      <div class="admonition-content">
+        <p>La commande <code>info</code> est aussi utile mais plus complète (je recommande de lire le man sur emacs mais cela prend du temps à comprendre), elle est utilisé par plusieurs programme (<code>tar</code>, <code>bash</code>, <code>emacs</code> ainsi que de nombreuses commandes du standard <code>GNU</code> l&rsquo;utilise en complément de <code>man</code>)</p>
+      </div>
+    </div>
       </div>
     </div>
     <div class="admonition memo">
@@ -236,12 +239,21 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
       </div>
     </div><p>Les conventions recommandent :</p>
 <ul>
-<li>d’utiliser des <strong>minuscules</strong> pour les noms de variables et de fonctions ;</li>
-<li>de séparer les mots par des underscores <code>_</code> :
-<code>ma_variable</code>, <code>ma_fonction()</code> ;</li>
+<li>d’utiliser des <strong>minuscules</strong> pour les noms de variables et de fonctions</li>
+<li>de séparer les mots par des underscores <code>_</code> (aussi appelé le <code>Snake Case</code>) :
+<code>ma_variable</code>, <code>ma_fonction()</code></li>
 <li>Pas d&rsquo;espaces entre les affectations :
 <code>x=10</code> (et non <code>x = 10</code>).</li>
 </ul>
+
+    <div class="admonition warning">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+        <span>Attention</span>
+      </div>
+      <div class="admonition-content">
+        <p>Mettre des espaces entre les affectations casse le système d&rsquo;affectation !</p>
+      </div>
+    </div>
       </div>
     </div><h2 id="les-variables">Les variables<a hidden class="anchor" aria-hidden="true" href="#les-variables">#</a></h2>
 
@@ -279,9 +291,8 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
       </div>
       <div class="admonition-content">
         <ul>
-<li>Pas d’espace avant ou après <code>=</code></li>
 <li>Pour utiliser une variable, on écrit <code>$nom_variable</code></li>
-<li>Les variables sont toujours des chaînes de caractères, même si elles contiennent des nombres</li>
+<li>Les variables sont toujours des chaînes de caractères en Bash, même si elles contiennent des nombres</li>
 </ul>
       </div>
     </div><h3 id="les-tableaux">Les tableaux<a hidden class="anchor" aria-hidden="true" href="#les-tableaux">#</a></h3>
@@ -297,11 +308,13 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">animaux</span><span class="o">=(</span><span class="s2">&#34;chien&#34;</span> <span class="s2">&#34;chat&#34;</span> <span class="s2">&#34;poisson&#34;</span> <span class="s2">&#34;chameau&#34;</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Premier animal : </span><span class="si">${</span><span class="nv">animaux</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Tous les animaux : </span><span class="si">${</span><span class="nv">animaux</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Taille du tableau : </span><span class="si">${#</span><span class="nv">animaux</span><span class="si">}</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Nombre d&#39;animaux : </span><span class="si">${#</span><span class="nv">animaux</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -331,11 +344,23 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">read</span> <span class="s2">&#34;Quel est ton nom ? &#34;</span> nom
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Quel est ton nom: &#34;</span> nom
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Bonjour </span><span class="nv">$nom</span><span class="s2"> !&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
+      </div>
+    </div>
+    <div class="admonition note">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+        <span>Options utiles</span>
+      </div>
+      <div class="admonition-content">
+        <ul>
+<li><code>-p</code> : n’ajoute pas de retour à la ligne</li>
+<li><code>-i</code> : permet d&rsquo;entrer une liste</li>
+<li><code>-d</code> : continue jusqu&rsquo;à ce que la lettre delimitante est lue (<code>-d &quot;i&quot;</code> par exemple)</li>
+</ul>
       </div>
     </div><h3 id="les-sorties">Les sorties<a hidden class="anchor" aria-hidden="true" href="#les-sorties">#</a></h3>
 <p>Afficher un texte avec <code>echo</code> :</p>
@@ -491,6 +516,15 @@ Il sert principalement à automatiser des tâches système, manipuler des fichie
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
+      </div>
+    </div>
+    <div class="admonition tip">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+        <span>La différence entre while et until</span>
+      </div>
+      <div class="admonition-content">
+        <p><a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs">Page info de Bash sur les boucles</a></p>
+<p>Et oui, tout les manuels / pages info sont en anglais (à moins de changer le <code>locale</code>)<a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs">https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs</a></p>
       </div>
     </div><h2 id="les-fonctions">Les fonctions<a hidden class="anchor" aria-hidden="true" href="#les-fonctions">#</a></h2>
 
@@ -857,7 +891,7 @@ Les redirections (<code>&gt;</code>, <code>&gt;&gt;</code>, <code>&lt;</code>) p
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;ceci,est,un,fichier,csv&#34;</span> &gt; file.csv
-</span></span><span class="line"><span class="cl">cat file.csv <span class="p">|</span> cut -d <span class="s2">&#34;,&#34;</span> -f ,2,3
+</span></span><span class="line"><span class="cl">cat file.csv <span class="p">|</span> cut -d <span class="s2">&#34;,&#34;</span> -f 1,2,3
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

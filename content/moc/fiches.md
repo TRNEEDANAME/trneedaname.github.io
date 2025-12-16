@@ -48,12 +48,12 @@ Le SQL est un langage utilisé dans la requète de bases de données.
 
 Les fiches sont plus concentré sur le réseaux en lui même
 
-[ Les adresses IP ]({{< relref "IP" >}})
+[ Les adresses IP ]({{< relref "fiches/IP" >}})
 
-[ Les sous réseaux ]({{< relref "sous-reseaux" >}})
+[ Les sous réseaux ]({{< relref "fiches/sous-reseaux" >}})
 
 
 ## Le bash {#le-bash}
 
 La fiche sur le Bash
-[ Bash ]({{< relref "bash" >}})
+[ Bash ]({{< relref "fiches/Bash" >}})

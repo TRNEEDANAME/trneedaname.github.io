@@ -29,21 +29,6 @@
     </item>
     <item>
       <title>sous-reseaux</title>
-      <link>http://localhost:1313/fiches-reseaux/sous-reseaux/</link>
-      <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches-reseaux/sous-reseaux/</guid>
-      <description>&lt;h2 id=&#34;les-sous-réseaux-c-est-quoi&#34;&gt;Les sous-réseaux, c&amp;rsquo;est quoi&lt;/h2&gt;
-
-          &lt;link rel=&#34;stylesheet&#34; href=&#34;http://localhost:1313/css/vendors/admonitions.css&#34;&gt;
-    &lt;div class=&#34;admonition info&#34;&gt;
-      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z&#34;/&gt;&lt;/svg&gt;
-        &lt;span&gt;Info&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&#34;admonition-content&#34;&gt;
-        &lt;p&gt;Un sous-réseaux permet de découper un réseaux en plusieurs petit réseaux.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>sous-reseaux</title>
       <link>http://localhost:1313/fiches/sous-reseaux/</link>
       <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/fiches/sous-reseaux/</guid>
@@ -56,24 +41,6 @@
       &lt;/div&gt;
       &lt;div class=&#34;admonition-content&#34;&gt;
         &lt;p&gt;Un sous-réseaux permet de découper un réseaux en plusieurs petit réseaux.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>IP</title>
-      <link>http://localhost:1313/fiches-reseaux/ip/</link>
-      <pubDate>Mon, 24 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches-reseaux/ip/</guid>
-      <description>&lt;h2 id=&#34;les-ip-c-est-quoi&#34;&gt;Les IP, c&amp;rsquo;est quoi ?&lt;/h2&gt;
-&lt;p&gt;Une IP c&amp;rsquo;est une adresse qui permet de référencer une machine connecté à Internet.&lt;/p&gt;
-&lt;p&gt;Il y a deux types d&amp;rsquo;adresses, &lt;code&gt;IP v4&lt;/code&gt; et &lt;code&gt;IP v6&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Les &lt;code&gt;IP v4&lt;/code&gt; sont écrites en décimales sur &lt;code&gt;4&lt;/code&gt; octets, les &lt;code&gt;IP v6&lt;/code&gt; sont en hexadécimales sur &lt;code&gt;6&lt;/code&gt; octets.&lt;/p&gt;
-&lt;h2 id=&#34;ip-v4&#34;&gt;IP v4&lt;/h2&gt;
-
-    &lt;div class=&#34;admonition memo&#34;&gt;
-      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;path d=&#34;M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z&#34;/&gt;&lt;/svg&gt;
-        &lt;span&gt;Les ID&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class=&#34;admonition-content&#34;&gt;
-        &lt;p&gt;Les adresses IP v4 sont découpés en 2 parties :&lt;/p&gt;</description>
     </item>
     <item>
       <title>IP</title>
@@ -92,6 +59,17 @@
       &lt;/div&gt;
       &lt;div class=&#34;admonition-content&#34;&gt;
         &lt;p&gt;Les adresses IP v4 sont découpés en 2 parties :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>http://localhost:1313/fiches/bash/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/bash/</guid>
+      <description>&lt;h2 id=&#34;le-bash-c-est-quoi&#34;&gt;Le Bash, c’est quoi ?&lt;/h2&gt;
+&lt;p&gt;Le langage &lt;code&gt;Bash&lt;/code&gt; (Bourne Again SHell) est un langage de script interprété par un terminal Unix/Linux.
+Il sert principalement à automatiser des tâches système, manipuler des fichiers, exécuter des commandes, etc.&lt;/p&gt;
+&lt;p&gt;Le Bash est un language de programmation, mais en tant que tel il n&amp;rsquo;est pas très utile, il est principalement utilisé en conjonction avec des commandes qui permettent d&amp;rsquo;interagir avec le système.&lt;/p&gt;
+&lt;p&gt;Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des distribution Linux.&lt;/p&gt;</description>
     </item>
     <item>
       <title>css</title>
@@ -124,17 +102,6 @@ Il peut utiliser des variables et conditions.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;&lt;h2 id=&#34;ordre-d-applications&#34;&gt;Ordre d&amp;rsquo;applications&lt;/h2&gt;
 &lt;p&gt;Les attributs utilise un ordre, par exemple &lt;code&gt;font-family&lt;/code&gt;, &lt;code&gt;font-style&lt;/code&gt;&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>demande prof</title>
-      <link>http://localhost:1313/fiches/demande-prof/</link>
-      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/fiches/demande-prof/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Utilisez &lt;code&gt;console.log(...)&lt;/code&gt; n&amp;rsquo;est pas autoriser.&lt;/li&gt;
-&lt;li&gt;Utilisez &lt;code&gt;prompt(...)&lt;/code&gt; pour les entrées.&lt;/li&gt;
-&lt;li&gt;Utilisez &lt;code&gt;alert(...)&lt;/code&gt; et &lt;code&gt;confirm(...)&lt;/code&gt; pour les sorties&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     <item>
       <title>SQL</title>
