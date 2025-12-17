@@ -186,7 +186,7 @@ Afficher un texte avec `echo` :
 > [!TIP] La différence entre while et until
 > [Page info de Bash sur les boucles](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs)
 > 
-> Et oui, tout les manuels / pages info sont en anglais (à moins de changer le `locale`)<https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Looping-Constructs>
+> Et oui, tout les manuels / pages info sont en anglais (à moins de changer le `locale`)
 
 
 ## Les fonctions {#les-fonctions}
