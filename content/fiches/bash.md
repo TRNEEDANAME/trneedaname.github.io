@@ -222,7 +222,7 @@ Afficher un texte avec `echo` :
 >    a|e|i|o|u|y)
 >      echo "C'est une voyelle"
 >      ;;
->    ,*)
+>    *)
 >      echo "Pas une voyelle"
 >      ;;
 >  esac
@@ -316,7 +316,7 @@ Les redirections (`>`, `>>`, `<`) permettent de manipuler les flux d’entrée/s
 >>> Il y a aussi les classes de caractères UNIX
 >>> 
 >>> -   `[[:alnum:]]`: tout les caractères (équivalent à `[0-9A-Za-z]`)
->>> -   `[[:alpha]]` : tout les caractères (équivalent à `[A-Za-z`)
+>>> -   `[[:alpha:]]` : tout les caractères (équivalent à `[A-Za-z`)
 >>> -   `[[:digit:]]` : tout les nombres (équivalent à `[0-9]`)
 >>> -   `[[:lower:]] & [[:upper:]]` tout les caractères en minuscules et majuscules
 >> 

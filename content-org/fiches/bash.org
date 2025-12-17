@@ -336,7 +336,7 @@ Pour plus d'info, allez sur [[https:quickref.me/regex][quickref : Regex]]
 
 *** tr
 
-Change ou modifie les caractères (supporte les classes de caractères UNIX ~[:alpha]~ / ~[:alnum:]~...).
+Change ou modifie les caractères (supporte les classes de caractères UNIX ~[:alpha:]~ / ~[:alnum:]~...).
 
 #+begin_src bash
 echo "toto" | tr o 8 # renvoi t8t8
