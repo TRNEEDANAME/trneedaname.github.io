@@ -114,7 +114,7 @@
     /* Aurora */
     --nord11: #d12f2f; /* Red (boosted for light) */
     --nord12: #e06b3d; /* Orange */
-    --nord13: #f2e07b; /* Yellow */
+    --nord13: #a48547; /* Yellow */
     --nord14: #70c05c; /* Green */
     --nord15: #b85bdb; /* Purple */
     --nord-func: #e6a600; /* Function names (light) */
@@ -125,8 +125,8 @@
     --secondary: var(--nord3);
     --tertiary: var(--nord4);
     --content: var(--nord2);
-    --code-block-bg: var(--nord5);
-    --code-bg: var(--nord5);
+    --code-block-bg: var(--nord4);
+    --code-bg: var(--nord4);
     --border: var(--nord5);
 
     --theme-bg: var(--theme);
@@ -323,7 +323,7 @@ pre.chroma,
 .chroma .c, .chroma .cm, .chroma .ch { color: var(--nord3); font-style: italic; }
 html[data-theme="dark"] .chroma .c1 { color: var(--nord6); font-style: italic; }
 .chroma .o, .chroma .ow { color: var(--nord11); font-weight: bold; }
-.chroma .ni, .chroma .ne { color: var(--nord12); }
+.chroma .ni, .chroma .ne, .chroma .cl .nv { color: var(--nord12); }
 .chroma .gh, .chroma .gu { color: var(--nord13); font-weight: bold; }
 .chroma .ge { font-style: italic; }
 .chroma .gs { font-weight: bold; }

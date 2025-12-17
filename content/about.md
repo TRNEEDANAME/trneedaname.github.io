@@ -39,23 +39,23 @@ Outside of things computer related, I do archery.
 
 ### Technology used by this site {#technology-used-by-this-site}
 
-The theme used is [PaperMod](https://github.com/adityatelange/hugo-PaperMod) with a nord inspired theme (subject to change as to increase contrast if people feel like it's not enough).
+The theme used is [PaperMod](https://github.com/adityatelange/hugo-PaperMod) with a nord inspired theme.
 
-This site is made using [Hugo](https://gohugo.io/) with [ox-hugo](https://ox-hugo.scripter.co/) as the `org -> md` part
+This site is made using [Hugo](https://gohugo.io/) with [ox-hugo](https://ox-hugo.scripter.co/) to convert from `.org` file to `.md`
 
 
 #### The fonts used {#the-fonts-used}
 
 -   Titles : Noto Sans Display
 -   Main body text : Noto Sans
--   Code / monospace : Berkely-Mono
+-   Code / monospace : Berkely-Mono (with ligatures)
 
-They are `.woff2` files because they are smaller to load.
+The fonts are local as to allow for faster load time.
 
 
 ## Contact me {#contact-me}
 
-To contact me about this website, please send me an email to [trneedaname@proton.me](mailto:trneedaname@proton.me). Otherwise please use fill a bug / feature report on the github repository of the mod / steam page.
+To contact me about this website, please send me an email to [trneedaname@proton.me](mailto:trneedaname@proton.me). Otherwise please fill a bug / feature report on the github repository of the mod / steam page.
 
 
 ## Licences {#licences}

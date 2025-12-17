@@ -111,12 +111,12 @@
 }
 
 .admonition.abstract > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.abstract > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.abstract > .admonition-content pre code {
@@ -147,12 +147,12 @@
 }
 
 .admonition.caution > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.caution > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.caution > .admonition-content pre code {
@@ -183,12 +183,12 @@
 }
 
 .admonition.code > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.code > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.code > .admonition-content pre code {
@@ -219,12 +219,12 @@
 }
 
 .admonition.conclusion > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.conclusion > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.conclusion > .admonition-content pre code {
@@ -255,12 +255,12 @@
 }
 
 .admonition.danger > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.danger > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.danger > .admonition-content pre code {
@@ -291,12 +291,12 @@
 }
 
 .admonition.error > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.error > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.error > .admonition-content pre code {
@@ -327,12 +327,12 @@
 }
 
 .admonition.example > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.example > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.example > .admonition-content pre code {
@@ -363,12 +363,12 @@
 }
 
 .admonition.experiment > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.experiment > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.experiment > .admonition-content pre code {
@@ -399,12 +399,12 @@
 }
 
 .admonition.goal > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.goal > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.goal > .admonition-content pre code {
@@ -435,12 +435,12 @@
 }
 
 .admonition.idea > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.idea > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.idea > .admonition-content pre code {
@@ -471,12 +471,12 @@
 }
 
 .admonition.important > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.important > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.important > .admonition-content pre code {
@@ -507,12 +507,12 @@
 }
 
 .admonition.info > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.info > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.info > .admonition-content pre code {
@@ -543,12 +543,12 @@
 }
 
 .admonition.memo > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.memo > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.memo > .admonition-content pre code {
@@ -579,12 +579,12 @@
 }
 
 .admonition.note > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.note > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.note > .admonition-content pre code {
@@ -615,12 +615,12 @@
 }
 
 .admonition.notify > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.notify > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.notify > .admonition-content pre code {
@@ -651,12 +651,12 @@
 }
 
 .admonition.question > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.question > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.question > .admonition-content pre code {
@@ -687,12 +687,12 @@
 }
 
 .admonition.quote > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.quote > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.quote > .admonition-content pre code {
@@ -723,12 +723,12 @@
 }
 
 .admonition.success > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.success > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.success > .admonition-content pre code {
@@ -759,12 +759,12 @@
 }
 
 .admonition.task > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.task > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.task > .admonition-content pre code {
@@ -795,12 +795,12 @@
 }
 
 .admonition.tip > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.tip > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.tip > .admonition-content pre code {
@@ -831,12 +831,12 @@
 }
 
 .admonition.warning > .admonition-content code:not(pre > code) {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
   color: #434c5e;
 }
 
 .admonition.warning > .admonition-content pre {
-  background-color: #e5e9f0;
+  background-color: #d8dee9;
 }
 
 .admonition.warning > .admonition-content pre code {

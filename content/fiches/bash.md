@@ -20,10 +20,14 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 > Si vous utilisez une distribution Linux (ou WSL sur windows / une VM), la commande `man` va être très utile, `man commande` vous donne le manuel de la commande en question, ce qui est pratique (surtout pour les différents flags et autre fonctions)
 > 
 >> [!TIP] info
->> La commande `info` est aussi utile mais plus complète (je recommande de lire le man sur emacs mais cela prend du temps à comprendre), elle est utilisé par plusieurs programme (`tar`, `bash`, `emacs` ainsi que de nombreuses commandes du standard `GNU` l'utilise en complément de `man`)
+>> La commande `info` est aussi utile mais plus complète (je recommande de lire les `info` sur emacs mais cela prend du temps à comprendre), elle est utilisé par plusieurs programme (`tar`, `bash`, `emacs` ainsi que de nombreuses commandes du standard `GNU` l'utilise en complément de `man`)
 
 > [!MEMO] Convention
 > Les scripts Bash ont généralement l’extension `.sh` et commencent toujours par une ligne d’en-tête (appelée **shebang**) :
+> 
+>> [!ABSTRACT] Pour executer le code
+>> Vous pouvez utiliser tout le Bash en ligne de commande (ligne par ligne), mais pour faire un fichier il faut utiliser la commande `chmod +x mon_fichier.sh`
+>> La commande chmod est expliqué [ici](#chmod)
 > 
 >> [!CODE] bash
 >>  ```bash
@@ -33,7 +37,7 @@ Ces commandes (ainsi que le Shell) sont installé par défaut sur la plupart des
 > Les conventions recommandent :
 >
 > -   d’utiliser des **minuscules** pour les noms de variables et de fonctions
-> -   de séparer les mots par des underscores `_` (aussi appelé le `Snake Case`) :
+> -   de séparer les mots par des underscores `_` :
 >     `ma_variable`, `ma_fonction()`
 > -   Pas d'espaces entre les affectations :
 >     `x=10` (et non `x = 10`).
@@ -458,4 +462,58 @@ La commande `sed` supporte aussi le Regex.
 >  ```bash
 >  sed 's/chat/chien/g' animaux.txt        # remplace "chat" par "chien"
 >  sed -i 's/chien/loup/g' animaux.txt     # remplace directement dans le fichier
+> ```
+
+
+### chmod {#chmod}
+
+La commande chmod permet de modifier les droits des fichiers, la syntaxe est comme tel
+
+> [!CODE] bash
+>  ```bash
+>  chmod [GROUPE][OPERATEUR][PERMISSIONS] [FICHIER]
+> ```
+
+
+#### Operateurs {#operateurs}
+
+Les opérateurs sont `+`, `-`, `=`
+
+-   `+` : donne des permissions
+-   `-` : retire des permissions
+-   `=` : attribut des permissions différentes
+
+
+#### Groupes {#groupes}
+
+Les groupes sont : `u`, `g`, `o`, `a`
+
+-   `u` : l'utilisateur
+-   `g` : le groupe auquel l'utilisateur appartient
+-   `o` : les autres (pas dans le groupes)
+-   `a` : tout le monde
+
+**Un seul groupe peut est `owner` du fichier**
+
+
+### Permissions {#permissions}
+
+Les permissions sont : `r`, `w`, `x` (on peut aussi utiliser l'octal, voir `man chmod`)
+
+-   `r` : lire le fichier
+-   `w` : écrire dans le fichier
+-   `x` : éxecute un fichier ou traverse un dossier
+
+<!--listend-->
+
+> [!CODE] bash
+>  ```bash
+>  chmod u+r mon_fichier.txt
+> ```
+
+Ommetre le groupe assume l'utilisateur
+
+> [!CODE] bash
+>  ```bash
+>  chmod +r mon_fichier.txt
 > ```
