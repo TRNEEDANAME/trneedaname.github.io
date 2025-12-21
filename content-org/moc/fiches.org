@@ -49,6 +49,14 @@ Les fiches sont plus concentré sur le réseaux en lui même
 
 {{{relref(Les sous réseaux,fiches/sous-reseaux)}}}
 
-** Le bash
+** Le Bash
 
-{{{relref(Bash,fiches/Bash)}}}
+Le Bash est un language très puissant utilisé dans le scripting Unix.
+
+{{{relref(Le Bash,fiches/Bash)}}}
+
+** Le Java
+
+Le Java est l'un des langages les plus utilisé dans le monde de par sa polivalence et grande adoption.
+
+{{{relref(Le Java,fiches/java)}}}

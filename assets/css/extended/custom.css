@@ -80,6 +80,8 @@
     --table-border: 1px solid;
     --table-zebra-even: var(--entry-bg); /* overridden below after color mapping */
     --table-zebra-odd: var(--theme-bg); /* overridden below after color mapping */
+    --table-hover-bg: var(--nord8);
+    --table-hover-fg: var(--nord6);
 
     /* Code / highlight */
     --line-number-color: #7b88a1;
@@ -107,18 +109,18 @@
 
     /* Frost */
     --nord7: #8fbcbb;
-    --nord8: #88c0d0;
-    --nord9: #81a1c1;
+    --nord8: #5e81ac;
+    --nord9: #5e81ac;
     --nord10: #5e81ac;
 
     /* Aurora */
-    --nord11: #d12f2f; /* Red (boosted for light) */
-    --nord12: #e06b3d; /* Orange */
-    --nord13: #a48547; /* Yellow */
-    --nord14: #70c05c; /* Green */
-    --nord15: #b85bdb; /* Purple */
-    --nord-func: #e6a600; /* Function names (light) */
-
+    --nord11: #b32626;       /* red */
+    --nord12: #c75a2a;       /* orange */
+    --nord13: #8c6a2f;       /* yellow */
+    --nord14: #4f9e3f;       /* green */
+    --nord15: #7b3fa0;       /* purple */
+    --nord-func: #996f00;    /* function names */
+    
     --theme: var(--nord6);
     --entry: var(--nord5);
     --primary: var(--nord2);
@@ -132,9 +134,9 @@
     --theme-bg: var(--theme);
     --theme-fg: var(--primary);
     --theme-border: var(--border);
-    --theme-accent: var(--nord9);
+    --theme-accent: var(--nord8);
     --theme-link: var(--nord10);
-    --theme-link-hover: var(--nord9);
+    --theme-link-hover: var(--nord15);
     --theme-menu-bg: var(--nord5);
     --theme-menu-link: var(--nord0);
     --theme-menu-hover: var(--nord15);
@@ -224,15 +226,15 @@ body {
 }
 
 /* Links outside menu */
-a:not(.logo > a):not(#menu a) {
+a:not(.logo > a):not(#menu a):not(.footnote-backref) {
     color: var(--theme-link);
 }
-a:not(.logo > a):not(#menu a):hover {
+a:not(.logo > a):not(#menu a):hover:not(.footnote-backref) {
     color: var(--theme-link-hover);
     text-decoration-color: var(--theme-link-hover);
 }
 
-a:hover {
+a:hover :not(.footnote-backref) {
     color: var(--hover-accent);
     border-bottom: var(--link-underline-thickness) solid var(--hover-accent);
     font-weight: bold;
@@ -241,7 +243,7 @@ a:hover {
 .logo a:hover,
 .social-icons a:hover,
 a.entry-link:hover,
-#menu > li > a:hover {
+#menu > li > a:hover:not(.footnote-backref) {
     color: var(--hover-accent);
     border-bottom: none;
 }
@@ -418,4 +420,20 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: var(--nord10);
     font-family: TX-02;
+}
+
+html[data-theme="dark"] table:not(.lntable) th,
+html[data-theme="dark"] table:not(.lntable) td,
+html[data-theme="dark"] table:not(.lntable) tr {
+  border: 2px solid var(--nord5);
+}
+
+table:not(.lntable) th,
+table:not(.lntable) td,
+table:not(.lntable) tr {
+  border: 2px solid var(--nord3);
+}
+
+a.footnote-backref {
+    box-shadow: none;
 }
