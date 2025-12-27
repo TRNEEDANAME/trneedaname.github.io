@@ -1,0 +1,62 @@
+#+TITLE: Playable Codex
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: wiki xcom
+#+DATE: 2025-12-27
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: false
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: wiki-xcom
+
+My [[https://steamcommunity.com/sharedfiles/filedetails/?id=2827187144][Playable Codex]] mod is riddled with balancing & general issues, so I plan to remake it, starting by a complete rework of the skill tree.
+
+** Skill tree
+
+The trees as they are now (2025-12-27) are not really thought out, the new ones are as follow :
+
+*** Teleporter
+
+Focuses on teleport, damage mitigation and other tricks to redirect damages
+
+*** Codex Factory
+
+Focuses on cloning, overwhelming enemies with sheer numbers
+
+*** Run n gun
+
+Focuses on straight shooting and taking out enemies with it's precision rifle
+
+** Skill tree
+
+Each new abilities will have a footnote detailing how it works
+
+| Rank       | Teleporter               | Codex Factory            | Run n Gun                        |
+|------------+--------------------------+--------------------------+----------------------------------|
+| Squaddie   | Teleport                 | Clone                    | Mechanical Advantages[fn:1]      |
+| Corporal   | Emergency Teleport[fn:2] | Cloning improvment[fn:3] | Psionic Rif                      |
+| Sergeant   | Swap[fn:4]               | Clone                    | Blast Padding                    |
+| Lieutenant | Teleporting buff[fn:5]   |                          | Run and gun                      |
+| Captain    | Damaging Teleport[fn:6]  |                          | Target Definition                |
+| Major      | Damage negation[fn:7]    |                          | Emergency Psionic overload[fn:8] |
+| Colonel    | Tele Attack[fn:9]        |                          |                                  |
+
+* Footnotes
+
+[fn:1] The codex gain immunity to poison, mind control, fire and other biological attacks
+
+[fn:2] Free action teleporting the unit in a small (5x5) range
+
+[fn:3] Make each cloning only consume 25% of the health
+
+[fn:4] Swap places with either an ally or enemy (1AP, 2 turn cooldown, does not end the turn, does not require line of sight)
+
+[fn:5] a
+
+[fn:6]
+
+[fn:7]
+
+[fn:8] Has a chance to desorient or stun a target, remove all ammo and makes the unit unable to move (6 turns cooldown, 1AP, end the turn, stun for 4 actions, desorient for 6, 50/50% chances for both)
+
+[fn:9]
