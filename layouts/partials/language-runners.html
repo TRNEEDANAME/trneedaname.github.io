@@ -1,24 +1,17 @@
-{{ $tags := .Params.tags }}
-
-{{ if in $tags "python" }}
-{{ with resources.Get "js/python-runner.js" }}
-{{ $pyPipe := . | minify | fingerprint }}
+{{/* PYTHON */}}
+{{ $py := resources.Get "js/python-runner.js" }}
+{{ if $py }}
+{{ $pyPipe := $py | minify | fingerprint }}
 <script defer src="{{ $pyPipe.RelPermalink }}" integrity="{{ $pyPipe.Data.Integrity }}"></script>
 {{ else }}
 <!-- MISSING assets/js/python-runner.js -->
 {{ end }}
-{{ end }}
- 
-{{ if in $tags "javascript" }}
-{{ with resources.Get "js/js-runner.js" }}
-{{ $jsPipe := . | minify | fingerprint }}
-<script defer src="{{ $jsPipe.RelPermalink }}" integrity="{{ $jsPipe.Data.Integrity }}"></script>
-{{ end }}
-{{ end }}
 
-{{ if in $tags "sql" }}
-{{ with resources.Get "js/sql-runner.js" }}
-{{ $sqlPipe := . | minify | fingerprint }}
-<script defer src="{{ $sqlPipe.RelPermalink }}" integrity="{{ $sqlPipe.Data.Integrity }}"></script>
-{{ end }}
+{{/* JS runner (optional) */}}
+{{ $js := resources.Get "js/js-runner.js" }}
+{{ if $js }}
+{{ $jsPipe := $js | minify | fingerprint }}
+<script defer src="{{ $jsPipe.RelPermalink }}" integrity="{{ $jsPipe.Data.Integrity }}"></script>
+{{ else }}
+<!-- MISSING assets/js/js-runner.js -->
 {{ end }}

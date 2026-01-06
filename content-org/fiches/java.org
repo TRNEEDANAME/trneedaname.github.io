@@ -2,10 +2,10 @@
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
 #+AUTHOR: TRNEEDANAME
-#+FILETAGS: fiches
+#+FILETAGS: fiches java
 #+DATE: 2025-12-18
 #+HUGO_PUBLISHDATE: null
-#+HUGO_DRAFT: true
+#+HUGO_DRAFT: false
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
 #+HUGO_SECTION: fiches
 

@@ -5,22 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>IP | Dev blog</title>
-<meta name="keywords" content="fiches, reseaux">
-<meta name="description" content="Les IP, c&rsquo;est quoi ?
-Une IP c&rsquo;est une adresse qui permet de référencer une machine connecté à Internet.
-Il y a deux types d&rsquo;adresses, IP v4 et IP v6
-Les IP v4 sont écrites en décimales sur 4 octets, les IP v6 sont en hexadécimales sur 6 octets.
-IP v4
-
-    
-      
-        Les ID
-      
-      
-        Les adresses IP v4 sont découpés en 2 parties :">
+<title>Playable Codex Revamped | Dev blog</title>
+<meta name="keywords" content="wiki, xcom">
+<meta name="description" content="My Playable Codex mod is riddled with balancing &amp; general issues, so I plan to remake it, starting by a complete rework of the skill tree.
+Skill tree
+The trees as they are now (2025-12-27) are not really thought out, the new ones are as follow :
+Teleporter
+Focuses on teleport, damage mitigation and other tricks to redirect damages
+Codex Factory
+Focuses on cloning, overwhelming enemies with sheer numbers
+Run n gun
+Focuses on straight shooting and taking out enemies with it&rsquo;s precision rifle">
 <meta name="author" content="TRNEEDANAME">
-<link rel="canonical" href="http://localhost:1313/fiches/ip/">
+<link rel="canonical" href="http://localhost:1313/wiki-xcom/playable-codex-revamped/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e3ca58a5a2b3db7354a18b23360d774944c2bbbd71e01403df839bb1a1c319c0.css" integrity="sha256-48pYpaKz23NUoYsjNg13SUTCu71x4BQD34ObsaHDGcA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -29,7 +26,7 @@ IP v4
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/fiches/ip/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/wiki-xcom/playable-codex-revamped/">
 <noscript>
     <style>
         #theme-toggle,
@@ -139,11 +136,11 @@ IP v4
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/fiches/">Fiches</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/wiki-xcom/">Wiki-Xcoms</a></div>
     <h1 class="post-title entry-hint-parent">
-      IP
+      Playable Codex Revamped
     </h1>
-    <div class="post-meta"><span title='2025-11-24 00:00:00 +0000 UTC'>November 24, 2025</span>&nbsp;·&nbsp;<span>TRNEEDANAME</span>
+    <div class="post-meta"><span title='2025-12-27 00:00:00 +0000 UTC'>December 27, 2025</span>&nbsp;·&nbsp;<span>TRNEEDANAME</span>
 
 </div>
   </header> <div class="toc">
@@ -155,82 +152,153 @@ IP v4
         </summary>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#les-ip-c-est-quoi">Les IP, c&rsquo;est quoi ?</a></li>
-    <li><a href="#ip-v4">IP v4</a>
+    <li><a href="#skill-tree">Skill tree</a>
       <ul>
-        <li><a href="#le-masque">Le masque</a></li>
-        <li><a href="#les-sous-réseaux">Les sous réseaux</a></li>
+        <li><a href="#teleporter">Teleporter</a></li>
+        <li><a href="#codex-factory">Codex Factory</a></li>
+        <li><a href="#run-n-gun">Run n gun</a></li>
       </ul>
     </li>
+    <li><a href="#skill-tree">Skill tree</a></li>
+    <li><a href="#units">Units</a></li>
   </ul>
 </nav>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="les-ip-c-est-quoi">Les IP, c&rsquo;est quoi ?<a hidden class="anchor" aria-hidden="true" href="#les-ip-c-est-quoi">#</a></h2>
-<p>Une IP c&rsquo;est une adresse qui permet de référencer une machine connecté à Internet.</p>
-<p>Il y a deux types d&rsquo;adresses, <code>IP v4</code> et <code>IP v6</code></p>
-<p>Les <code>IP v4</code> sont écrites en décimales sur <code>4</code> octets, les <code>IP v6</code> sont en hexadécimales sur <code>6</code> octets.</p>
-<h2 id="ip-v4">IP v4<a hidden class="anchor" aria-hidden="true" href="#ip-v4">#</a></h2>
-
-    <div class="admonition memo">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
-        <span>Les ID</span>
-      </div>
-      <div class="admonition-content">
-        <p>Les adresses IP v4 sont découpés en 2 parties :</p>
+  <div class="post-content"><p>My <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2827187144">Playable Codex</a> mod is riddled with balancing &amp; general issues, so I plan to remake it, starting by a complete rework of the skill tree.</p>
+<h2 id="skill-tree">Skill tree<a hidden class="anchor" aria-hidden="true" href="#skill-tree">#</a></h2>
+<p>The trees as they are now (2025-12-27) are not really thought out, the new ones are as follow :</p>
+<h3 id="teleporter">Teleporter<a hidden class="anchor" aria-hidden="true" href="#teleporter">#</a></h3>
+<p>Focuses on teleport, damage mitigation and other tricks to redirect damages</p>
+<h3 id="codex-factory">Codex Factory<a hidden class="anchor" aria-hidden="true" href="#codex-factory">#</a></h3>
+<p>Focuses on cloning, overwhelming enemies with sheer numbers</p>
+<h3 id="run-n-gun">Run n gun<a hidden class="anchor" aria-hidden="true" href="#run-n-gun">#</a></h3>
+<p>Focuses on straight shooting and taking out enemies with it&rsquo;s precision rifle</p>
+<h2 id="skill-tree">Skill tree<a hidden class="anchor" aria-hidden="true" href="#skill-tree">#</a></h2>
+<p>Each new abilities will have a footnote detailing how it works</p>
+<table>
+  <thead>
+      <tr>
+          <th>Rank</th>
+          <th>Teleporter</th>
+          <th>Codex Factory</th>
+          <th>Run n Gun</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Squaddie</td>
+          <td>Teleport</td>
+          <td>Clone</td>
+          <td>Mechanical Advantages<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+      </tr>
+      <tr>
+          <td>Corporal</td>
+          <td>Emergency Teleport<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td>Cloning improvment<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+          <td>Psionic Rift<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+      </tr>
+      <tr>
+          <td>Sergeant</td>
+          <td>Swap<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
+          <td>Clone buff<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></td>
+          <td>Blast Padding</td>
+      </tr>
+      <tr>
+          <td>Lieutenant</td>
+          <td>Teleporting buff<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></td>
+          <td>Clone subroutine<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></td>
+          <td>Run and gun</td>
+      </tr>
+      <tr>
+          <td>Captain</td>
+          <td>Enhanced tech<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></td>
+          <td>Clone decoy<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></td>
+          <td>Target Definition</td>
+      </tr>
+      <tr>
+          <td>Major</td>
+          <td>Damage negation<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></td>
+          <td>Non damaging clones<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></td>
+          <td>Emergency Psionic overload<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup></td>
+      </tr>
+      <tr>
+          <td>Colonel</td>
+          <td>Tele Attack<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup></td>
+          <td>Unlimited clones<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup></td>
+          <td>Precision shot<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="units">Units<a hidden class="anchor" aria-hidden="true" href="#units">#</a></h2>
 <ul>
-<li>ID réseau</li>
-<li>ID hôte</li>
+<li>Decoys : work like a mimic beacon</li>
+<li>Free clone : Half HP, other stats are the same, they can create clones themselves but cannot use any special abilities (inherit blast padding and other such abilities if the original has them)</li>
+<li>Enhanced clones : 10HP, 15 mobility, 10 dodge, can create lesser clones and use a lesser form of psionic rift. Due to the amount, they don&rsquo;t have any real guns and can only use a &ldquo;codex gun&rdquo; that deal 5 damage</li>
+<li>Lesser clones : 3HP, 17 mobility, 5 dodge, they can use a minor form of teleport, the gun they have does 2 damage</li>
 </ul>
-<p>L&rsquo;id de réseau permet de connaître le réseau auquel la machine est connecté, l&rsquo;id d&rsquo;hôte permet de connaître la machine</p>
-
-          <link rel="stylesheet" href="/css/vendors/admonitions.css">
-    <div class="admonition important">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
-        <span>Important</span>
-      </div>
-      <div class="admonition-content">
-        <p>Sans le masque il est impossible de savoir ou l&rsquo;adresse réseau finit !</p>
-      </div>
-    </div>
-      </div>
-    </div>
-    <div class="admonition tip">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
-        <span>A savoir</span>
-      </div>
-      <div class="admonition-content">
-        <p>Il y a 2 adresses qui ne peuvent être attribués, <code>0</code> et <code>255</code></p>
-<ul>
-<li><code>0</code> est l&rsquo;adresse de réseau</li>
-<li><code>255</code> est l&rsquo;adresse de broadcast</li>
-</ul>
-<p>Le nombre d&rsquo;adresse total est donc <code>2^n - 1</code> ou <code>n</code> est le masque en notation bits (aussi appelé CIDR)</p>
-      </div>
-    </div><h3 id="le-masque">Le masque<a hidden class="anchor" aria-hidden="true" href="#le-masque">#</a></h3>
-<p>Le masque est sur 4 octets et s&rsquo;écrit en décimal ou bits
-Il permet de savoir ou l&rsquo;id de réseaux finit (tout les bits à 1 sur le masque sont le réseau)</p>
-
-    <div class="admonition note">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
-        <span>Exemple</span>
-      </div>
-      <div class="admonition-content">
-        <p><code>143.177.222.11/16</code> définit le masque comme faisant 16 bits, donc 2 octets.</p>
-<p>On peut aussi écrire le masque comme faisant <code>255.255.0.0</code></p>
-<p>L&rsquo;id de réseau est donc <code>143.177</code>, l&rsquo;id d&rsquo;hôte est donc <code>222.11</code></p>
-      </div>
-    </div><h3 id="les-sous-réseaux">Les sous réseaux<a hidden class="anchor" aria-hidden="true" href="#les-sous-réseaux">#</a></h3>
-<p>Pour les sous réseaux, une fiche spéciale à été faite <a href="/fiches/sous-reseaux/"> Sous Séseaux </a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The codex gain immunity to poison, mind control, fire and other biological attacks&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Free action teleporting the unit in a small (5x5) range (4 turn cooldown)&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Make each cloning only consume 25% of the health&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>A rift that unload all weapons in its radius, if units stay in the rift, they take damage&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Swap places with either an ally or enemy (1AP, 2 turn cooldown, does not end the turn, does not require line of sight)&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Each clones get +15 aim, +1 mobility and +10 dodge&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>After teleporting, gain +10 aim, +5 crit, +3 mobility and+1 armour (passive)&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>Create a free clone, 1AP, 3 turn cooldown, 3 charges&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>Teleporting has its cooldown reduced by half and its range increased, also grant a boost to stat after a teleport (10 aim, 1 armour, 10 defense)&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p>The codex create a decoy, taking 10% of its total health, every units is compeled to shoot at the decoy, the decoy has 15 health, 1 armour, cannot move or attack and dissapear after a turn, 2 use, 5 turn cooldown, 1AP, does not end the turn&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11">
+<p>Teleport briefly in another dimension, making the attack miss (passive, can trigger at most 2 times per turn, grant 30 dodge as well)&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12">
+<p>Clones now don&rsquo;t damage the codex (the decoy now takes 5% of health, rounded up)&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13">
+<p>Has a chance to desorient or stun a target, remove all ammo and makes the unit unable to move (6 turns cooldown, 1AP, end the turn, stun for 4 actions, desorient for 6, 50/50% chances for both)&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14">
+<p>Teleport near a unit (3x3 around), grant a single action point to attack said unit 3 times (gives 200% damage), get teleported back to the starting point (8 turn cooldown, 1AP, end turn)&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:15">
+<p>The codex create 5 enhanced clones in a 10x10 radius, each ones have 10HP, 2 armour, 15 mobility, 10 dodge, they can each create 2 lesser clones, due to the strain, the main codex is rendered stunned for 3 turns&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:16">
+<p>The codex target an enemy, inflicting 200% damage, has a +50 chance to crit and cannot miss, 2 AP, 8 turn cooldown&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/fiches/">Fiches</a></li>
-      <li><a href="http://localhost:1313/tags/reseaux/">Reseaux</a></li>
+      <li><a href="http://localhost:1313/tags/wiki/">Wiki</a></li>
+      <li><a href="http://localhost:1313/tags/xcom/">Xcom</a></li>
     </ul>
 
   </footer>

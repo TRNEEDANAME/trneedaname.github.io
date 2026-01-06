@@ -28,10 +28,10 @@
 &lt;p&gt;Le SQL est un langage utilisé dans la requète de bases de données.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Playable Codex</title>
-      <link>http://localhost:1313/wiki-xcom/playable-codex/</link>
+      <title>Playable Codex Revamped</title>
+      <link>http://localhost:1313/wiki-xcom/playable-codex-revamped/</link>
       <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/wiki-xcom/playable-codex/</guid>
+      <guid>http://localhost:1313/wiki-xcom/playable-codex-revamped/</guid>
       <description>&lt;p&gt;My &lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=2827187144&#34;&gt;Playable Codex&lt;/a&gt; mod is riddled with balancing &amp;amp; general issues, so I plan to remake it, starting by a complete rework of the skill tree.&lt;/p&gt;
 &lt;h2 id=&#34;skill-tree&#34;&gt;Skill tree&lt;/h2&gt;
 &lt;p&gt;The trees as they are now (2025-12-27) are not really thought out, the new ones are as follow :&lt;/p&gt;
@@ -41,6 +41,23 @@
 &lt;p&gt;Focuses on cloning, overwhelming enemies with sheer numbers&lt;/p&gt;
 &lt;h3 id=&#34;run-n-gun&#34;&gt;Run n gun&lt;/h3&gt;
 &lt;p&gt;Focuses on straight shooting and taking out enemies with it&amp;rsquo;s precision rifle&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>java</title>
+      <link>http://localhost:1313/fiches/java/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fiches/java/</guid>
+      <description>&lt;h2 id=&#34;le-java-c-est-quoi&#34;&gt;Le Java, c&amp;rsquo;est quoi ?&lt;/h2&gt;
+&lt;p&gt;Le langage &lt;code&gt;Java&lt;/code&gt; est compilé, ce qui veut dire que le code est transformé en un code intérmediaire (dans le cas du java un &lt;code&gt;.class&lt;/code&gt;) qui est ensuite interpreté en code machine.&lt;/p&gt;
+&lt;p&gt;Le Java est un langage &lt;strong&gt;objet&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;div class=&#34;admonition memo&#34;&gt;
+      &lt;div class=&#34;admonition-header&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;path d=&#34;M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z&#34;/&gt;&lt;/svg&gt;
+        &lt;span&gt;Convention&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;admonition-content&#34;&gt;
+        &lt;p&gt;Le java utilise le &lt;a href=&#34;https://fr.wikipedia.org/wiki/Camel_case&#34;&gt;Camel Case&lt;/a&gt; pour nommer les variables et fonctions.
+Les fonctions et lignes longues doivent être découpés :&lt;/p&gt;</description>
     </item>
     <item>
       <title>sous-reseaux</title>

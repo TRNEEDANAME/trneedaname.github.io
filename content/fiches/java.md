@@ -3,8 +3,8 @@ title = "java"
 author = ["TRNEEDANAME"]
 date = 2025-12-18
 layout = "page"
-tags = ["fiches"]
-draft = true
+tags = ["fiches", "java"]
+draft = false
 +++
 
 ## Le Java, c'est quoi ? {#le-java-c-est-quoi}
