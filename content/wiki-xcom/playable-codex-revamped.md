@@ -60,7 +60,7 @@ Each new abilities will have a footnote detailing how it works
 [^fn:6]: Each clones get +15 aim, +1 mobility and +10 dodge
 [^fn:7]: After teleporting, gain +10 aim, +5 crit, +3 mobility and+1 armour (passive)
 [^fn:8]: Create a free clone, 1AP, 3 turn cooldown, 3 charges
-[^fn:9]: Teleporting has its cooldown reduced by half and its range increased, also grant a boost to stat after a teleport (10 aim, 1 armour, 10 defense)
+[^fn:9]: Teleporting has its cooldown reduced by half and its range increased, also grant a boost to stat after a teleport (10 aim, 1 armour, 10 defense), psionic rift also gets its cooldown reduced by 2, radius increased by 2 and damage increased by 4
 [^fn:10]: The codex create a decoy, taking 10% of its total health, every units is compeled to shoot at the decoy, the decoy has 15 health, 1 armour, cannot move or attack and dissapear after a turn, 2 use, 5 turn cooldown, 1AP, does not end the turn
 [^fn:11]: Teleport briefly in another dimension, making the attack miss (passive, can trigger at most 2 times per turn, grant 30 dodge as well)
 [^fn:12]: Clones now don't damage the codex (the decoy now takes 5% of health, rounded up)

@@ -8,6 +8,8 @@
 #+HUGO_SECTION: moc
 #+AUTHOR: TRNEEDANAME
 #+HUGO_CUSTOM_FRONT_MATTER: :ShowToc false :ShowPostNavLinks false
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+
 
 ** Mods for xcom
 
@@ -16,3 +18,7 @@ This file will have all of the different mods I did and am doing, each mods will
 *** Ability Creator
 
 Allows for the creation of abilities using only config.
+
+*** Playable Codex Revamped
+
+A complete rework of my Playable codex mod, link {{{relref(here,wiki-xcom/playable-codex-revamped)}}}

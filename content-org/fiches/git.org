@@ -1,0 +1,15 @@
+#+TITLE: Git
+#+HUGO_BASE_DIR: ../../
+#+HUGO_LAYOUT: page
+#+AUTHOR: TRNEEDANAME
+#+FILETAGS: fiches
+#+DATE: 2026-01-09
+#+HUGO_PUBLISHDATE: null
+#+HUGO_DRAFT: false
+#+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
+#+HUGO_SECTION: fiches
+
+
+** Git c'est quoi ?
+
+Jsp
