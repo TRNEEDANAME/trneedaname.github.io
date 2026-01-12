@@ -37,7 +37,7 @@ Each new abilities will have a footnote detailing how it works
 | Rank       | Teleporter                | Codex Factory               | Run n Gun                          |
 |------------|---------------------------|-----------------------------|------------------------------------|
 | Squaddie   | Teleport                  | Clone                       | Mechanical Advantages[^fn:1]       |
-| Corporal   | Emergency Teleport[^fn:2] | Cloning improvment[^fn:3]   | Psionic Rift[^fn:4]                |
+| Corporal   | Emergency Teleport[^fn:2] | Cloning improvment[^fn:3]   | Psionic Bomb[^fn:4]                |
 | Sergeant   | Swap[^fn:5]               | Clone buff[^fn:6]           | Blast Padding                      |
 | Lieutenant | Teleporting buff[^fn:7]   | Clone subroutine[^fn:8]     | Run and gun                        |
 | Captain    | Enhanced tech[^fn:9]      | Clone decoy[^fn:10]         | Target Definition                  |
@@ -57,7 +57,7 @@ Each new abilities will have a footnote detailing how it works
 [^fn:3]: Make each cloning only consume 25% of the health
 [^fn:4]: A rift that unload all weapons in its radius, if units stay in the rift, they take damage
 [^fn:5]: Swap places with either an ally or enemy (1AP, 2 turn cooldown, does not end the turn, does not require line of sight)
-[^fn:6]: Each clones get +15 aim, +1 mobility and +10 dodge
+[^fn:6]: Each clones get +15 aim, +1 mobility and +10 dodge, the clone also get 1 action point when being cloned
 [^fn:7]: After teleporting, gain +10 aim, +5 crit, +3 mobility and+1 armour (passive)
 [^fn:8]: Create a free clone, 1AP, 3 turn cooldown, 3 charges
 [^fn:9]: Teleporting has its cooldown reduced by half and its range increased, also grant a boost to stat after a teleport (10 aim, 1 armour, 10 defense), psionic rift also gets its cooldown reduced by 2, radius increased by 2 and damage increased by 4
