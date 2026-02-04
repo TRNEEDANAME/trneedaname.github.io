@@ -30,8 +30,6 @@ Focuses on cloning, overwhelming enemies with sheer numbers
 
 Focuses on straight shooting and taking out enemies with it's precision rifle
 
-** Skill tree
-
 Each new abilities will have a footnote detailing how it works
 
 | Rank       | Teleporter               | Codex Factory              | Run n Gun                         |

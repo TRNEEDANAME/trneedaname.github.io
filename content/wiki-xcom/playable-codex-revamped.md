@@ -32,9 +32,6 @@ Focuses on cloning, overwhelming enemies with sheer numbers
 
 Focuses on straight shooting and taking out enemies with it's precision rifle
 
-
-## Skill tree {#skill-tree}
-
 Each new abilities will have a footnote detailing how it works
 
 | Rank       | Teleporter                | Codex Factory               | Run n Gun                          |
@@ -102,11 +99,11 @@ The main codex get +15 dodge and +3 HP
 [^fn:15]: The codex create 5 enhanced clones in a 10x10 radius, they can each create 2 lesser clones, due to the strain, (2AP, 2 charges, 6 turn cooldown &amp; the main codex is rendered stunned for 3 turns)
 [^fn:16]: The codex target an enemy, inflicting 200% damage, has a +50 chance to crit and cannot miss, (2 AP, 8 turn cooldown)
 [^fn:17]: The codex teleport into another dimension, it gains the "phantom" perk and the ability to get in shadow 2 times per mission
-[^fn:18]: Make a free clone using a dead humanoid body
+[^fn:18]: Make a free clone using a dead humanoid body (1AP, 3 turn cooldown, 4 charges, create a lesser clone)
 [^fn:19]: Every teleport gives +5 HP and a 2 turn regeneration
 [^fn:20]: Clones can have different loadouts, they can swap using an ability, each loadouts get additional abilities (2AP, sniper : long watch, steady aim, Lightning Hands, +20 aim, sniper &amp; pistol / ranger : run and gun, implacable, rapid fire, +1 mobility, shotgun, grenadier : Biggest Booms, saturation fire, +1 armour, cannon, grenade launcher / specialist : Aid Protocol, Ever Vigilant, Gremlin heal, +1 mobility, codex rifle, gremlin) -- Addon with support for LWOTC / Proficiency
 [^fn:21]: Every clones get a passive regen of 2HP
-[^fn:22]: On kill, gain a free teleport
+[^fn:22]: On kill, gain a free teleport (passive)
 [^fn:23]: Take a shot guaranted to hit, (1AP, 2 ammo, 4 turn cooldown)
 [^fn:24]: Target an enemy unit, sending it to the shadow dimension, cannot target 'boss' units or large ones (2AP, 6 turn cooldown, 2 charges)
-[^fn:25]: Target a unit, if it dies, it has a chance to become a clone, if the unit dies, the codex get another AP to target another unit again (active, 1AP, 3 turn cooldown after the chain is broken, 2 charges)
+[^fn:25]: Target a unit, if it dies, it has a chance to become a clone, if the unit dies, the codex get another AP to target another unit again (active, 1AP, 3 turn cooldown after the chain is broken, 2 charges, create an enhanced clone)
