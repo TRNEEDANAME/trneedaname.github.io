@@ -22,3 +22,7 @@ Allows for the creation of abilities using only config.
 *** Playable Codex Revamped
 
 A complete rework of my Playable codex mod, link {{{relref(here,wiki-xcom/playable-codex-revamped)}}}
+
+*** Playable Chosen Reworked
+
+A complete rework of the Playable Chosen mod, link {{{relref(here,wiki-xcom/playable-chosen-reworked)}}}

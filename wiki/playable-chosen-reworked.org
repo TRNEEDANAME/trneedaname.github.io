@@ -2,15 +2,15 @@
 #+HUGO_BASE_DIR: ../../
 #+HUGO_LAYOUT: page
 #+AUTHOR: TRNEEDANAME
-#+FILETAGS: wiki-zomboid
+#+FILETAGS: wiki xcom
 #+DATE: 2026-02-04
 #+HUGO_PUBLISHDATE: null
 #+HUGO_DRAFT: false
 #+macro: relref @@hugo:[@@ $1 @@hugo:]({{< relref "$2" >}})@@
-#+HUGO_SECTION: wiki-zomboid
+#+HUGO_SECTION: wiki-xcom
 
 
-The [[https:linkhere][Playable Chosen]] mod made by fireborn has issues with the abilities
+The [[https://steamcommunity.com/sharedfiles/filedetails/?id=3010054920][Playable Chosen]] mod made by fireborn has issues with the abilities
 
 This mod aims to fix those issues and include LWOTC / CI support
 
@@ -60,4 +60,4 @@ Specialise into pistol attacks and close range.
 - Just die : shoot at a unit until it dies (2AP, 10 turn cooldown, 3 charges)
 - Killer fog : For every units killed by the hunter, gets +10 aim, +1 mobility, each kills refund 2AP and refunds 1 ammo (12 turn cooldown, 1AP, 2 charges)
 - Credential : Admin : Gets a +200 in hacking, can destroy, disable or take control of any robotic units in it's vision (passive)
-- Best shooter in the west, and east : Shoot 4 times at every enemies in sight with a +40 aim, +10 crit buff
+- Best shooter in the west, and east : Shoot 4 times at every enemies in sight with a +40 aim, +10 crit buff (12 turn cooldown, 2AP, 1 charge)
