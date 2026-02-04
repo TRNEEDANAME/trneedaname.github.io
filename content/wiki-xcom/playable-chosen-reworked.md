@@ -1,0 +1,64 @@
++++
+title = "Playable Chosen Reworked"
+author = ["TRNEEDANAME"]
+date = 2026-02-04
+layout = "page"
+tags = ["wiki", "xcom"]
+draft = false
++++
+
+The [Playable Chosen](https://steamcommunity.com/sharedfiles/filedetails/?id=3010054920) mod made by fireborn has issues with the abilities
+
+This mod aims to fix those issues and include LWOTC / CI support
+
+
+## Hunter {#hunter}
+
+The hunter specialise in tracking and taking enemies out from afar.
+It can also get in close with his pistol and grappling hook
+
+
+### Skill tree {#skill-tree}
+
+
+#### Sharpshooter {#sharpshooter}
+
+Specialise into shooting enemmies from afar, the bigger, the better.
+
+
+#### Tracker {#tracker}
+
+Specialise into finding enemies and tagging their weak points for hunting later.
+
+
+#### Close combat {#close-combat}
+
+Specialise into pistol attacks and close range.
+
+| Rank       | Sharpshooter            | Tracker                 | Close Combat                       |
+|------------|-------------------------|-------------------------|------------------------------------|
+| Squaddie   | Death from above        | I see you               | I'm always a quickdraw             |
+| Corporal   | A fine red mist         | Targeting               | Always the right ammo for the job  |
+| Sergeant   | The bigger they are     | Bad design finder       | I can do that too                  |
+| Lieutenant | Kill to shot            | Better compound grenade | Found you !                        |
+| Captain    | Killing shot            | This one's free         | Now run                            |
+| Major      | Free shots on the house | Can't run               | Just die                           |
+| Colonel    | Killer fog              | Credential : Admin      | Best shooter in the west, and east |
+
+-   I see you : can see all enemies in a 30 tiles radius (passive)
+-   I'm always a quickdraw : gain "quickdraw" and "Lightning Hand" (2 turn cooldown lightning hands)
+-   A fine red mist : If the unit dies by this shot, has a chance to panic nearby units (50%, 4 turn cooldown)
+-   Targeting : copy of holotargeting (free action, 1 turn cooldown)
+-   Always the right ammo for the job : Can freely swap between a configured set of ammo types
+-   The bigger they are : shot that does more damage based on the unit's HP (for every 5HP of the unit, +10 crit &amp; +2 damage)
+-   Bad design finder : Targeting increase crit chance, reduce defense and dodge (+15 crit, -10 defense, -25 dodge)
+-   I can do that too : Return fire three times against any enemies that attack him, max of 3 attacks
+-   Kill to shoot : If the targeted unit dies, grant 1AP and refund the ammo (5 turn cooldown, free action)
+-   Better compound grenade : The grenade now targets robotic units, last longer and panic (passive)
+-   Found you ! : If a unit moves in the hunter's line of sight, take a shot at it, no limit (passive)
+-   Free shots on the house : Target a unit, making it loose all defense, if an ally kill it, refund the AP and ammo, the hunter gets +1AP (6 turn cooldown, 2AP)
+-   Can't run : removes all mobility and aim from a unit (last 3 turns, 2AP, 8 turn cooldown)
+-   Just die : shoot at a unit until it dies (2AP, 10 turn cooldown, 3 charges)
+-   Killer fog : For every units killed by the hunter, gets +10 aim, +1 mobility, each kills refund 2AP and refunds 1 ammo (12 turn cooldown, 1AP, 2 charges)
+-   Credential : Admin : Gets a +200 in hacking, can destroy, disable or take control of any robotic units in it's vision (passive)
+-   Best shooter in the west, and east : Shoot 4 times at every enemies in sight with a +40 aim, +10 crit buff (12 turn cooldown, 2AP, 1 charge)
